@@ -11,27 +11,36 @@ html, body {
 
 /* Global Styles */
 
-nav ul h1 {
-    display: flex;
+nav {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    background-color: rgb(27, 73, 101);
+    padding: 5px;
+}
+
+nav h1 {
     color: silver;
+    padding-left: 15px;
+}
+
+nav ul a {
+    color:rgb(206, 206, 245);
 }
 
 nav ul {
     display:flex;
     list-style: none;
     justify-content: center;
-    background-color: rgb(27, 73, 101);
+    padding-top: 5px;
+}
+
+nav li a, footer li {
+    padding: 10px;
+    text-decoration: none;
 }
 
 footer ul {
     display:flex;
     list-style: none;
     background-color: rgb(27, 73, 101);
-}
-
-nav li a, footer li a {
-    display: block;
-    padding: 10px;
-    text-decoration: none;
-    font-weight: 700;
 }
