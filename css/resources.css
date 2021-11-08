@@ -1,4 +1,4 @@
-main div, main h1 {
+main div a, main h1 {
     display: flex;
     list-style: none;
     justify-content: center;
@@ -20,8 +20,12 @@ main h1 a {
 }
 
 main div a {
-    display: block;
+    display: inline-flex;
+    justify-content: center;
     padding: 10px;
     margin: 20px;
     background-color: rgb(108 , 126, 136);
+    height: 40px;
+    width: auto;
+    border-radius: 0.75em;
 }
