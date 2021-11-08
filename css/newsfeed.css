@@ -1,8 +1,44 @@
-main h1  {
+main h2  {
     display: flex;
     justify-content: center;
+    color: #CAE9FF;
 }
 #sorting {
     display: flex;
     justify-content: end;
+}
+.post {
+    display: grid;
+    grid-template-columns: 1fr 7fr;
+    color: #FFFFFF;
+    background-color: #758090;
+    border-radius: 1em;
+    margin: 1em 0;
+    padding: 1em;
+}
+.name {
+    font-weight: bold;
+}
+.user-post{
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+.buttons{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-right: 90%;
+    font-weight: bold;
+}
+.buttons a {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+.reply {
+    display: grid;
+    grid-template-columns: 1fr 7fr;
+    border-radius: 1em;
+    background-color: #636D7C;
+    margin: 1em 1em;
+    padding: 1em;
 }
