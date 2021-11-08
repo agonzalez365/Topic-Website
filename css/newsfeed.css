@@ -1,0 +1,8 @@
+main h1  {
+    display: flex;
+    justify-content: center;
+}
+#sorting {
+    display: flex;
+    justify-content: end;
+}
