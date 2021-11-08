@@ -1,0 +1,27 @@
+main div, main h1 {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    padding: 25px;
+}
+
+main div a, main h1 a {
+    text-decoration: none;
+    color: rgb(206, 206, 245);
+}
+
+main a {
+    border:rgb(56, 69, 141) 2px solid;
+}
+
+main h1 a {
+    background-color: rgb(104, 133, 187);
+    padding:5px;
+}
+
+main div a {
+    display: block;
+    padding: 10px;
+    margin: 20px;
+    background-color: rgb(108 , 126, 136);
+}
