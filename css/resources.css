@@ -1,13 +1,9 @@
 main {
     background-color: rgb(84, 84, 84);
-    height: 100%;
 }
 
 main div {
     background-color: rgb(117, 128, 144);
-    width: 80%;
-    height: 80%;
-    margin: 0 10%;
 }
 
 main div a, main h1 {
@@ -20,6 +16,7 @@ main div a, main h1 {
 main div a, main h1 a {
     text-decoration: none;
     color: rgb(206, 206, 245);
+    box-shadow: 0px 5px 5px #444444;
 }
 
 main a {
