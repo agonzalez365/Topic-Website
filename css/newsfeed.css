@@ -42,3 +42,18 @@ main h2  {
     margin: 1em 1em;
     padding: 1em;
 }
+
+textarea {
+    resize: none;
+    width: 98%;
+    border-radius: 1em;
+}
+
+#post-button {
+    position: relative;
+    left: 96%;
+    color: #FFFFFF;
+    background-color: #5FA8D3;
+    border: 1em solid #4F555F;
+    border-radius: 1em;
+}
