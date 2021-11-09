@@ -1,3 +1,15 @@
+main {
+    background-color: rgb(84, 84, 84);
+    height: 100%;
+}
+
+main div {
+    background-color: rgb(117, 128, 144);
+    width: 80%;
+    height: 80%;
+    margin: 0 10%;
+}
+
 main div a, main h1 {
     display: flex;
     list-style: none;
@@ -12,11 +24,12 @@ main div a, main h1 a {
 
 main a {
     border:rgb(56, 69, 141) 2px solid;
+    border-radius: 0.75em;
 }
 
 main h1 a {
     background-color: rgb(104, 133, 187);
-    padding:5px;
+    padding: 5px 15px;
 }
 
 main div a {
@@ -25,7 +38,5 @@ main div a {
     padding: 10px;
     margin: 20px;
     background-color: rgb(108 , 126, 136);
-    height: 40px;
     width: auto;
-    border-radius: 0.75em;
 }

@@ -1,6 +1,5 @@
 main {
-    display: grid;
-    justify-content: center;
+    background-color: rgb(84, 84, 84);
 }
 
 main #title {
@@ -9,32 +8,52 @@ main #title {
 }
 
 main #title h1 {
-    padding: 5%;
-    margin: 10%;
-    border: black solid 3px;
+    padding: 25px;
+    margin: 25px;
+    border: rgb(80, 73, 41) solid 3px;
     border-radius: .75em;
+    background-color: rgb(244, 209, 96);
+}
+
+main ul {
+    display: grid;
+    justify-content: center;
+    background-color: rgb(117, 128, 144);
+    padding: 50px;
+    width: 80%;
+    margin: 0 10%;
 }
 
 main ul li {
-    display: flex;
-    list-style: none;
+    display: grid;
     justify-content: center;
-    width: 100%;
-    padding: 25px;
+    list-style: none;
+    width: max-content;
     margin-bottom: 15px;
-    border: black solid 3px;
+    padding: 20px;
     background-color: rgb(108, 126, 136);
+    color: rgb(38, 44, 49);
+    border: rgb(68, 68, 68) solid 3px;
     border-radius: 0.75em;
 }
 
-#first {
+main ul #first {
     background-color: rgb(227, 213, 164);
+    border: rgb(137, 138, 82) solid 5px;
+    color: rgb(141, 139, 1);
+    margin: 25px 0 50px 0;
 }
 
-#second {
+main ul #second {
     background-color: rgb(164, 137, 211);
+    border: rgb(108, 82, 138) solid 5px;
+    color: rgb(46, 0, 105);
+    margin-bottom: 50px;
 }
 
-#third {
+main ul #third {
     background-color: rgb(154, 177, 238);
+    border: rgb(82, 90, 138) solid 5px;
+    color: rgb(0, 2, 90);
+    margin-bottom: 50px;
 }
