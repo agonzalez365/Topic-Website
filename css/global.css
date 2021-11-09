@@ -12,10 +12,14 @@ html, body {
 
 /* Global Styles */
 
+/* Navigation */
 nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
     display: grid;
     grid-template-columns: auto 1fr;
-    background-color: rgb(27, 73, 101);
+    background-color: #1B4965;
     padding: 5px;
 }
 
@@ -25,7 +29,8 @@ nav h1 {
 }
 
 nav ul a {
-    color:rgb(206, 206, 245);
+    color:#CAE9FF;
+    font-size: xx-large;
 }
 
 nav ul {
@@ -35,13 +40,35 @@ nav ul {
     padding-top: 5px;
 }
 
-nav li a, footer li {
-    padding: 10px;
+nav ul li.active a {
+    display: block;
+    color: #FFF1A6;
+    text-shadow: 0px 5px 10px #444444;
+    background-color: #18415A;
+    border-radius: 1em;
+}
+
+nav li a {
+    padding-left: 30px;
+    padding-right: 30px;
     text-decoration: none;
 }
 
+/* Page */
+main {
+    width: 100%;
+    height: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 2em;
+    background-color: #545454;
+}
+
+/* Footer */
 footer ul {
-    display:flex;
+    padding-left: 15px;
+    display: flex;
     list-style: none;
-    background-color: rgb(27, 73, 101);
+    background-color: #1B4965;
+    color: #BABFC7;
 }

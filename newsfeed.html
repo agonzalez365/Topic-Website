@@ -19,17 +19,17 @@
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="resources.html">Resources</a></li>
-                <li><a href="newsfeed.html">News Feed</a></li>
+                <li class="active"><a href="newsfeed.html">News Feed</a></li>
                 <li><a href="leaderboard.html">Leaderboard</a></li>
             </ul>
         </div>
     </nav>
 
     <main>
-        <h1>Latest Activity...</h1>
+        <h2>Latest Activity...</h2>
 
         <!-- sorting placeholder -->
-        <div>
+        <div id="sorting" class="post-submit">
             <label for="sort">Sort by...</label>
             <select name="sort" id="sort">
                 <option value="new">New</option>
@@ -38,39 +38,81 @@
             </select>
         </div>
 
-        <!-- remove all breaks when css is implemented -->
-        <br>
-        <br>
         <!-- create post -->
-        <form action="">
+        <div class="post">
+            <a href="newsfeed.html"><img src="" alt="Profile Picture" height="100"></a>
             <div>
-                <a href="newsfeed.html"><img src="" alt="profile picture" height="100"></a>
-                <p>Name Namington</p>
-                <textarea name="makepost" id="makepost" cols="30" rows="10"></textarea>
-                <button type="submit">Post</button>
+                <p class="name">Name Namington</p>
+                <form>
+                    <textarea name="makepost" id="makepost" class="user-post" placeholder="Share your thoughts..."></textarea>
+                    <div>
+                        <input type="submit" name="user-create-post" value="Post" id="post-button">
+                    </div>
+                </form>
             </div>
-        </form>
-        <br>
-        <br>
+        </div>
+
         <!-- existing posts -->
-        <div>
-            <a href="newsfeed.html"><img src="" alt="Profile picture"></a>
-            <p>Name Namington the Second</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque mattis libero dui, vel placerat urna consectetur a. Maecenas in pulvinar magna. Praesent porttitor, nibh nec consectetur eleifend, leo lacus lacinia leo, vel porta ipsum justo in turpis. Morbi vulputate hendrerit orci ac finibus. Sed ullamcorper facilisis venenatis...</p>
+        <div class="post">
+            <a href="newsfeed.html"><img src="" alt="Profile Picture"></a>
+            <div>
+
+                <p class="name">Name Namington the Second</p>
+                <p class="user-post">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque mattis libero dui,
+                    vel placerat urna consectetur a. Maecenas in pulvinar magna. Praesent porttitor, nibh nec
+                    consectetur eleifend, leo lacus lacinia leo, vel porta ipsum justo in turpis. Morbi vulputate
+                    hendrerit orci ac finibus. Sed ullamcorper facilisis venenatis...</p>
+                <div class="buttons">
+                    <div class="like">
+                        <a href="#">Like</a>
+                    </div>
+                    <div class="reply-button">
+                        <a href="#">Reply</a>
+                    </div>
+                </div>
+
+            </div>
         </div>
 
         <!-- post with reply -->
-        <br>
-        <br>
-        <div>
+        <div class="post">
             <a href="newsfeed.html"><img src="" alt="Profile Picture"></a>
-            <p>Name Namington the Third</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque mattis libero dui, vel placerat urna consectetur a. Maecenas in pulvinar magna. Praesent porttitor, nibh nec consectetur eleifend, leo lacus lacinia leo, vel porta ipsum justo in turpis. Morbi vulputate hendrerit orci ac finibus. Sed ullamcorper facilisis venenatis...</p>
-            <br>
             <div>
-                <a href="newsfeed.html"><img src="" alt="Profile picture"></a>
-                <p>Name Namington the Fourth of Reply-land</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque mattis libero dui, vel placerat urna consectetur a. Maecenas in pulvinar magna. Praesent porttitor, nibh nec consectetur eleifend, leo lacus lacinia leo, vel porta ipsum justo in turpis. Morbi vulputate hendrerit orci ac finibus. Sed ullamcorper facilisis venenatis...</p>
+
+                <p class="name">Name Namington the Third</p>
+                <p class="user-post">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque mattis libero dui,
+                    vel placerat urna consectetur a. Maecenas in pulvinar magna. Praesent porttitor, nibh nec
+                    consectetur eleifend, leo lacus lacinia leo, vel porta ipsum justo in turpis. Morbi vulputate
+                    hendrerit orci ac finibus. Sed ullamcorper facilisis venenatis...</p>
+                <div class="buttons">
+                    <div class="like">
+                        <a href="#">Like</a>
+                    </div>
+                    <div class="reply-button">
+                        <a href="#">Reply</a>
+                    </div>
+                </div>
+
+                <!-- reply -->
+                <div class="reply">
+                    <a href="newsfeed.html"><img src="" alt="Profile Picture"></a>
+                    <div>
+                        <p class="name">Name Namington the Fourth of Reply-land</p>
+                        <p class="user-post">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque mattis
+                            libero dui, vel placerat urna consectetur a. Maecenas in pulvinar magna. Praesent porttitor,
+                            nibh nec consectetur eleifend, leo lacus lacinia leo, vel porta ipsum justo in turpis. Morbi
+                            vulputate hendrerit orci ac finibus. Sed ullamcorper facilisis venenatis...</p>
+
+                        <div class="buttons">
+                            <div class="like">
+                                <a href="#">Like</a>
+                            </div>
+                            <div class="reply-button">
+                                <a href="#">Reply</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </main>
@@ -82,6 +124,7 @@
             </ul>
         </div>
     </footer>
-    
+
 </body>
+
 </html>
