@@ -1,0 +1,40 @@
+main {
+    display: grid;
+    justify-content: center;
+}
+
+main #title {
+    display: flex;
+    justify-content: center;
+}
+
+main #title h1 {
+    padding: 5%;
+    margin: 10%;
+    border: black solid 3px;
+    border-radius: .75em;
+}
+
+main ul li {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    width: 100%;
+    padding: 25px;
+    margin-bottom: 15px;
+    border: black solid 3px;
+    background-color: rgb(108, 126, 136);
+    border-radius: 0.75em;
+}
+
+#first {
+    background-color: rgb(227, 213, 164);
+}
+
+#second {
+    background-color: rgb(164, 137, 211);
+}
+
+#third {
+    background-color: rgb(154, 177, 238);
+}
