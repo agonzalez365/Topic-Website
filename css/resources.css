@@ -1,39 +1,54 @@
 main {
     background-color: rgb(84, 84, 84);
+    grid-template-columns: 1fr 1fr;
+    display: grid;
 }
 
-main div {
-    background-color: rgb(117, 128, 144);
+#support {
+    grid-column: span 2;
+    margin: 50px;
 }
 
-main div a, main h1 {
-    display: flex;
-    list-style: none;
-    justify-content: center;
-    padding: 25px;
-}
-
-main div a, main h1 a {
-    text-decoration: none;
-    color: rgb(206, 206, 245);
-    box-shadow: 0px 5px 5px #444444;
-}
-
-main a {
-    border:rgb(56, 69, 141) 2px solid;
-    border-radius: 0.75em;
-}
-
-main h1 a {
+#support a {
     background-color: rgb(104, 133, 187);
     padding: 5px 15px;
 }
 
-main div a {
-    display: inline-flex;
-    justify-content: center;
+main a {
+    border-radius: 0.75em;
+    width: max-content;
     padding: 10px;
-    margin: 20px;
+    margin: 20px 0;
+}
+
+#links {
+    grid-template-rows: max-content;
+    align-content: center;
+    background-color: rgb(117, 128, 144);
+}
+
+#links a {
     background-color: rgb(108 , 126, 136);
-    width: auto;
+    width: max-content;
+    margin-left: 50px;
+}
+
+#links a, #support {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+#links a, #support a {
+    text-decoration: none;
+    color: rgb(206, 206, 245);
+    border:rgb(96, 100, 124) 2px solid;
+    box-shadow: 0px 5px 5px #444444;
+    height: max-content;
+    width: max-content;
+}
+
+#videos {
+    display: grid;
+    justify-content: center;
 }
