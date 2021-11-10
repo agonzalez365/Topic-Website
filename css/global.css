@@ -44,7 +44,6 @@ nav {
 }
 
 nav a {
-    color: var(--logo-color);
     text-decoration: none;
     font-size: 2em;
     font-weight: bold;
@@ -82,7 +81,7 @@ nav ul li a:hover {
     border-radius: 1em;
     transition: 300ms;
 }
-#logo {
+#logo a{
     color: var(--logo-color);
     padding-left: 1em;
 }
