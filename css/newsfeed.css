@@ -91,3 +91,6 @@ textarea {
 #post-button:hover {
     background-color: var(--button-hover-color);
 }
+#secret {
+    display: none;
+}
