@@ -37,15 +37,18 @@ nav {
     top: 0;
     width: 100%;
     display: grid;
-    grid-template-columns: auto 1fr;
+    grid-template-columns: auto 1fr auto;
     background-color: var(--nav-main-color);
     padding: 5px;
     z-index: 1;
 }
 
-nav h1 {
+nav a {
     color: var(--logo-color);
-    padding-left: 15px;
+    padding-left: 1em;
+    text-decoration: none;
+    font-size: 2em;
+    font-weight: bold;
 }
 
 nav ul a {
@@ -71,6 +74,7 @@ nav li a {
     padding-left: 30px;
     padding-right: 30px;
     text-decoration: none;
+    display: inline-block;
 }
 
 nav ul li a:hover {
@@ -80,6 +84,22 @@ nav ul li a:hover {
     border-radius: 1em;
     transition: 300ms;
 }
+#logo {
+    color: var(--logo-color);
+}
+#profile {
+    padding-right: 1em;
+}
+#profile a img{
+    border-radius: 50%;
+    position: relative;
+    top: 5px;
+}
+#profile a:hover{
+    color: var(--highlight-color);
+    transition: all 300ms;
+}
+
 
 /* Page */
 main {
