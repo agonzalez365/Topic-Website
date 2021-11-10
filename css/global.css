@@ -10,7 +10,26 @@ html, body {
     height: 100%;
 }
 
-/* Global Styles */
+/* colors */
+:root {
+    /* preferably use these variables so colors are more uniform and changing page colors is easier */
+    /* examples of how to use a variable are in newsfeed.css */
+    /* header & footer colors */
+    --nav-main-color: #1B4965;
+    --nav-hover-color: #18415A;
+    --highlight-color: #FFF1A6;
+    --logo-color: #CAE9FF;
+    --nav-text-color: #CAE9FF;
+    --nav-drop-shadow-color: #444444;
+    /* page content colors */
+    --body-text-color: #FFFFFF;
+    --page-background-color: #545454;
+    --content-layer-1-color: #758090;
+    --content-layer-2-color: #636D7C;
+    --content-box-drop-shadow-color: #313131;
+    --button-color: #5FA8D3;
+    --button-hover-color: #3f8db9;
+}
 
 /* Navigation */
 nav {
@@ -19,17 +38,18 @@ nav {
     width: 100%;
     display: grid;
     grid-template-columns: auto 1fr;
-    background-color: #1B4965;
+    background-color: var(--nav-main-color);
     padding: 5px;
+    z-index: 1;
 }
 
 nav h1 {
-    color: silver;
+    color: var(--logo-color);
     padding-left: 15px;
 }
 
 nav ul a {
-    color:#CAE9FF;
+    color: var(--nav-text-color);
     font-size: xx-large;
 }
 
@@ -41,10 +61,9 @@ nav ul {
 }
 
 nav ul li.active a {
-    display: block;
-    color: #FFF1A6;
-    text-shadow: 0px 5px 10px #444444;
-    background-color: #18415A;
+    color: var(--highlight-color);
+    text-shadow: 0px 5px 10px var(--drop-shadow-main-color);
+    background-color: var(--nav-hover-color);
     border-radius: 1em;
 }
 
@@ -54,21 +73,39 @@ nav li a {
     text-decoration: none;
 }
 
+nav ul li a:hover {
+    color: var(--highlight-color);
+    text-shadow: 0px 5px 10px var(--drop-shadow-main-color);
+    background-color: var(--nav-hover-color);
+    border-radius: 1em;
+    transition: 300ms;
+}
+
 /* Page */
 main {
     width: 100%;
-    height: max-content;
+    min-height: 100%;
     max-width: 1200px;
     margin: auto;
     padding: 2em;
-    background-color: #545454;
+    background-color: var(--page-background-color);
 }
 
 /* Footer */
+footer{
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}
 footer ul {
     padding-left: 15px;
     display: flex;
     list-style: none;
-    background-color: #1B4965;
-    color: #BABFC7;
+    background-color: var(--nav-main-color);
+    color: var(--nav-text-color);
+}
+footer ul li {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    opacity: 50%;
 }
