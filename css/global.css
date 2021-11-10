@@ -93,6 +93,9 @@ nav ul li a:hover {
     position: relative;
     top: 5px;
 }
+#profile a{
+    color: var(--nav-text-color);
+}
 #profile a:hover{
     color: var(--highlight-color);
     transition: all 300ms;
