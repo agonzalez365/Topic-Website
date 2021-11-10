@@ -42,7 +42,7 @@ a.name:hover{
 .buttons{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    padding-right: 90%;
+    padding-right: 85%;
     font-weight: bold;
 }
 .buttons a {
@@ -60,6 +60,9 @@ a.name:hover{
     background-color: var(--content-layer-2-color);
     margin: 1em 1em;
     padding: 1em;
+}
+.like span{
+    margin: 1em;
 }
 /* post creation */
 textarea {
