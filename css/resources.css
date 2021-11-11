@@ -1,34 +1,43 @@
 main {
-    background-color: rgb(84, 84, 84);
     grid-template-columns: 1fr 1fr;
     display: grid;
 }
 
 #support {
     grid-column: span 2;
-    margin: 50px;
+    margin: 30px;
 }
 
 #support a {
-    background-color: rgb(104, 133, 187);
-    padding: 5px 15px;
+    text-shadow: 0px 5px 5px #444444;
+    color: #CAE9FF;
+}
+
+#links a:hover, #support:hover {
+    color: #FFF1A6;
+    background-color: #2c2c2c;
+    transition: 300ms;
+    border-radius: .75em;
 }
 
 main a {
     border-radius: 0.75em;
     width: max-content;
     padding: 10px;
-    margin: 20px 0;
+    margin: 40px 0;
 }
 
 #links {
     grid-template-rows: max-content;
     align-content: center;
-    background-color: rgb(117, 128, 144);
+    background-color: var(--content-layer-1-color);
+    border-radius: .75em;
 }
 
 #links a {
-    background-color: rgb(108 , 126, 136);
+    color: var(--body-text-color);
+    background-color: var(--content-layer-2-color);
+    box-shadow: 0px 10px 3px var(--content-box-drop-shadow-color);
     width: max-content;
     margin-left: 50px;
 }
@@ -41,9 +50,6 @@ main a {
 
 #links a, #support a {
     text-decoration: none;
-    color: rgb(206, 206, 245);
-    border:rgb(96, 100, 124) 2px solid;
-    box-shadow: 0px 5px 5px #444444;
     height: max-content;
     width: max-content;
 }
@@ -51,4 +57,9 @@ main a {
 #videos {
     display: grid;
     justify-content: center;
+}
+
+#videos iframe {
+    border-radius: 1em;
+    margin-bottom: 20px;
 }
