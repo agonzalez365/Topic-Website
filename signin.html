@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-    
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Sign-In</title>
     <link rel="stylesheet" href="css/global.css">
-    <link rel="stylesheet" href="css/homepage.css">
+    <link rel="stylesheet" href="css/signin.css">
 </head>
 
 <body>
@@ -17,20 +17,31 @@
     </div>
     <div>
         <ul>
-            <li class="active"><a href="index.html">Home</a></li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="resources.html">Resources</a></li>
             <li><a href="newsfeed.html">News Feed</a></li>
             <li><a href="leaderboard.html">Leaderboard</a></li>
         </ul>
     </div>
-    <div id="profile">
+    <div id="profile" class="active">
         <a href="signin.html">Log-in</a>
         <a href=""><img src="https://via.placeholder.com/30" alt=""></a>
     </div>
 </nav>
 
 <main>
-    <!-- page content here -->
+    <div>
+        Sign-In
+    </div>
+    <div>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username">
+    </div>
+    <div>
+        <label for="pass">Password:</label>
+        <input type="password" id="pass" name="password"minlength="8" required>
+    </div>
+    <input type="submit" value="Sign in">
 </main>
 
 <footer>
@@ -40,6 +51,6 @@
         </ul>
     </div>
 </footer>
-    
+
 </body>
 </html>
