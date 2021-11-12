@@ -25,15 +25,6 @@ main h2 a {
     color: var(--nav-text-color);
 }
 
-main h2 a:hover {
-    color: #FFF1A6;
-    background-color: #2c2c2c;
-    transition: 300ms;
-    border-radius: .75em;
-    text-shadow: 0px 5px 5px #444444;
-    padding: 10px;
-}
-
 label {
     display: block;
     font: .9rem 'Fira Sans', sans-serif;

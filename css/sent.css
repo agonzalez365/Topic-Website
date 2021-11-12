@@ -1,37 +1,33 @@
-main form {
-    background-color: var(--content-layer-2-color);
-    padding: 20px;
-    border-radius: 0.75em;
-    width: max-content;
-}
-
 main h1 {
-    margin: 1em 0 15px 0;
     display: flex;
     justify-content: center;
+    margin: 200px 0 15px 0;
     color: var(--nav-text-color);
     text-shadow: 0px 5px 5px #444444;
     font-size: xx-large;
 }
 
-main h2 {
+main h6 {
+    display: flex;
+    justify-content: center;
+    margin: 1em 0 15px 0;
     color: var(--nav-text-color);
-    text-shadow: 0px 5px 5px #444444; 
-    margin: 15px 0;
+    text-shadow: 0px 5px 5px #444444;
+    font-size: xx-large;
 }
 
-main h2 a {
+h6 a {
     text-decoration: none;
     color: var(--nav-text-color);
+    padding: 10px;
 }
 
-main h2 a:hover {
+a:hover {
     color: #FFF1A6;
     background-color: #2c2c2c;
     transition: 300ms;
     border-radius: .75em;
     text-shadow: 0px 5px 5px #444444;
-    padding: 10px;
 }
 
 label {
