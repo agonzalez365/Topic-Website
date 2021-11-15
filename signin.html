@@ -1,36 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-    
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Sign-In</title>
     <link rel="stylesheet" href="css/global.css">
-    <link rel="stylesheet" href="css/homepage.css">
+    <link rel="stylesheet" href="css/signin.css">
 </head>
 
 <body>
+
 <nav>
     <div id="logo">
         <a href="#">MHA</a>
     </div>
     <div>
         <ul>
-            <li><a class="active" href="index.html">Home</a></li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="resources.html">Resources</a></li>
             <li><a href="newsfeed.html">News Feed</a></li>
             <li><a href="leaderboard.html">Leaderboard</a></li>
         </ul>
     </div>
     <div id="profile">
-        <a href="signin.html">Log-in</a>
+        <a class="active" href="signin.html">Log-in</a>
         <a href=""><img src="https://via.placeholder.com/30" alt=""></a>
     </div>
 </nav>
 
 <main>
-    <!-- page content here -->
+    <h1>Sign-In</h1>
+
+    <form action="">
+        <label for="username"><h2>Username:</h2></label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="pass"><h2>Password:</h2></label>
+        <input type="password" id="pass" name="password" minlength="8" required>
+
+        <input type="submit" value="Sign in" onclick="location.href='index.html'">
+
+        <h2><a href="create.html">Create A New Account</a></h2>
+        <h2><a href="forgot.html">Forgot Your Password?</a></h2>
+    </form>    
 </main>
 
 <footer>
@@ -40,6 +54,6 @@
         </ul>
     </div>
 </footer>
-    
+
 </body>
 </html>
