@@ -65,12 +65,14 @@ a img:hover {
     padding: 1ch;
     color: var(--body-text-color);
 }
+
 .buttons a:hover{
     background-color: var(--content-layer-2-color);
     border-radius: 1em;
     transition: all 300ms;
     box-sizing: border-box;
 }
+
 .buttons a:hover i{
     color: var(--highlight-color);
     border-radius: 1em;
@@ -89,9 +91,11 @@ a img:hover {
     margin: 1em 1em;
     padding: 1em;
 }
+
 .buttons span{
     margin: 0.5em;
 }
+
 /* post creation */
 
 textarea {

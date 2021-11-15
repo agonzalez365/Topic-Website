@@ -4,7 +4,9 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 /* test fonts - choose one later */
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,900&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 html, body {
@@ -40,11 +42,9 @@ html, body {
     --page-background-color: #545454;
     --content-layer-1-color: #758090;
     --content-layer-2-color: #636D7C;
-    --content-box-drop-shadow-color: #313131BB;
+    --content-box-drop-shadow-color: #313131;
     --button-color: #5FA8D3;
-    --button-hover-color: #5ebef5;
-    --button-shadow-color: #444444;
-    --button-outline-color: #2d6180;
+    --button-hover-color: #3f8db9;
 }
 
 /* Navigation */
@@ -56,8 +56,9 @@ nav {
     display: grid;
     grid-template-columns: 1fr 6fr 1fr;
     background-color: var(--nav-main-color);
-    padding: 0.5em;
+    padding: 5px;
     z-index: 1;
+
 }
 
 nav a {
@@ -70,13 +71,7 @@ nav ul {
     display:flex;
     list-style: none;
     justify-content: center;
-}
-
-.active a {
-    color: var(--highlight-color);
-    text-shadow: 0px 5px 10px var(--drop-shadow-main-color);
-    background-color: var(--nav-hover-color);
-    border-radius: 1em;
+    padding-top: 5px;
 }
 
 nav li a {
@@ -96,7 +91,7 @@ nav ul li a:hover {
     text-shadow: 0px 5px 10px var(--drop-shadow-main-color);
     background-color: var(--nav-hover-color);
     border-radius: 1em;
-    transition: all 300ms;
+    transition: 300ms;
 }
 
 
@@ -108,8 +103,6 @@ nav ul li a:hover {
 #logo a {
     color: var(--logo-color);
     padding-left: 1em;
-    display: flex;
-    align-items: center;
 }
 
 #profile {

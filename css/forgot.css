@@ -1,4 +1,12 @@
+main div {
+    display: grid;
+    justify-content: center;
+    margin-top: 10em;
+}
+
 main form {
+    display: block;
+    justify-self: center;
     background-color: var(--content-layer-2-color);
     padding: 20px;
     border-radius: 0.75em;
@@ -30,9 +38,13 @@ label {
     font: .9rem 'Fira Sans', sans-serif;
 }
 
-input [
-    type='submit'
-],
+input[type='submit'] {
+    padding: 5px;
+    font-weight: 900;
+    background-color: var(--button-color);
+    color: var(--nav-text-color);
+    border: 0px;
+}
 
 label {
     margin-top: 1rem;
