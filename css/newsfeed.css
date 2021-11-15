@@ -67,6 +67,7 @@ a img:hover {
     background-color: var(--content-layer-2-color);
     border-radius: 1em;
     transition: all 300ms;
+    box-sizing: border-box;
 }
 .buttons a:hover i{
     color: var(--highlight-color);
@@ -119,13 +120,12 @@ textarea {
     border-radius: 1em;
     border: none;
     cursor: pointer;
-    border: solid 2px var(--button-outline-color);
 }
 
 #post-button:hover {
     color: var(--highlight-color);
     background-color: var(--button-hover-color);
-    box-shadow: 0px 5px 3px var(--button-shadow-color);
+    border: solid 2px var(--button-outline-color);
     transition: all 300ms;
 }
 #secret {
