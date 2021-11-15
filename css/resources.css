@@ -9,12 +9,12 @@ main {
 }
 
 #support a {
-    text-shadow: 0px 5px 5px #444444;
-    color: #CAE9FF;
+    text-shadow: 0px 5px 5px var(--content-box-drop-shadow-color);
+    color: var(--nav-text-color);
 }
 
 #links a:hover, #support:hover {
-    color: #FFF1A6;
+    color: var(--highlight-color);
     background-color: #2c2c2c;
     transition: 300ms;
     border-radius: .75em;
@@ -51,7 +51,7 @@ main a {
 #links a, #support a {
     text-decoration: none;
     height: max-content;
-    width: max-content;
+    width: 80%;
 }
 
 #videos {
