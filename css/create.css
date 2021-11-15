@@ -1,0 +1,39 @@
+main form {
+    background-color: var(--content-layer-2-color);
+    padding: 20px;
+    border-radius: 0.75em;
+    width: max-content;
+}
+
+main h1 {
+    margin: 1em 0 15px 0;
+    display: flex;
+    justify-content: center;
+    color: var(--nav-text-color);
+    text-shadow: 0px 5px 5px #444444;
+    font-size: xx-large;
+}
+
+main h2 {
+    color: var(--nav-text-color);
+    text-shadow: 0px 5px 5px #444444; 
+    margin: 15px 0;
+}
+
+main h2 a {
+    text-decoration: none;
+    color: var(--nav-text-color);
+}
+
+label {
+    display: block;
+    font: .9rem 'Fira Sans', sans-serif;
+}
+
+input [
+    type='submit'
+],
+
+label {
+    margin-top: 1rem;
+}

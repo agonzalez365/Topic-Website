@@ -1,4 +1,5 @@
 /* Resets */
+
 * {
     margin: 0;
     padding: 0;
@@ -14,17 +15,22 @@ html, body {
 }
 
 /* colors */
+
 :root {
+
     /* preferably use these variables so colors are more uniform and changing page colors is easier */
     /* examples of how to use a variable are in newsfeed.css */
     /* header & footer colors */
+
     --nav-main-color: #1B4965;
     --nav-hover-color: #18415A;
     --highlight-color: #FFF1A6;
     --logo-color: #CAE9FF;
     --nav-text-color: #CAE9FF;
     --nav-drop-shadow-color: #444444;
+
     /* page content colors */
+    
     --body-text-color: #FFFFFF;
     --page-background-color: #545454;
     --content-layer-1-color: #758090;
@@ -37,6 +43,7 @@ html, body {
 }
 
 /* Navigation */
+
 nav {
     position: fixed;
     top: 0;
@@ -76,6 +83,10 @@ nav li a {
     display: inline-block;
 }
 
+nav a {
+    color: var(--nav-text-color);
+}
+
 nav ul li a:hover {
     color: var(--highlight-color);
     text-shadow: 0px 5px 10px var(--drop-shadow-main-color);
@@ -83,12 +94,14 @@ nav ul li a:hover {
     border-radius: 1em;
     transition: all 300ms;
 }
-#logo a{
+
+#logo a {
     color: var(--logo-color);
     padding-left: 1em;
     display: flex;
     align-items: center;
 }
+
 #profile {
     padding-right: 1em;
     margin-top: 1em;
@@ -100,21 +113,30 @@ nav ul li a:hover {
     transition: 300ms;
 
 }
-#profile a img{
+
+#profile a img {
     border-radius: 50%;
     position: relative;
-    top: 5px;
+    top: 5px;    
+    padding: 0 10px;
 }
-#profile a{
-    color: var(--nav-text-color);
-}
-#profile a:hover{
+
+#profile a:hover {
     color: var(--highlight-color);
+    background-color: var(--nav-hover-color);
+    border-radius: 1em;
     transition: all 300ms;
 }
 
+a.active {
+    color: var(--highlight-color);
+    text-shadow: 0px 5px 10px var(--drop-shadow-main-color);
+    background-color: var(--nav-hover-color);
+    border-radius: 1em;
+}
 
 /* Page */
+
 main {
     width: 100%;
     min-height: 100%;
@@ -125,11 +147,13 @@ main {
 }
 
 /* Footer */
-footer{
+
+footer {
     width: 100%;
     position: fixed;
     bottom: 0;
 }
+
 footer ul {
     padding-left: 15px;
     display: flex;
@@ -137,6 +161,7 @@ footer ul {
     background-color: var(--nav-main-color);
     color: var(--nav-text-color);
 }
+
 footer ul li {
     margin-top: 10px;
     margin-bottom: 10px;
