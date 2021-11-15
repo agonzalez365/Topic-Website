@@ -4,7 +4,6 @@ main h1  {
     color: #CAE9FF;
     text-shadow: 0px 5px 5px #444444;
     font-size: xx-large;
-    margin-top: 1em;
 }
 
 #sorting {
@@ -28,6 +27,9 @@ main h1  {
 
 .post a img {
     border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
 }
 
 .name {
@@ -120,6 +122,7 @@ textarea {
     border-radius: 1em;
     border: none;
     cursor: pointer;
+    border: solid 2px transparent;
 }
 
 #post-button:hover {
