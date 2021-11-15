@@ -37,8 +37,12 @@ main ul li:hover {
     transition: 300ms;
 }
 
-main ul li a, main ul li div, main ul li p {
-    margin: 0 40px;
+main ul li a {
+    margin: 0 1em;
+}
+
+main ul li div {
+    margin-right: 2em;
 }
 
 main ul li img {
