@@ -1,24 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <script src="https://kit.fontawesome.com/3dd4d3e2df.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>News Feed</title>
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/newsfeed.css">
 </head>
+
 <body>
+
     <nav>
+        <div id="logo">
+            <a href="#">MHA</a>
+        </div>
         <div>
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="resources.html">Resources</a></li>
-                <li><a href="newsfeed.html">News Feed</a></li>
+                <li><a class="active" href="newsfeed.html">News Feed</a></li>
                 <li><a href="leaderboard.html">Leaderboard</a></li>
             </ul>
+        </div>
+        <div id="profile">
+            <a href="signin.html">Log-in</a>
+            <a href=""><img src="https://via.placeholder.com/30" alt=""></a>
         </div>
     </nav>
 
     <main>
-        <!-- page content here -->
+        <h1>Latest Activity...</h1>
+
+        <!-- sorting placeholder -->
+
+        <div id="sorting" class="post-submit">
+            <label for="sort">Sort by...</label>
+            <select name="sort" id="sort">
+                <option value="new">New</option>
+                <option value="rating">Highest Rated</option>
+                <option value="old">Oldest</option>
+            </select>
+        </div>
+
+        <!-- create post -->
+
+        <div class="post">
+            <a href="#"><img src="https://via.placeholder.com/100" alt="Profile Picture" height="100"></a>
+            <div>
+                <p class="name">Name Namington</p>
+                <form>
+                    <textarea name="makepost" id="makepost" class="user-post" placeholder="Share your thoughts..."
+                        rows="4" maxlength="500"></textarea>
+                    <div>
+                        <input type="submit" name="user-create-post" value="Post" id="post-button">
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- existing posts -->
+
+        <!-- existing posts -->
+        <div class="post">
+            <a href="#"><img src="https://via.placeholder.com/100" alt="Profile Picture"></a>
+            <div>
+
+                <a href="#" class="name">Name Namington the Second</a>
+                <p class="user-post">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque mattis libero dui,
+                    vel placerat urna consectetur a. Maecenas in pulvinar magna. Praesent porttitor, nibh nec
+                    consectetur eleifend, leo lacus lacinia leo, vel porta ipsum justo in turpis. Morbi vulputate
+                    hendrerit orci ac finibus. Sed ullamcorper facilisis venenatis...</p>
+                <div class="buttons">
+                    <div class="like">
+                        <a href="#"><span>7</span><i class="fas fa-thumbs-up"></i><span>Like</span></a>
+                    </div>
+                    <div class="reply-button">
+                        <a href="#"><i class="fas fa-reply"></i><span>Reply</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- post with reply -->
+        <div class="post">
+            <a href="#"><img src="https://via.placeholder.com/100" alt="Profile Picture"></a>
+            <div>
+
+                <a href="#" class="name">Name Namington the Third</a>
+                <p class="user-post">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque mattis libero dui,
+                    vel placerat urna consectetur a. Maecenas in pulvinar magna. Praesent porttitor, nibh nec
+                    consectetur eleifend, leo lacus lacinia leo, vel porta ipsum justo in turpis. Morbi vulputate
+                    hendrerit orci ac finibus. Sed ullamcorper facilisis venenatis...</p>
+                <div class="buttons">
+                    <div class="like">
+                        <a href="#"><span>3</span><i class="fas fa-thumbs-up"></i><span>Like</span></a>
+                    </div>
+                    <div class="reply-button">
+                        <a href="#"><i class="fas fa-reply"></i><span>Reply</span></a>
+                    </div>
+                </div>
+                <!-- reply -->
+                <div class="reply">
+                    <a href="#"><img src="https://via.placeholder.com/100" alt="Profile Picture"></a>
+                    <div>
+                        <a href="#" class="name">Name Namington the Fourth of Reply-land</a>
+                        <p class="user-post">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque mattis
+                            libero dui, vel placerat urna consectetur a. Maecenas in pulvinar magna. Praesent porttitor,
+                            nibh nec consectetur eleifend, leo lacus lacinia leo, vel porta ipsum justo in turpis. Morbi
+                            vulputate hendrerit orci ac finibus. Sed ullamcorper facilisis venenatis...</p>
+
+                        <div class="buttons">
+                            <div class="like">
+                                <a href="#"><span>2</span><i class="fas fa-thumbs-up"></i><span>Like</span></a>
+                            </div>
+                            <div class="reply-button">
+                                <a href="#"><i class="fas fa-reply"></i><span>Reply</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="post">
+            <a href="#"><img src="https://via.placeholder.com/100" alt="Profile Picture"></a>
+            <div>
+
+                <a href="#" class="name">Name Namington the Fifth</a>
+                <p class="user-post">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque mattis libero dui,
+                    vel placerat urna consectetur a. Maecenas in pulvinar magna. Praesent porttitor, nibh nec
+                    consectetur eleifend, leo lacus lacinia leo, vel porta ipsum justo in turpis. Morbi vulputate
+                    hendrerit orci ac finibus. Sed ullamcorper facilisis venenatis...</p>
+                <div class="buttons">
+                    <div class="like">
+                        <a href="#"><span>42</span><i class="fas fa-thumbs-up"></i><span>Like</span></a>
+                    </div>
+                    <div class="reply-button">
+                        <a href="#"><i class="fas fa-reply"></i><span>Reply</span></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="post" id="secret">
+            <a href="#"><img src="https://via.placeholder.com/100" alt="Profile Picture"></a>
+            <div>
+
+                <a href="#" class="name">Inspector of Elements</a>
+                <p class="user-post">You found me.</p>
+                <div class="buttons">
+                    <div class="like">
+                        <a href="#"><span>999</span><i class="fas fa-thumbs-up"></i><span>Like</span></a>
+                    </div>
+                    <div class="reply-button">
+                        <a href="#"><i class="fas fa-reply"></i><span>Reply</span></a>
+                    </div>
+                </div>
+
+                <a href="#" class="name">Name Namington the Fifth</a>
+                <p class="user-post">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque mattis libero dui,
+                    vel placerat urna consectetur a. Maecenas in pulvinar magna. Praesent porttitor, nibh nec
+                    consectetur eleifend, leo lacus lacinia leo, vel porta ipsum justo in turpis. Morbi vulputate
+                    hendrerit orci ac finibus. Sed ullamcorper facilisis venenatis...</p>
+                <div class="buttons">
+                    <div class="like">
+                        <a href="#">Like</a>
+                    </div>
+                    <div class="reply-button">
+                        <a href="#">Reply</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
     </main>
 
     <footer>
@@ -28,6 +188,7 @@
             </ul>
         </div>
     </footer>
-    
+
 </body>
+
 </html>

@@ -1,0 +1,133 @@
+main h1  {
+    display: flex;
+    justify-content: center;
+    color: #CAE9FF;
+    text-shadow: 0px 5px 5px #444444;
+    font-size: xx-large;
+    margin-top: 1em;
+}
+
+#sorting {
+    display: flex;
+    justify-content: end;
+    color: var(--body-text-color);
+}
+
+/* posts */
+
+.post {
+    display: grid;
+    grid-template-columns: 1fr 7fr;
+    color: var(--body-text-color);
+    background-color: var(--content-layer-1-color);
+    border-radius: 1em;
+    margin: 2em 0;
+    padding: 1.5em;
+    box-shadow: 0px 10px 3px var(--content-box-drop-shadow-color);
+}
+
+.post a img {
+    border-radius: 50%;
+}
+
+.name {
+    font-weight: bold;
+    font-size: x-large;
+    color: var(--body-text-color);
+    text-decoration: none;
+}
+a.name:hover {
+    color: var(--highlight-color);
+    transition: all 300ms;
+}
+
+a img:hover {
+    border: black solid 3px;
+    transition: 300ms;
+    opacity: 50%;
+}
+
+.user-post {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+.buttons{
+    display: flex;
+    font-weight: bold;
+    margin: 1em 0;
+}
+
+.buttons a {
+    text-decoration: none;
+    margin: 0 1em 0 0;
+    padding: 1ch;
+    color: var(--body-text-color);
+}
+.buttons a:hover{
+    background-color: var(--content-layer-2-color);
+    border-radius: 1em;
+    transition: all 300ms;
+}
+.buttons a:hover i{
+    color: var(--highlight-color);
+    border-radius: 1em;
+    transition: all 300ms;
+}
+
+.reply .buttons a:hover{
+    background-color: var(--content-layer-1-color);
+}
+
+.reply {
+    display: grid;
+    grid-template-columns: 1fr 7fr;
+    border-radius: 1em;
+    background-color: var(--content-layer-2-color);
+    margin: 1em 1em;
+    padding: 1em;
+}
+.buttons span{
+    margin: 0.5em;
+}
+/* post creation */
+
+textarea {
+    font-family: 'Rubik', sans-serif;
+    font-style: italic;
+    resize: none;
+    padding: 1em;
+    width: 98%;
+    border-radius: 1em;
+    outline: none;
+    color: var(--body-text-color);
+    background-color: var(--content-layer-2-color);
+    border: none;
+}
+
+::placeholder{
+    color: var(--body-text-color);
+}
+
+#post-button {
+    position: relative;
+    left: 83%;
+    color: var(--body-text-color);
+    font-family: 'Rubik', sans-serif;
+    font-weight: 900;
+    background-color: var(--button-color);
+    padding: 1ch 5ch 1ch 5ch;
+    border-radius: 1em;
+    border: none;
+    cursor: pointer;
+    border: solid 2px var(--button-outline-color);
+}
+
+#post-button:hover {
+    color: var(--highlight-color);
+    background-color: var(--button-hover-color);
+    box-shadow: 0px 5px 3px var(--button-shadow-color);
+    transition: all 300ms;
+}
+#secret {
+    display: none;
+}
