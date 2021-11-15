@@ -4,8 +4,11 @@ main {
 }
 
 #support {
+    display: block;
+    justify-self: center;
     grid-column: span 2;
-    margin: 30px;
+    margin: 2em;
+    width: max-content;
 }
 
 #support a {
@@ -13,7 +16,7 @@ main {
     color: var(--nav-text-color);
 }
 
-#links a:hover, #support:hover {
+#links a:hover, #support a:hover {
     color: var(--highlight-color);
     background-color: #2c2c2c;
     transition: 300ms;
@@ -31,7 +34,9 @@ main a {
     grid-template-rows: max-content;
     align-content: center;
     background-color: var(--content-layer-1-color);
+    box-shadow: 0px 10px 3px var(--content-box-drop-shadow-color);
     border-radius: .75em;
+    height: max-content;
 }
 
 #links a {
