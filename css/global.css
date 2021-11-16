@@ -89,9 +89,6 @@ nav a:hover {
     display: flex;
     align-items: center;
     color: var(--logo-color);
-    transition-property: content;
-    transition-duration: 2s;
-    transition-delay: 2s;
 }
 
 #logo:hover::after{
