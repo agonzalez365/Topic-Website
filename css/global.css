@@ -29,7 +29,7 @@ html, body {
     --highlight-color: #FFF1A6;
     --logo-color: #CAE9FF;
     --nav-text-color: #CAE9FF;
-    --nav-drop-shadow-color: #444444;
+    --nav-drop-shadow-color: #44444499;
 
     /* page content colors */
     
@@ -37,7 +37,7 @@ html, body {
     --page-background-color: #545454;
     --content-layer-1-color: #758090;
     --content-layer-2-color: #636D7C;
-    --content-box-drop-shadow-color: #313131;
+    --content-box-drop-shadow-color: #31313199;
     --button-color: #5FA8D3;
     --button-hover-color: #3f8db9;
 }
@@ -141,7 +141,7 @@ main {
     width: 100%;
     min-height: 100%;
     max-width: 1200px;
-    margin: 86px auto 1% auto;
+    margin: 89px auto 38px auto;
     padding: 2em;
     background-color: var(--page-background-color);
 }
