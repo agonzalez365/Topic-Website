@@ -7,7 +7,7 @@ main {
     display: block;
     justify-self: center;
     grid-column: span 2;
-    margin: 2em;
+    margin-bottom: 2em;
     width: max-content;
 }
 
