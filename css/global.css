@@ -144,6 +144,7 @@ main {
     margin: 89px auto 38px auto;
     padding: 2em;
     background-color: var(--page-background-color);
+    box-shadow: 5px 0 20px var(--content-box-drop-shadow-color), -5px 0 10px var(--content-box-drop-shadow-color);
 }
 
 /* Footer */
