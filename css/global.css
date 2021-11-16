@@ -95,9 +95,8 @@ nav a:hover {
 }
 
 #logo:hover::after{
-    font-weight: 900;
-    transition: all 500ms;
     content: "Mental Health Awareness";
+    font-weight: 900;
 }
 
 #profile {

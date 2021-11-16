@@ -37,7 +37,7 @@ main h1  {
     border-radius: 1em;
 }
 
-#sorting select:hover {
+#sorting select:hover, #sorting select:focus {
     background-color: var(--button-hover-color);
     border: solid 2px #2c5e7a;
     cursor: pointer;
@@ -95,6 +95,7 @@ textarea {
     padding: 1.5em;
     box-shadow: 0px 10px 3px var(--content-box-drop-shadow-color);
     line-height: 150%;
+    font-weight: 400;
 }
 
 .post > a {
@@ -129,8 +130,7 @@ a.name:hover {
 }
 
 .user-post {
-    margin-top: 1em;
-    margin-bottom: 1em;
+    margin: 1em 0;
 }
 .buttons{
     display: flex;
