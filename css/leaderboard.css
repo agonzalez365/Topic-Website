@@ -1,11 +1,10 @@
 #title {
     display: flex;
     justify-content: center;
-    margin-top: 10px;
 }
 
 #title h1 {
-    padding: 25px;
+    padding: 0px 25px 25px 25px;
     color: var(--nav-text-color);
     text-shadow: 0px 5px 5px var(--content-box-drop-shadow-color);
 }
@@ -17,16 +16,18 @@ main ul {
 }
 
 main ul li {
-    display: flex;
+    display: grid;
+    grid-template-columns: 100px 1fr 100px;
+    text-align: center;
+    align-items: center;
+    justify-content: space-between;
     list-style: none;
     margin-bottom: 25px;
-    padding: 20px;
+    padding: 25px 0;
     background-color: var(--content-layer-2-color);
     color: var(--body-text-color);
     border-radius: 0.75em;
     box-shadow: 0px 5px 5px var(--content-box-drop-shadow-color);
-    align-items: center;
-    justify-content: space-between;
 }
 
 main ul li:hover {
@@ -35,8 +36,12 @@ main ul li:hover {
     transition: 300ms;
 }
 
-main ul li a, main ul li div, main ul li p {
-    margin: 0 40px;
+main ul li a {
+    margin: 0 1em;
+}
+
+main ul li div {
+    margin-right: 2em;
 }
 
 main ul li img {

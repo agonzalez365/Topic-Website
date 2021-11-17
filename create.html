@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <script src="https://kit.fontawesome.com/3dd4d3e2df.js" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,28 +26,29 @@
         </ul>
     </div>
     <div id="profile">
-        <a href="signin.html">Log-in</a>
-        <a href=""><img src="https://via.placeholder.com/30" alt=""></a>
+        <a href="signin.html"><span>Sign-in</span><i class="fas fa-user"></i></a>
     </div>
 </nav>
 
-<main>
-    <h1>Create Your Account!</h1>
-    <form action="">
-        <label for="email"><h2>Email Account:</h2></label>
-        <input type="email" id="email" name="email" required>
+<main>  
+    <div>
+        <h1>Sign Up</h1>
+        <form action="">
+            <label for="email"><h2>Email Account:</h2></label>
+            <input type="email" id="email" name="email" required>
 
-        <label for="username"><h2>Username:</h2></label>
-        <input type="text" id="username" name="username" maxlength="12" required>
+            <label for="username"><h2>Username:</h2></label>
+            <input type="text" id="username" name="username" maxlength="12" required>
 
-        <label for="pass"><h2>Password:</h2></label>
-        <input type="password" id="pass" name="password" minlength="8" required>
+            <label for="pass"><h2>Password:</h2></label>
+            <input type="password" id="pass" name="password" minlength="8" required>
 
-        <label for="pass2"><h2>Password Again:</h2></label>
-        <input type="password" id="pass2" name="password2" minlength="8" required>
-
-        <input type="submit" value="Create" onclick="location.href='signin.html'">
-    </form>
+            <label for="pass2"><h2>Password Again:</h2></label>
+            <input type="password" id="pass2" name="password2" minlength="8" required>
+            
+            <input type="submit" value="Create" onclick="location.href='signin.html'">
+        </form>
+    </div>
 </main>
 
 <footer>

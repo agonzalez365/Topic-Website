@@ -2,10 +2,12 @@
 .header{
     display: block;
 }
-main{
+
+main {
     height: 100%;
     min-height: 100%;
 }
+
 #title {
     display: flex;
     justify-content: center;
@@ -17,6 +19,7 @@ main{
     color: var(--nav-text-color);
     text-shadow: 0px 5px 5px var(--content-box-drop-shadow-color);
 }
+
 #game-image div{
     height: 36vh;
 }
