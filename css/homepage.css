@@ -1,48 +1,88 @@
-
 .header{
     display: block;
-}
-
-main {
-    height: 100%;
-    min-height: 100%;
 }
 
 #title {
     display: flex;
     justify-content: center;
-    margin-top: 10px;
 }
 
 #title h1 {
-    padding: 25px;
+    padding: 0 25px 25px 25px;
     color: var(--nav-text-color);
     text-shadow: 0px 5px 5px var(--content-box-drop-shadow-color);
 }
 
 #game-image div{
-    height: 36vh;
+    height: 328px;
 }
+
 #game-image img {
     object-fit: cover;
     object-position: top;
     width: 100%;
     height: 100%;
+    border-radius: 1em;
+    box-shadow: 0px 10px 3px var(--content-box-drop-shadow-color);
+}
+
+.text-box {
+    background-color: var(--content-layer-2-color);
+    padding: 20px;
+    padding-bottom: 30px;
+    border-radius: 1em;
+    box-shadow: 0px 10px 3px var(--content-box-drop-shadow-color);
+    height: max-content;
+}
+
+.text-box p {
+    margin: 20px 0;
+}
+
+.text-box a {
+    color: var(--body-text-color);
+    background-color: var(--content-layer-1-color);
+    box-shadow: 0px 10px 3px var(--content-box-drop-shadow-color);
+    padding: 10px;
+    border-radius: .75em;
+    margin-left: 15px
+}
+
+.text-box a:hover {
+    color: var(--highlight-color);
+    background-color: #2c2c2c;
+    transition: 300ms;
 }
 
 .rank {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: #C4C4C4;
+    background-color: var(--content-layer-2-color);
     width: 100%;
-    height: 25vh;
+    height: max-content;
+    padding: 15px;
+    border-radius: 1em;
+    box-shadow: 0px 10px 3px var(--content-box-drop-shadow-color);
 }
 
 .rank img {
     width: 100px;
     height: 100px;
     border-radius: 100%;
+    object-fit: cover;
+}
+
+#first {
+    color: rgb(141, 139, 1);
+}
+
+#second {
+    color: rgb(46, 0, 105);
+}
+
+#third {
+    color: rgb(0, 2, 90);
 }
 
 #help-grid {
@@ -60,6 +100,28 @@ main {
 }
 
 /* featured post */
+
+#activity-snippet {
+    background-color: var(--content-layer-2-color);
+    padding: 1em;
+    border-radius: 1em;
+    box-shadow: 0px 10px 3px var(--content-box-drop-shadow-color);
+}
+
+#activity-title {
+    font-size: 1.5em;
+    font-weight: 900;
+    color: var(--nav-text-color);
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+}
+
+#activity-title:hover {
+    color: var(--highlight-color);
+    transition: 300ms;
+}
+
 .post {
     display: grid;
     grid-template-columns: 1fr 7fr;
@@ -98,15 +160,18 @@ a img:hover {
     font-size: x-large;
     color: var(--body-text-color);
     text-decoration: none;
+    margin: 0em 0.3em;
 }
+
 a.name:hover {
     color: var(--highlight-color);
     transition: all 300ms;
 }
 
 .user-post {
-    margin: 1em 0;
+    margin: 1em 0.5em;
 }
+
 .buttons{
     display: flex;
     font-weight: bold;

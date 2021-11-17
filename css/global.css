@@ -1,4 +1,5 @@
 /* Resets */
+
 * {
     margin: 0;
     padding: 0;
@@ -144,6 +145,10 @@ main {
     margin: 89px auto 38px auto;
     padding: 2em;
     background-color: var(--page-background-color);
+}
+
+main p {
+    line-height: 1.5em;
 }
 
 /* Footer */
