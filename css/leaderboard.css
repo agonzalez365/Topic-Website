@@ -1,11 +1,10 @@
 #title {
     display: flex;
     justify-content: center;
-    margin-top: 10px;
 }
 
 #title h1 {
-    padding: 25px;
+    padding: 0px 25px 25px 25px;
     color: var(--nav-text-color);
     text-shadow: 0px 5px 5px var(--content-box-drop-shadow-color);
 }
