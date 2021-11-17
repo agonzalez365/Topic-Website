@@ -18,46 +18,126 @@ main{
     text-shadow: 0px 5px 5px var(--content-box-drop-shadow-color);
 }
 #game-image div{
-    height: 300px;
+    height: 36vh;
 }
-#game-image img{
+#game-image img {
     object-fit: cover;
+    object-position: top;
     width: 100%;
-    height: 300px;
-}
-.container{
-background-color:gray  ;
-width: 100%;
-max-width: 900px;
-margin: auto;
-min-height: 100%;
+    height: 100%;
 }
 
-#help-grid{
+.rank {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #C4C4C4;
+    width: 100%;
+    height: 25vh;
+}
+
+.rank img {
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+}
+
+#help-grid {
     display: grid;
     grid-gap: 8%;
     grid-template-columns: 1fr 1fr;
+    height: 75%;
 }
 
-.page{
+.page {
     width: 100%;
     max-width: 900px;
     margin: auto;
     color: rgb(236, 226, 228);
 }
-.rank{
+
+/* featured post */
+.post {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 7fr;
+    color: var(--body-text-color);
+    background-color: var(--content-layer-1-color);
+    border-radius: 1em;
+    margin: 2em 0;
+    padding: 1.5em;
+    box-shadow: 0px 10px 3px var(--content-box-drop-shadow-color);
+    line-height: 150%;
+    font-weight: 400;
 }
-.rank img{
-width: 100px;
-height: 100px;
-border-radius: 100%;
+
+.post > a {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
 }
-#logo img{
+
+.post a img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border: solid 2px transparent;
+}
+
+a img:hover {
+    border: solid 2px rgb(39, 39, 39);
+    transition: 300ms;
+    opacity: 70%;
+}
+
+.name {
+    font-weight: bold;
+    font-size: x-large;
+    color: var(--body-text-color);
+    text-decoration: none;
+}
+a.name:hover {
+    color: var(--highlight-color);
+    transition: all 300ms;
+}
+
+.user-post {
+    margin: 1em 0;
+}
+.buttons{
+    display: flex;
+    font-weight: bold;
+    margin: 1em 0;
+}
+
+.buttons a {
+    text-decoration: none;
+    margin: 0 1em 0 0;
+    padding: 1ch;
+    color: var(--body-text-color);
+}
+
+.buttons a:hover{
+    background-color: var(--content-layer-2-color);
+    border-radius: 1em;
+    transition: all 300ms;
+    box-sizing: border-box;
+}
+
+.buttons a:hover i{
+    color: var(--highlight-color);
+    border-radius: 1em;
+    transition: all 300ms;
+}
+
+.buttons span{
+    margin: 0.5em;
+}
+
+/* #logo img{
     height: 65px;
     
-}
+} */
 
 /* *{
     margin: 0;
