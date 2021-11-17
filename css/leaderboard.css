@@ -28,6 +28,8 @@ main ul li {
     color: var(--body-text-color);
     border-radius: 0.75em;
     box-shadow: 0px 5px 5px var(--content-box-drop-shadow-color);
+    font-size: 1.75em;
+    font-weight: 700;
 }
 
 main ul li:hover {
@@ -61,6 +63,7 @@ main ul li img:hover {
     border: rgb(110, 110, 64) solid 5px;
     color: rgb(141, 139, 1);
     margin-bottom: 50px;
+    font-size: 2.5em;
 }
 
 #first:hover {
@@ -74,6 +77,7 @@ main ul li img:hover {
     border: rgb(88, 65, 114) solid 5px;
     color: rgb(46, 0, 105);
     margin-bottom: 50px;
+    font-size: 2.25em;
 }
 
 #second:hover {
@@ -87,6 +91,7 @@ main ul li img:hover {
     border: rgb(82, 90, 138) solid 5px;
     color: rgb(0, 2, 90);
     margin-bottom: 50px;
+    font-size: 2em;
 }
 
 #third:hover {
