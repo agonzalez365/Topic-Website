@@ -66,10 +66,10 @@ nav ul {
     display:flex;
     list-style: none;
     justify-content: center;
-    padding-top: 5px;
+    padding: 5px 0;
 }
 
-nav li a {
+nav a {
     color: var(--nav-text-color);
     padding: 0.5em 1em;
     margin: 0.25em;
@@ -77,11 +77,7 @@ nav li a {
     display: inline-block;
 }
 
-nav a {
-    color: var(--nav-text-color);
-}
-
-nav ul li a:hover {
+nav a:hover {
     color: var(--highlight-color);
     text-shadow: 0px 5px 10px var(--drop-shadow-main-color);
     background-color: var(--nav-hover-color);
@@ -89,15 +85,15 @@ nav ul li a:hover {
     transition: 300ms;
 }
 
-
 #logo {
     display: flex;
     align-items: center;
+    color: var(--logo-color);
 }
 
-#logo a {
-    color: var(--logo-color);
-    padding-left: 1em;
+#logo:hover::after{
+    content: "Mental Health Awareness";
+    font-weight: 900;
 }
 
 #profile {
@@ -141,9 +137,10 @@ main {
     width: 100%;
     min-height: 100%;
     max-width: 1200px;
-    margin: 89px auto 38px auto;
+    margin: 94px auto 38px auto;
     padding: 2em;
     background-color: var(--page-background-color);
+    box-shadow: 5px 0 20px var(--content-box-drop-shadow-color), -5px 0 10px var(--content-box-drop-shadow-color);
 }
 
 /* Footer */

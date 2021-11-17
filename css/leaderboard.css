@@ -46,6 +46,7 @@ main ul li div {
 
 main ul li img {
     border-radius: 100%;
+    object-fit: cover;
 }
 
 main ul li img:hover {

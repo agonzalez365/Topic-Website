@@ -9,6 +9,20 @@
     <title>News Feed</title>
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/newsfeed.css">
+    <!-- testing -->
+    <script>
+        var i = 0;
+        var txt = 'Lorem ipsum dummy text blabla.';
+        var speed = 50;
+        
+        function typeWriter() {
+          if (i < txt.length) {
+            document.getElementById("logo").innerHTML += txt.charAt(i);
+            i++;
+            setTimeout(typeWriter, speed);
+          }
+        }
+    </script>
 </head>
 
 <body>
@@ -74,7 +88,7 @@
                     hendrerit orci ac finibus. Sed ullamcorper facilisis venenatis...</p>
                 <div class="buttons">
                     <div class="like">
-                        <a href="#"><span>7</span><i class="fas fa-thumbs-up"></i><span>Like</span></a>
+                        <a href="#"><span class="like-count">7</span><i class="fas fa-thumbs-up"></i><span>Like</span></a>
                     </div>
                     <div class="reply-button">
                         <a href="#"><i class="fas fa-reply"></i><span>Reply</span></a>
@@ -96,7 +110,7 @@
                     hendrerit orci ac finibus. Sed ullamcorper facilisis venenatis...</p>
                 <div class="buttons">
                     <div class="like">
-                        <a href="#"><span>3</span><i class="fas fa-thumbs-up"></i><span>Like</span></a>
+                        <a href="#"><span class="like-count">3</span><i class="fas fa-thumbs-up"></i><span>Like</span></a>
                     </div>
                     <div class="reply-button">
                         <a href="#"><i class="fas fa-reply"></i><span>Reply</span></a>
@@ -114,7 +128,7 @@
 
                         <div class="buttons">
                             <div class="like">
-                                <a href="#"><span>2</span><i class="fas fa-thumbs-up"></i><span>Like</span></a>
+                                <a href="#"><span class="like-count">2</span><i class="fas fa-thumbs-up"></i><span>Like</span></a>
                             </div>
                             <div class="reply-button">
                                 <a href="#"><i class="fas fa-reply"></i><span>Reply</span></a>
@@ -136,7 +150,7 @@
                     hendrerit orci ac finibus. Sed ullamcorper facilisis venenatis...</p>
                 <div class="buttons">
                     <div class="like">
-                        <a href="#"><span>42</span><i class="fas fa-thumbs-up"></i><span>Like</span></a>
+                        <a href="#"><span class="like-count">42</span><i class="fas fa-thumbs-up"></i><span>Like</span></a>
                     </div>
                     <div class="reply-button">
                         <a href="#"><i class="fas fa-reply"></i><span>Reply</span></a>
@@ -154,7 +168,7 @@
                 <p class="user-post">You found me.</p>
                 <div class="buttons">
                     <div class="like">
-                        <a href="#"><span>999</span><i class="fas fa-thumbs-up"></i><span>Like</span></a>
+                        <a href="#"><span class="like-count">999</span><i class="fas fa-thumbs-up"></i><span>Like</span></a>
                     </div>
                     <div class="reply-button">
                         <a href="#"><i class="fas fa-reply"></i><span>Reply</span></a>
