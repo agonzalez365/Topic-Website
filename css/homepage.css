@@ -53,7 +53,7 @@
 
 .text-box a:hover {
     color: var(--highlight-color);
-    background-color: var(--button-hover-color);
+    background-color: var(--content-layer-2-color);
     transition: 300ms;
 }
 
@@ -76,6 +76,15 @@
     object-fit: cover;
 }
 
+.ranking {
+    text-decoration: none;
+    font-size: small;
+    font-weight: 900;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 #first {
     color: rgb(141, 139, 1);
 }
@@ -87,6 +96,8 @@
 #third {
     color: rgb(0, 2, 90);
 }
+
+
 
 #help-grid {
     display: grid;
