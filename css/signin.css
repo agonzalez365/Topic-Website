@@ -52,18 +52,24 @@ label {
 }
 
 input[type='submit'] {
-    padding: 5px;
+    padding: 1ch;
     font-weight: 900;
     background-color: var(--button-color);
     color: var(--nav-text-color);
     border: 0px;
     box-shadow: 0px 5px 5px var(--content-box-drop-shadow-color);
 }
+input[type='submit']:hover {
+    background-color: var(--button-hover-color);
+    cursor: pointer;
+    color: var(--highlight-color);
+}
 
 input {
+    border: none;
     border-radius: 1em;
     width: 1fr;
-    padding: 5px;
+    padding: 1ch;
     margin: 5px;
     box-shadow: 0px 5px 5px var(--content-box-drop-shadow-color);
 }
