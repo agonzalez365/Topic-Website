@@ -53,7 +53,7 @@
 
 .text-box a:hover {
     color: var(--highlight-color);
-    background-color: var(--content-layer-2-color);
+    background-color: var(--button-hover-color);
     transition: 300ms;
 }
 
