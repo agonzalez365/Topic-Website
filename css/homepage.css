@@ -27,6 +27,7 @@
 }
 
 .text-box {
+    color: var(--body-text-color);
     background-color: var(--content-layer-2-color);
     padding: 20px;
     padding-bottom: 30px;
