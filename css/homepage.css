@@ -40,6 +40,7 @@
 }
 
 .text-box a {
+    text-decoration: none;
     color: var(--body-text-color);
     background-color: var(--content-layer-1-color);
     box-shadow: 0px 10px 3px var(--content-box-drop-shadow-color);
@@ -50,7 +51,7 @@
 
 .text-box a:hover {
     color: var(--highlight-color);
-    background-color: #2c2c2c;
+    background-color: var(--content-layer-2-color);
     transition: 300ms;
 }
 
@@ -73,6 +74,15 @@
     object-fit: cover;
 }
 
+.ranking {
+    text-decoration: none;
+    font-size: small;
+    font-weight: 900;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 #first {
     color: rgb(141, 139, 1);
 }
@@ -84,6 +94,8 @@
 #third {
     color: rgb(0, 2, 90);
 }
+
+
 
 #help-grid {
     display: grid;
