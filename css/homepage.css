@@ -67,6 +67,13 @@
     transition: 300ms;
 }
 
+#intro{
+    margin-bottom: 2em;
+    font-size: large;
+    text-align: center;
+    font-weight: 700;
+}
+
 .rank {
     display: flex;
     justify-content: space-around;
@@ -114,7 +121,7 @@
     grid-gap: 5%;
     grid-template-columns: 1fr 1fr;
     width: 100%;
-    max-width: 1100px;
+    max-width: 1200px;
     margin: auto;
     color: rgb(236, 226, 228);
 }
