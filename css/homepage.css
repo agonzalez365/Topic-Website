@@ -26,6 +26,15 @@
     box-shadow: 0px 10px 3px var(--content-box-drop-shadow-color);
 }
 
+#game-image iframe {
+    color: var(--body-text-color);
+    background-color: var(--content-layer-2-color);
+    padding: 20px;
+    padding-bottom: 30px;
+    border-radius: 1em;
+    box-shadow: 0px 10px 3px var(--content-box-drop-shadow-color);
+}
+
 .text-box {
     color: var(--body-text-color);
     background-color: var(--content-layer-2-color);
