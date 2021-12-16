@@ -225,6 +225,9 @@ a.name:hover {
     margin: 0.5em;
 }
 
+#game-image iframe{
+    background-color: white;
+}
 /* #logo img{
     height: 65px;
     
