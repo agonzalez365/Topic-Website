@@ -31,5 +31,4 @@ let replies = {
 $('document').ready(function() {
     $('#create-post').hide();
     $('#create-post').show();
-
 });
