@@ -29,6 +29,11 @@ let replies = {
 }
 
 $('document').ready(function() {
-    $('#create-post').hide();
-    $('#create-post').show();
+    //hide post creation if user is not logged in
+    if(localStorage.getItem('logged-in') === "false"){
+        $('#create-post').hide();
+    }
+
+    
+
 });
