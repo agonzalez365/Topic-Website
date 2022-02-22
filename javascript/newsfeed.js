@@ -97,11 +97,14 @@ $('document').ready(function() {
             mainContainer.append(
                 `
                 <div class="post">
-                    <a href="#"><img src="${post.profilePic}" alt="Profile Picture"></a>
                     <div>
-
-                        <a href="#" class="name">${post.name}</a>
-                        <p class="user-post">${post.postContent}</p>
+                        <a href="#"><img src="${post.profilePic}" alt="Profile Picture"></a>
+                    </div>
+                    <div>
+                        <div>
+                            <a href="#" class="name">${post.name}</a>
+                            <p class="user-post">${post.postContent}</p>
+                        </div>
                         <div class="buttons">
                             <div class="like">
                                 <a href="#"><span class="like-count">15</span><i class="fas fa-thumbs-up"></i><span>Like</span></a>
@@ -137,11 +140,14 @@ $('document').ready(function() {
             mainContainer.append(
                 `
                 <div class="post">
-                    <a href="#"><img src="${post.profilePic}" alt="Profile Picture"></a>
                     <div>
-        
-                        <a href="#" class="name">${post.name}</a>
-                        <p class="user-post">${post.postContent}</p>
+                        <a href="#"><img src="${post.profilePic}" alt="Profile Picture"></a>
+                    </div>
+                    <div>
+                        <div>
+                            <a href="#" class="name">${post.name}</a>
+                            <p class="user-post">${post.postContent}</p>
+                        </div>
                         <div class="buttons">
                             <div class="like">
                                 <a href="#"><span class="like-count">${post.likeCount}</span><i class="fas fa-thumbs-up"></i><span>Like</span></a>
@@ -157,6 +163,11 @@ $('document').ready(function() {
             );
         }
     });
+
+    //sorting
+
+    //sort by oldest
+    
 
     //like counts
     const likeButtons = document.getElementsByClassName('like-count');
