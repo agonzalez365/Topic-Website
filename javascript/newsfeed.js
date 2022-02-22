@@ -164,21 +164,39 @@ $('document').ready(function() {
         }
     });
 
+    //post creation
+
+
     //sorting
 
     //sort by oldest
     const sortByOldest = document.getElementById('sort-old');
-    console.log(sortByOldest);
     sortByOldest.addEventListener('click', function() {
-        console.log('clicked');
+        //TO DO: Sorting algorithm
+        console.log('old');
     });
+
+    //sort by newest
+    const sortByNewest = document.getElementById('sort-new')
+    sortByNewest.addEventListener('click', function() {
+        //TO DO: Sorting algorithm
+        console.log('new');
+    });
+
+    //sort by rating
+    const sortByRating = document.getElementById('sort-rating');
+    sortByRating.addEventListener('click', function() {
+        //TO DO: Sorting algorithm
+        console.log('rating');
+    });
+    
 
     //like counts
     const likeButtons = document.getElementsByClassName('like');
     for(let i = 0; i < likeButtons.length; i += 1){
         likeButtons[i].addEventListener('click', function() {
-            console.log(likeButtons[i].children);
+            //TO DO: increment count
         });
     }
 
-});
+})
