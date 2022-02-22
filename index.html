@@ -7,6 +7,9 @@
         <title>Home</title>
         <link rel="stylesheet" href="css/global.css">
         <link rel="stylesheet" href="css/homepage.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="/javascript/global.js"></script>
+        <script src="/javascript/homepage.js"></script>
 
         <style>
             html, body{
@@ -39,30 +42,26 @@
         <main>
             <div id="title">  
                 <h1>
-                    Welcome to the Game!
+                    Mental Health Awareness
                 </h1>
+            </div>
+
+            <div class="text-box" id="intro">
+                <p>Mental health is something that affects everyone. The aim of this site is to provide a place to find resources about mental health, as well as a place to talk about mental health without any of the surrounding stigma.</p>
             </div>
 
             <div class="page" id="help-grid">
 
                 <div id="game-image">
-                    <div>
-                        <img src="images/game.jpg">
-                    </div>
+                    <iframe 
+                        src="https://scratch.mit.edu/projects/617604264/embed" 
+                        allowtransparency="true" width="100%" height="100%" 
+                        frameborder="0" scrolling="no" allowfullscreen>
+                    </iframe>
                 </div>
-            </div>
 
                 <div class="text-box">
-                    <h2> Mind Refresher Puzzle!</h2>
-                    <p>We chose to tackle the subject of mental health because it can affect everyone.<br> 
-                        This issue is on the rise and is still growing, and with the state of mental health services,<br>
-                        this subject seemed like the right one for us. We wanted the user to learn more about mental health,<br>
-                        mental illness’ impact on the youth, and provide access to resources and information for sake of awareness.<br> 
-                        Mental health is a lot like physical health in that many ailments of the mind can be treated and aided with<br>
-                        the proper care, and yet there are still millions who struggle with these issues daily. <br>
-                        We hope to raise awareness on this issue of mental illness, as well as provide a platform for many resources<br>
-                        in order to allow viewers an easy access point to information.
-                            <br></p>
+                    <h2>Mind Refresher Game</h2>
                     <p>This game is about those with Depression and anxiety.
                         Playing games is a great way to get your friends and 
                         family members talking and laughing, and this game can 
@@ -72,8 +71,7 @@
                         hyperactivity disorder (ADHD), and post-traumatic stress 
                         disorder(PTSD).
                     </p>
-                    <a  href="https://news.ecu.edu/2011/02/16/study-casual-video-
-                        games-demonstrate-ability-to-reduce-depression-and-anxiety/"
+                    <a  href="https://news.ecu.edu/2011/02/16/study-casual-video-games-demonstrate-ability-to-reduce-depression-and-anxiety/"
                         class="here-btn" target="_blank">Click here to read More!
                     </a>
                 </div>
@@ -91,12 +89,23 @@
                         <img src="images/leaderboard/david.jpg">
                         <p>Da_S3raph_Sl1dz_</p>
                     </a>
-                    <div class= "modal">
-                        <a  href="https://news.ecu.edu/2011/02/16/study-casual-video-
-                        games-demonstrate-ability-to-reduce-depression-and-anxiety/"
-                        class="here-btn" target="_blank">Click here to read More!
-                    </a>
+
+                    <div class="modal-button">
+                        
                     </div>
+
+                   <!-- <div class="modal">
+                        <div class="modal-content">
+                            
+                            <span class="close">
+                        
+                            </span>
+                           
+                            <p> 
+                                this is a place holder text.
+                            </p>
+                       </div>
+                    </div> -->
                 </div>
                 
                 <div id="activity-snippet">
