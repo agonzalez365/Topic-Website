@@ -107,10 +107,10 @@ $('document').ready(function() {
                         </div>
                         <div class="buttons">
                             <div class="like">
-                                <a href="#"><span class="like-count">15</span><i class="fas fa-thumbs-up"></i><span>Like</span></a>
+                                <span class="like-count">15</span><i class="fas fa-thumbs-up"></i><span>Like</span>
                             </div>
                             <div class="reply-button">
-                                <a href="#"><i class="fas fa-reply"></i><span>Reply</span></a>
+                                <i class="fas fa-reply"></i><span>Reply</span>
                             </div>
                         </div>
 
@@ -122,10 +122,10 @@ $('document').ready(function() {
 
                                 <div class="buttons">
                                     <div class="like">
-                                        <a href="#"><span class="like-count">12</span><i class="fas fa-thumbs-up"></i><span>Like</span></a>
+                                        <span class="like-count">${post.replies[0].likeCount}</span><i class="fas fa-thumbs-up"></i><span>Like</span>
                                     </div>
                                     <div class="reply-button">
-                                        <a href="#"><i class="fas fa-reply"></i><span>Reply</span></a>
+                                        <i class="fas fa-reply"></i><span>Reply</span>
                                     </div>
                                 </div>
                             </div>
@@ -150,10 +150,10 @@ $('document').ready(function() {
                         </div>
                         <div class="buttons">
                             <div class="like">
-                                <a href="#"><span class="like-count">${post.likeCount}</span><i class="fas fa-thumbs-up"></i><span>Like</span></a>
+                                <span class="like-count">${post.likeCount}</span><i class="fas fa-thumbs-up"></i><span>Like</span>
                             </div>
                             <div class="reply-button">
-                                <a href="#"><i class="fas fa-reply"></i><span>Reply</span></a>
+                                <i class="fas fa-reply"></i><span>Reply</span>
                             </div>
                         </div>
         
@@ -167,11 +167,18 @@ $('document').ready(function() {
     //sorting
 
     //sort by oldest
-    
+    const sortByOldest = document.getElementById('sort-old');
+    console.log(sortByOldest);
+    sortByOldest.addEventListener('click', function() {
+        console.log('clicked');
+    });
 
     //like counts
-    const likeButtons = document.getElementsByClassName('like-count');
+    const likeButtons = document.getElementsByClassName('like');
     for(let i = 0; i < likeButtons.length; i += 1){
-        console.log(likeButtons[i]);
+        likeButtons[i].addEventListener('click', function() {
+            console.log(likeButtons[i].children);
+        });
     }
+
 });
