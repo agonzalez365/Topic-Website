@@ -231,17 +231,16 @@ a.name:hover {
     margin: 0.5em;
 }
 
-<<<<<<< HEAD
 .modal-button{
-        background-color: var(--button-hover-color);
-        transition: 300ms;
-        color: var(--body-text-color);
-        padding: 20px;
-        padding-bottom: 30px;
-        border-radius: 1em;
-        box-shadow: 0px 10px 3px var(--content-box-drop-shadow-color);
-        height: max-content;
-    
+    background-color: var(--button-hover-color);
+    transition: 300ms;
+    color: var(--body-text-color);
+    padding: 20px;
+    padding-bottom: 30px;
+    border-radius: 1em;
+    box-shadow: 0px 10px 3px var(--content-box-drop-shadow-color);
+    height: max-content;
+
 }
 
 .modal {
@@ -272,21 +271,8 @@ a.name:hover {
     font-weight: bold;
   }
   
-  .close:hover,
-.close:focus {
+.close:hover,.close:focus {
   color: black;
   text-decoration: none;
   cursor: pointer;
 }
-=======
-
->>>>>>> 29d8f7d6504c396e9f8d358db9467c930cda7363
-
-
-
-
-
-
-
-
-
