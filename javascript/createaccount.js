@@ -21,10 +21,9 @@ $('document').ready(function() {
             const user = {
                 email,
                 password,
-                loggedIn: false
             }
 
-            window.localStorage.setItem(JSON.stringify(username), JSON.stringify(user));
+            window.localStorage.setItem(username, JSON.stringify(user));
             //redirect to signin
             window.location.href = 'signin.html';
         }
