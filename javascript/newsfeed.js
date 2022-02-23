@@ -165,7 +165,38 @@ $('document').ready(function() {
     });
 
     //post creation
+    const createPostBtn = document.getElementById('post-button');
+    createPostBtn.addEventListener('click', function(event) {
+        event.preventDefault();
+        const postText = document.getElementById('post-text').value;
+        //TO DO: make username non-default, store posts in local storage
+        //pic will remain default
+        mainContainer.append(
+            `
+            <div class="post">
+                    <div>
+                        <a href="#"><img src="/images/newsfeed/user.jpg" alt="Profile Picture"></a>
+                    </div>
+                    <div>
+                        <div>
+                            <a href="#" class="name">User</a>
+                            <p class="user-post">${postText}</p>
+                        </div>
+                        <div class="buttons">
+                            <div class="like">
+                                <span class="like-count">0</span><i class="fas fa-thumbs-up"></i><span>Like</span>
+                            </div>
+                            <div class="reply-button">
+                                <i class="fas fa-reply"></i><span>Reply</span>
+                            </div>
+                        </div>
+        
+                    </div>
+                </div>
+            `
+        )
 
+    });
 
     //sorting
 
