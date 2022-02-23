@@ -1,0 +1,1 @@
+var modal= document.querySelector("#modal-div")
