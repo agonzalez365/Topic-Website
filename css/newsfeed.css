@@ -138,27 +138,27 @@ a.name:hover {
     margin: 1em 0;
 }
 
-.buttons a {
-    text-decoration: none;
+.like, .reply-button{
     margin: 0 1em 0 0;
     padding: 1ch;
     color: var(--body-text-color);
 }
 
-.buttons a:hover{
+.buttons .like:hover, .reply-button:hover{
     background-color: var(--content-layer-2-color);
     border-radius: 1em;
     transition: all 300ms;
     box-sizing: border-box;
+    cursor: pointer;
 }
 
-.buttons a:hover i{
+.like:hover i, .reply-button:hover i{
     color: var(--highlight-color);
     border-radius: 1em;
     transition: all 300ms;
 }
 
-.reply .buttons a:hover{
+.reply .like:hover, .reply .reply-button:hover{
     background-color: var(--content-layer-1-color);
 }
 
@@ -169,12 +169,6 @@ a.name:hover {
     background-color: var(--content-layer-2-color);
     margin: 1em 1em;
     padding: 1em;
-}
-
-.reply > a {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
 }
 
 .buttons span{

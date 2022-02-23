@@ -97,17 +97,20 @@ $('document').ready(function() {
             mainContainer.append(
                 `
                 <div class="post">
-                    <a href="#"><img src="${post.profilePic}" alt="Profile Picture"></a>
                     <div>
-
-                        <a href="#" class="name">${post.name}</a>
-                        <p class="user-post">${post.postContent}</p>
+                        <a href="#"><img src="${post.profilePic}" alt="Profile Picture"></a>
+                    </div>
+                    <div>
+                        <div>
+                            <a href="#" class="name">${post.name}</a>
+                            <p class="user-post">${post.postContent}</p>
+                        </div>
                         <div class="buttons">
                             <div class="like">
-                                <a href="#"><span class="like-count">15</span><i class="fas fa-thumbs-up"></i><span>Like</span></a>
+                                <span class="like-count">15</span><i class="fas fa-thumbs-up"></i><span>Like</span>
                             </div>
                             <div class="reply-button">
-                                <a href="#"><i class="fas fa-reply"></i><span>Reply</span></a>
+                                <i class="fas fa-reply"></i><span>Reply</span>
                             </div>
                         </div>
 
@@ -119,10 +122,10 @@ $('document').ready(function() {
 
                                 <div class="buttons">
                                     <div class="like">
-                                        <a href="#"><span class="like-count">12</span><i class="fas fa-thumbs-up"></i><span>Like</span></a>
+                                        <span class="like-count">${post.replies[0].likeCount}</span><i class="fas fa-thumbs-up"></i><span>Like</span>
                                     </div>
                                     <div class="reply-button">
-                                        <a href="#"><i class="fas fa-reply"></i><span>Reply</span></a>
+                                        <i class="fas fa-reply"></i><span>Reply</span>
                                     </div>
                                 </div>
                             </div>
@@ -137,17 +140,20 @@ $('document').ready(function() {
             mainContainer.append(
                 `
                 <div class="post">
-                    <a href="#"><img src="${post.profilePic}" alt="Profile Picture"></a>
                     <div>
-        
-                        <a href="#" class="name">${post.name}</a>
-                        <p class="user-post">${post.postContent}</p>
+                        <a href="#"><img src="${post.profilePic}" alt="Profile Picture"></a>
+                    </div>
+                    <div>
+                        <div>
+                            <a href="#" class="name">${post.name}</a>
+                            <p class="user-post">${post.postContent}</p>
+                        </div>
                         <div class="buttons">
                             <div class="like">
-                                <a href="#"><span class="like-count">${post.likeCount}</span><i class="fas fa-thumbs-up"></i><span>Like</span></a>
+                                <span class="like-count">${post.likeCount}</span><i class="fas fa-thumbs-up"></i><span>Like</span>
                             </div>
                             <div class="reply-button">
-                                <a href="#"><i class="fas fa-reply"></i><span>Reply</span></a>
+                                <i class="fas fa-reply"></i><span>Reply</span>
                             </div>
                         </div>
         
@@ -158,9 +164,70 @@ $('document').ready(function() {
         }
     });
 
+    //post creation
+    const createPostBtn = document.getElementById('post-button');
+    createPostBtn.addEventListener('click', function(event) {
+        event.preventDefault();
+        const postText = document.getElementById('post-text').value;
+        //TO DO: make username non-default, store posts in local storage
+        //pic will remain default
+        mainContainer.append(
+            `
+            <div class="post">
+                    <div>
+                        <a href="#"><img src="/images/newsfeed/user.jpg" alt="Profile Picture"></a>
+                    </div>
+                    <div>
+                        <div>
+                            <a href="#" class="name">User</a>
+                            <p class="user-post">${postText}</p>
+                        </div>
+                        <div class="buttons">
+                            <div class="like">
+                                <span class="like-count">0</span><i class="fas fa-thumbs-up"></i><span>Like</span>
+                            </div>
+                            <div class="reply-button">
+                                <i class="fas fa-reply"></i><span>Reply</span>
+                            </div>
+                        </div>
+        
+                    </div>
+                </div>
+            `
+        )
+
+    });
+
+    //sorting
+
+    //sort by oldest
+    const sortByOldest = document.getElementById('sort-old');
+    sortByOldest.addEventListener('click', function() {
+        //TO DO: Sorting algorithm
+        console.log('old');
+    });
+
+    //sort by newest
+    const sortByNewest = document.getElementById('sort-new')
+    sortByNewest.addEventListener('click', function() {
+        //TO DO: Sorting algorithm
+        console.log('new');
+    });
+
+    //sort by rating
+    const sortByRating = document.getElementById('sort-rating');
+    sortByRating.addEventListener('click', function() {
+        //TO DO: Sorting algorithm
+        console.log('rating');
+    });
+    
+
     //like counts
-    const likeButtons = document.getElementsByClassName('like-count');
+    const likeButtons = document.getElementsByClassName('like');
     for(let i = 0; i < likeButtons.length; i += 1){
-        console.log(likeButtons[i]);
+        likeButtons[i].addEventListener('click', function() {
+            //TO DO: increment count
+        });
     }
-});
+
+})
