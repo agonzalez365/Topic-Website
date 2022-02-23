@@ -231,6 +231,7 @@ a.name:hover {
     margin: 0.5em;
 }
 
+<<<<<<< HEAD
 .modal-button{
         background-color: var(--button-hover-color);
         transition: 300ms;
@@ -277,6 +278,9 @@ a.name:hover {
   text-decoration: none;
   cursor: pointer;
 }
+=======
+
+>>>>>>> 29d8f7d6504c396e9f8d358db9467c930cda7363
 
 
 
