@@ -35,7 +35,7 @@ let latestPosts = [
                 userId: 3,
                 timestamp: 75,
                 postId: 375,
-            }
+            },
         ]
     },
     {
@@ -65,38 +65,45 @@ $('document').ready(function() {
     function displayLatest(){
         postContainer.empty();
         latestPosts.forEach((post) => {
-            //if there are replies, use reply template, else, don't
-            //only works with one reply, need to update
-            if(post.replies.length > 0){
-                postContainer.append(
-                    `
-                    <div class="post">
+            postContainer.append(
+                `
+                <div class="post" id="${post.postId}">
+                    <div>
+                        <a href="#"><img src="${post.profilePic}" alt="Profile Picture"></a>
+                    </div>
+                    <div class="post-content">
                         <div>
-                            <a href="#"><img src="${post.profilePic}" alt="Profile Picture"></a>
+                            <a href="#" class="name">${post.name}</a>
+                            <p class="user-post">${post.postContent}</p>
                         </div>
-                        <div>
-                            <div>
-                                <a href="#" class="name">${post.name}</a>
-                                <p class="user-post">${post.postContent}</p>
+                        <div class="buttons">
+                            <div class="like">
+                                <span class="like-count">${post.likeCount.length}</span><i class="fas fa-thumbs-up"></i><span>Like</span>
                             </div>
-                            <div class="buttons">
-                                <div class="like">
-                                    <span class="like-count">${post.likeCount.length}</span><i class="fas fa-thumbs-up"></i><span>Like</span>
-                                </div>
-                                <div class="reply-button">
-                                    <i class="fas fa-reply"></i><span>Reply</span>
-                                </div>
+                            <div class="reply-button">
+                                <i class="fas fa-reply"></i><span>Reply</span>
                             </div>
-    
-                            <div class="reply">
-                                <a href="#"><img src="${post.replies[0].profilePic}" alt="Profile Picture"></a>
+                        </div>
+
+                    </div>
+                </div>
+                `
+            );
+            //append replies to post
+            if(post.replies.length > 0) {
+                const replyPoint = postContainer.find('#' + post.postId).children().eq(1);
+                for(let i = 0; i < post.replies.length; i+= 1){
+                    replyPoint.append(
+                        `
+                        <div class="reply" id="${post.replies[i].postId}">
+                                <a href="#"><img src="${post.replies[i].profilePic}" alt="Profile Picture"></a>
                                 <div>
-                                    <a href="#" class="name">${post.replies[0].name}</a>
-                                    <p class="user-post">${post.replies[0].postContent}</p>
+                                    <a href="#" class="name">${post.replies[i].name}</a>
+                                    <p class="user-post">${post.replies[i].postContent}</p>
     
                                     <div class="buttons">
                                         <div class="like">
-                                            <span class="like-count">${post.replies[0].likeCount.length}</span><i class="fas fa-thumbs-up"></i><span>Like</span>
+                                            <span class="like-count">${post.replies[i].likeCount.length}</span><i class="fas fa-thumbs-up"></i><span>Like</span>
                                         </div>
                                         <div class="reply-button">
                                             <i class="fas fa-reply"></i><span>Reply</span>
@@ -104,73 +111,55 @@ $('document').ready(function() {
                                     </div>
                                 </div>
                             </div>
-    
-                        </div>
-                    </div>
-                    `
-                );
-            }
-            else {
-                postContainer.append(
-                    `
-                    <div class="post">
-                        <div>
-                            <a href="#"><img src="${post.profilePic}" alt="Profile Picture"></a>
-                        </div>
-                        <div>
-                            <div>
-                                <a href="#" class="name">${post.name}</a>
-                                <p class="user-post">${post.postContent}</p>
-                            </div>
-                            <div class="buttons">
-                                <div class="like">
-                                    <span class="like-count">${post.likeCount.length}</span><i class="fas fa-thumbs-up"></i><span>Like</span>
-                                </div>
-                                <div class="reply-button">
-                                    <i class="fas fa-reply"></i><span>Reply</span>
-                                </div>
-                            </div>
-            
-                        </div>
-                    </div>
-                    `
-                );
+                        `
+                    );
+                }
             }
         });
     }
     function displayOldest(){
         postContainer.empty();
         latestPosts.slice().reverse().forEach((post) => {
-            if(post.replies.length > 0){
-                postContainer.append(
-                    `
-                    <div class="post">
+            //append post
+            postContainer.append(
+                `
+                <div class="post" id="${post.postId}">
+                    <div>
+                        <a href="#"><img src="${post.profilePic}" alt="Profile Picture"></a>
+                    </div>
+                    <div class="post-content">
                         <div>
-                            <a href="#"><img src="${post.profilePic}" alt="Profile Picture"></a>
+                            <a href="#" class="name">${post.name}</a>
+                            <p class="user-post">${post.postContent}</p>
                         </div>
-                        <div>
-                            <div>
-                                <a href="#" class="name">${post.name}</a>
-                                <p class="user-post">${post.postContent}</p>
+                        <div class="buttons">
+                            <div class="like">
+                                <span class="like-count">${post.likeCount.length}</span><i class="fas fa-thumbs-up"></i><span>Like</span>
                             </div>
-                            <div class="buttons">
-                                <div class="like">
-                                    <span class="like-count">${post.likeCount.length}</span><i class="fas fa-thumbs-up"></i><span>Like</span>
-                                </div>
-                                <div class="reply-button">
-                                    <i class="fas fa-reply"></i><span>Reply</span>
-                                </div>
+                            <div class="reply-button">
+                                <i class="fas fa-reply"></i><span>Reply</span>
                             </div>
-    
-                            <div class="reply">
-                                <a href="#"><img src="${post.replies[0].profilePic}" alt="Profile Picture"></a>
+                        </div>
+
+                    </div>
+                </div>
+                `
+            );
+            //append replies to post
+            if(post.replies.length > 0) {
+                const replyPoint = postContainer.find('#' + post.postId).children().eq(1);
+                for(let i = 0; i < post.replies.length; i+= 1){
+                    replyPoint.append(
+                        `
+                        <div class="reply" id="${post.replies[i].postId}">
+                                <a href="#"><img src="${post.replies[i].profilePic}" alt="Profile Picture"></a>
                                 <div>
-                                    <a href="#" class="name">${post.replies[0].name}</a>
-                                    <p class="user-post">${post.replies[0].postContent}</p>
+                                    <a href="#" class="name">${post.replies[i].name}</a>
+                                    <p class="user-post">${post.replies[i].postContent}</p>
     
                                     <div class="buttons">
                                         <div class="like">
-                                            <span class="like-count">${post.replies[0].likeCount.length}</span><i class="fas fa-thumbs-up"></i><span>Like</span>
+                                            <span class="like-count">${post.replies[i].likeCount.length}</span><i class="fas fa-thumbs-up"></i><span>Like</span>
                                         </div>
                                         <div class="reply-button">
                                             <i class="fas fa-reply"></i><span>Reply</span>
@@ -178,37 +167,9 @@ $('document').ready(function() {
                                     </div>
                                 </div>
                             </div>
-    
-                        </div>
-                    </div>
-                    `
-                );
-            }
-            else {
-                postContainer.append(
-                    `
-                    <div class="post">
-                        <div>
-                            <a href="#"><img src="${post.profilePic}" alt="Profile Picture"></a>
-                        </div>
-                        <div>
-                            <div>
-                                <a href="#" class="name">${post.name}</a>
-                                <p class="user-post">${post.postContent}</p>
-                            </div>
-                            <div class="buttons">
-                                <div class="like">
-                                    <span class="like-count">${post.likeCount.length}</span><i class="fas fa-thumbs-up"></i><span>Like</span>
-                                </div>
-                                <div class="reply-button">
-                                    <i class="fas fa-reply"></i><span>Reply</span>
-                                </div>
-                            </div>
-            
-                        </div>
-                    </div>
-                    `
-                );
+                        `
+                    );
+                }
             }
         });
     }
@@ -227,38 +188,45 @@ $('document').ready(function() {
             return 0;
         });
         postsByRating.forEach((post) => {
-            //if there are replies, use reply template, else, don't
-            //only works with one reply, need to update
-            if(post.replies.length > 0){
-                postContainer.append(
-                    `
-                    <div class="post">
+            postContainer.append(
+                `
+                <div class="post" id="${post.postId}">
+                    <div>
+                        <a href="#"><img src="${post.profilePic}" alt="Profile Picture"></a>
+                    </div>
+                    <div class="post-content">
                         <div>
-                            <a href="#"><img src="${post.profilePic}" alt="Profile Picture"></a>
+                            <a href="#" class="name">${post.name}</a>
+                            <p class="user-post">${post.postContent}</p>
                         </div>
-                        <div>
-                            <div>
-                                <a href="#" class="name">${post.name}</a>
-                                <p class="user-post">${post.postContent}</p>
+                        <div class="buttons">
+                            <div class="like">
+                                <span class="like-count">${post.likeCount.length}</span><i class="fas fa-thumbs-up"></i><span>Like</span>
                             </div>
-                            <div class="buttons">
-                                <div class="like">
-                                    <span class="like-count">${post.likeCount.length}</span><i class="fas fa-thumbs-up"></i><span>Like</span>
-                                </div>
-                                <div class="reply-button">
-                                    <i class="fas fa-reply"></i><span>Reply</span>
-                                </div>
+                            <div class="reply-button">
+                                <i class="fas fa-reply"></i><span>Reply</span>
                             </div>
-    
-                            <div class="reply">
-                                <a href="#"><img src="${post.replies[0].profilePic}" alt="Profile Picture"></a>
+                        </div>
+
+                    </div>
+                </div>
+                `
+            );
+            //append replies to post
+            if(post.replies.length > 0) {
+                const replyPoint = postContainer.find('#' + post.postId).children().eq(1);
+                for(let i = 0; i < post.replies.length; i+= 1){
+                    replyPoint.append(
+                        `
+                        <div class="reply" id="${post.replies[i].postId}">
+                                <a href="#"><img src="${post.replies[i].profilePic}" alt="Profile Picture"></a>
                                 <div>
-                                    <a href="#" class="name">${post.replies[0].name}</a>
-                                    <p class="user-post">${post.replies[0].postContent}</p>
+                                    <a href="#" class="name">${post.replies[i].name}</a>
+                                    <p class="user-post">${post.replies[i].postContent}</p>
     
                                     <div class="buttons">
                                         <div class="like">
-                                            <span class="like-count">${post.replies[0].likeCount.length}</span><i class="fas fa-thumbs-up"></i><span>Like</span>
+                                            <span class="like-count">${post.replies[i].likeCount.length}</span><i class="fas fa-thumbs-up"></i><span>Like</span>
                                         </div>
                                         <div class="reply-button">
                                             <i class="fas fa-reply"></i><span>Reply</span>
@@ -266,37 +234,9 @@ $('document').ready(function() {
                                     </div>
                                 </div>
                             </div>
-    
-                        </div>
-                    </div>
-                    `
-                );
-            }
-            else {
-                postContainer.append(
-                    `
-                    <div class="post">
-                        <div>
-                            <a href="#"><img src="${post.profilePic}" alt="Profile Picture"></a>
-                        </div>
-                        <div>
-                            <div>
-                                <a href="#" class="name">${post.name}</a>
-                                <p class="user-post">${post.postContent}</p>
-                            </div>
-                            <div class="buttons">
-                                <div class="like">
-                                    <span class="like-count">${post.likeCount.length}</span><i class="fas fa-thumbs-up"></i><span>Like</span>
-                                </div>
-                                <div class="reply-button">
-                                    <i class="fas fa-reply"></i><span>Reply</span>
-                                </div>
-                            </div>
-            
-                        </div>
-                    </div>
-                    `
-                );
+                        `
+                    );
+                }
             }
         });
 
