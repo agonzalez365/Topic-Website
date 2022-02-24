@@ -5,7 +5,7 @@ let latestPosts = [
         name: 'Alex',
         postContent: 'I\'m happy to see a game that explores the topic of mental health!',
         likeCount: 7,
-        userId: 5,
+        userId: 4,
         timestamp: 100,
         postId: 4100, //should be calculated, postId-timestamp
         replies: [
@@ -19,7 +19,7 @@ let latestPosts = [
         consectetur eleifend, leo lacus lacinia leo, vel porta ipsum justo in turpis. Morbi vulputate
         hendrerit orci ac finibus. Sed ullamcorper facilisis venenatis...`,
         likeCount: 45,
-        userId: 4,
+        userId: 2,
         timestamp: 50,
         postId: 250, 
         replies: [
@@ -45,7 +45,7 @@ let latestPosts = [
         consectetur eleifend, leo lacus lacinia leo, vel porta ipsum justo in turpis. Morbi vulputate
         hendrerit orci ac finibus. Sed ullamcorper facilisis venenatis...`,
         likeCount: 43,
-        userId: 2,
+        userId: 1,
         timestamp: 25,
         postId: 150, 
         replies: [
@@ -371,10 +371,12 @@ $('document').ready(function() {
         //defaults to false for now, likes not stored by account
         let liked = false;
         likeButtons.eq(i).on('click', function() {
+            //if signed in, proceed, else notify user
             if(localStorage.getItem('logged-in') === "true"){
                 let likeBtn = $(this);
                 let countCont = likeBtn.children('.like-count');
                 let count = countCont.text();
+                //if not liked, update to liked, else reset
                 if(!liked){
                     likeBtn.children().eq(2).text('Liked');
                     countCont.text(Number(count) + 1);
