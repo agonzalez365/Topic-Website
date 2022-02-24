@@ -22,7 +22,7 @@ let latestPosts = [
         likeCount: [2, 1, 3, 4],
         userId: 2,
         timestamp: 50,
-        postId: 250, 
+        postId: 250,
         replies: [
             {
                 profilePic: 'images/newsfeed/profilereply.jpg',
@@ -48,21 +48,21 @@ let latestPosts = [
         likeCount: [1, 2, 3],
         userId: 1,
         timestamp: 25,
-        postId: 150, 
+        postId: 150,
         replies: [
         ]
     }
 ];
 
-$('document').ready(function() {
+$('document').ready(function () {
     const postContainer = $('.post-container');
     //hide post creation if user is not logged in
-    if(localStorage.getItem('logged-in') === "false"){
+    if (localStorage.getItem('logged-in') === "false") {
         $('#create-post').hide();
     }
 
     //function to append post that is supplied
-    function displayOperation(post){
+    function displayOperation(post) {
         postContainer.append(
             `
             <div class="post" id="${post.postId}">
@@ -88,9 +88,9 @@ $('document').ready(function() {
             `
         );
         //append replies to post
-        if(post.replies.length > 0) {
+        if (post.replies.length > 0) {
             const replyPoint = postContainer.find('#' + post.postId).children().eq(1);
-            for(let i = 0; i < post.replies.length; i+= 1){
+            for (let i = 0; i < post.replies.length; i += 1) {
                 replyPoint.append(
                     `
                     <div class="reply" id="${post.replies[i].postId}">
@@ -116,19 +116,19 @@ $('document').ready(function() {
     }
 
     //display functions
-    function displayLatest(){
+    function displayLatest() {
         postContainer.empty();
         latestPosts.forEach((post) => {
             displayOperation(post);
         });
     }
-    function displayOldest(){
+    function displayOldest() {
         postContainer.empty();
         latestPosts.slice().reverse().forEach((post) => {
             displayOperation(post);
         });
     }
-    function displayRating(){
+    function displayRating() {
         postContainer.empty();
         let postsByRating = latestPosts.slice().sort(function (a, b) {
             //move to front if rating is higher
@@ -136,7 +136,7 @@ $('document').ready(function() {
                 return -1;
             }
             //move to back if rating is lower
-            if(a.likeCount.length < b.likeCount.length) {
+            if (a.likeCount.length < b.likeCount.length) {
                 return 1;
             }
             //dont move if equal
@@ -147,14 +147,14 @@ $('document').ready(function() {
         });
 
     }
-    
+
     //initial page population
     //display depending on sort setting
     const selection = $('#sort');
-    if(selection.val() === 'new'){
+    if (selection.val() === 'new') {
         displayLatest();
     }
-    else if(selection.val() === 'rating'){
+    else if (selection.val() === 'rating') {
         displayRating();
     }
     else {
@@ -165,69 +165,77 @@ $('document').ready(function() {
 
     //sort by oldest
     const sortByOldest = $('#sort-old');
-    sortByOldest.on('click', function() {
+    sortByOldest.on('click', function () {
         displayOldest();
     });
 
     //sort by newest
     const sortByNewest = $('#sort-new')
-    sortByNewest.on('click', function() {
+    sortByNewest.on('click', function () {
         displayLatest();
     });
 
     //sort by rating
     const sortByRating = $('#sort-rating');
-    sortByRating.on('click', function() {
+    sortByRating.on('click', function () {
         displayRating();
     });
 
     //post creation
+    //should be hiddden if not logged in
     const createPostBtn = $('#post-button');
-    createPostBtn.on('click', function(event) {
+    createPostBtn.on('click', function (event) {
         event.preventDefault();
-        const postText = document.getElementById('post-text').value;
-        const newPost = {
-            profilePic: 'images/newsfeed/user.jpg',
-            name: 'User',
-            postContent: postText,
-            likeCount: 0,
-            userId: latestPosts.length + 1,
-            timestamp: Date.now(),
-            postId: latestPosts.length + 1,
-            replies: [
-            ]
+        if (localStorage.getItem('user') !== null) {
+            const user = JSON.parse(localStorage.getItem('user'));
+            const postText = document.getElementById('post-text').value;
+            const newPost = {
+                profilePic: 'images/newsfeed/user.jpg',
+                name: user.username,
+                postContent: postText,
+                likeCount: [user.userId],
+                userId: user.userId,
+                timestamp: Date.now(),
+                postId: latestPosts.length + 1,
+                replies: [
+                ]
+            };
+            //add to front array
+            latestPosts.unshift(newPost);
+
+            //display based on sorting
+            if (selection.val() === 'new') {
+                displayLatest();
+            }
+            else if (selection.val() === 'rating') {
+                displayRating();
+            }
+            else {
+                displayOldest();
+            }
+
         }
 
-        //add to array
-        latestPosts.unshift(newPost);
 
-        //display based on sorting
-        if(selection.val() === 'new'){
-            displayLatest();
-        }
-        else if(selection.val() === 'rating'){
-            displayRating();
-        }
-        else {
-            displayOldest();
-        }
-        
 
-    });  
+
+
+
+    });
 
     //like counts
     const likeButtons = $('.like');
-    for (let i = 0; i < likeButtons.length; i += 1){
+    for (let i = 0; i < likeButtons.length; i += 1) {
         //CHANGE LATER: defaults to false for now, likes not stored by account yet
         let liked = false;
-        likeButtons.eq(i).on('click', function() {
+        likeButtons.eq(i).on('click', function () {
             //if signed in, proceed, else notify user
-            if(localStorage.getItem('logged-in') === "true"){
+            if (localStorage.getItem('logged-in') === "true") {
                 let likeBtn = $(this);
                 let countCont = likeBtn.children('.like-count');
                 let count = countCont.text();
                 //if not liked, update to liked, else reset
-                if(!liked){
+                if (!liked) {
                     likeBtn.children().eq(2).text('Liked');
                     countCont.text(Number(count) + 1);
                     liked = true;
@@ -244,11 +252,20 @@ $('document').ready(function() {
         });
     }
 
+    //apply likes to page
+    if (localStorage.getItem('user') !== null) {
+        console.log(localStorage.getItem('user'));
+        const user = JSON.parse(localStorage.getItem('user'));
+        console.log(user);
+        user
+    }
+
     //reply functionality
     const replyButtons = $('.reply-button');
-    for (let i = 0; i < replyButtons.length; i += 1){
-        replyButtons.eq(i).on('click', function() {
+    for (let i = 0; i < replyButtons.length; i += 1) {
+        replyButtons.eq(i).on('click', function () {
             console.log('clicked');
         });
     }
+
 });
