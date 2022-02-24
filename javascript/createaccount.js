@@ -10,6 +10,8 @@ $('document').ready(function() {
         const username = childInputs.eq(1).val();
         const password = childInputs.eq(2).val();
         const confirmPass = childInputs.eq(3).val();
+        //mock login, will cause issues if existing id is generated
+        const userID = Math.round(Math.random() * 1000 + 5);
 
         console.log(childInputs);
         console.log(username, email, password, confirmPass);
@@ -19,6 +21,7 @@ $('document').ready(function() {
             alert('Passwords do not match');
         } else {
             const user = {
+                userID,
                 email,
                 password,
             }
