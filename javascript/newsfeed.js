@@ -36,6 +36,18 @@ let latestPosts = [
                 timestamp: 75,
                 postId: 375,
             },
+            {
+                profilePic: 'images/newsfeed/profilereply.jpg',
+                name: 'Layla',
+                postContent: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque mattis libero dui,
+                vel placerat urna consectetur a. Maecenas in pulvinar magna. Praesent porttitor, nibh nec
+                consectetur eleifend, leo lacus lacinia leo, vel porta ipsum justo in turpis. Morbi vulputate
+                hendrerit orci ac finibus. Sed ullamcorper facilisis venenatis...`,
+                likeCount: [3, 2],
+                userId: 3,
+                timestamp: 75,
+                postId: 375,
+            }
         ]
     },
     {
@@ -61,116 +73,71 @@ $('document').ready(function() {
         $('#create-post').hide();
     }
 
+    //function to append post that is supplied
+    function displayOperation(post){
+        postContainer.append(
+            `
+            <div class="post" id="${post.postId}">
+                <div>
+                    <a href="#"><img src="${post.profilePic}" alt="Profile Picture"></a>
+                </div>
+                <div class="post-content">
+                    <div>
+                        <a href="#" class="name">${post.name}</a>
+                        <p class="user-post">${post.postContent}</p>
+                    </div>
+                    <div class="buttons">
+                        <div class="like">
+                            <span class="like-count">${post.likeCount.length}</span><i class="fas fa-thumbs-up"></i><span>Like</span>
+                        </div>
+                        <div class="reply-button">
+                            <i class="fas fa-reply"></i><span>Reply</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            `
+        );
+        //append replies to post
+        if(post.replies.length > 0) {
+            const replyPoint = postContainer.find('#' + post.postId).children().eq(1);
+            for(let i = 0; i < post.replies.length; i+= 1){
+                replyPoint.append(
+                    `
+                    <div class="reply" id="${post.replies[i].postId}">
+                            <a href="#"><img src="${post.replies[i].profilePic}" alt="Profile Picture"></a>
+                            <div>
+                                <a href="#" class="name">${post.replies[i].name}</a>
+                                <p class="user-post">${post.replies[i].postContent}</p>
+
+                                <div class="buttons">
+                                    <div class="like">
+                                        <span class="like-count">${post.replies[i].likeCount.length}</span><i class="fas fa-thumbs-up"></i><span>Like</span>
+                                    </div>
+                                    <div class="reply-button">
+                                        <i class="fas fa-reply"></i><span>Reply</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                );
+            }
+        }
+    }
+
     //display functions
     function displayLatest(){
         postContainer.empty();
         latestPosts.forEach((post) => {
-            postContainer.append(
-                `
-                <div class="post" id="${post.postId}">
-                    <div>
-                        <a href="#"><img src="${post.profilePic}" alt="Profile Picture"></a>
-                    </div>
-                    <div class="post-content">
-                        <div>
-                            <a href="#" class="name">${post.name}</a>
-                            <p class="user-post">${post.postContent}</p>
-                        </div>
-                        <div class="buttons">
-                            <div class="like">
-                                <span class="like-count">${post.likeCount.length}</span><i class="fas fa-thumbs-up"></i><span>Like</span>
-                            </div>
-                            <div class="reply-button">
-                                <i class="fas fa-reply"></i><span>Reply</span>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                `
-            );
-            //append replies to post
-            if(post.replies.length > 0) {
-                const replyPoint = postContainer.find('#' + post.postId).children().eq(1);
-                for(let i = 0; i < post.replies.length; i+= 1){
-                    replyPoint.append(
-                        `
-                        <div class="reply" id="${post.replies[i].postId}">
-                                <a href="#"><img src="${post.replies[i].profilePic}" alt="Profile Picture"></a>
-                                <div>
-                                    <a href="#" class="name">${post.replies[i].name}</a>
-                                    <p class="user-post">${post.replies[i].postContent}</p>
-    
-                                    <div class="buttons">
-                                        <div class="like">
-                                            <span class="like-count">${post.replies[i].likeCount.length}</span><i class="fas fa-thumbs-up"></i><span>Like</span>
-                                        </div>
-                                        <div class="reply-button">
-                                            <i class="fas fa-reply"></i><span>Reply</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        `
-                    );
-                }
-            }
+            displayOperation(post);
         });
     }
     function displayOldest(){
         postContainer.empty();
         latestPosts.slice().reverse().forEach((post) => {
-            //append post
-            postContainer.append(
-                `
-                <div class="post" id="${post.postId}">
-                    <div>
-                        <a href="#"><img src="${post.profilePic}" alt="Profile Picture"></a>
-                    </div>
-                    <div class="post-content">
-                        <div>
-                            <a href="#" class="name">${post.name}</a>
-                            <p class="user-post">${post.postContent}</p>
-                        </div>
-                        <div class="buttons">
-                            <div class="like">
-                                <span class="like-count">${post.likeCount.length}</span><i class="fas fa-thumbs-up"></i><span>Like</span>
-                            </div>
-                            <div class="reply-button">
-                                <i class="fas fa-reply"></i><span>Reply</span>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                `
-            );
-            //append replies to post
-            if(post.replies.length > 0) {
-                const replyPoint = postContainer.find('#' + post.postId).children().eq(1);
-                for(let i = 0; i < post.replies.length; i+= 1){
-                    replyPoint.append(
-                        `
-                        <div class="reply" id="${post.replies[i].postId}">
-                                <a href="#"><img src="${post.replies[i].profilePic}" alt="Profile Picture"></a>
-                                <div>
-                                    <a href="#" class="name">${post.replies[i].name}</a>
-                                    <p class="user-post">${post.replies[i].postContent}</p>
-    
-                                    <div class="buttons">
-                                        <div class="like">
-                                            <span class="like-count">${post.replies[i].likeCount.length}</span><i class="fas fa-thumbs-up"></i><span>Like</span>
-                                        </div>
-                                        <div class="reply-button">
-                                            <i class="fas fa-reply"></i><span>Reply</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        `
-                    );
-                }
-            }
+            displayOperation(post);
         });
     }
     function displayRating(){
@@ -188,56 +155,7 @@ $('document').ready(function() {
             return 0;
         });
         postsByRating.forEach((post) => {
-            postContainer.append(
-                `
-                <div class="post" id="${post.postId}">
-                    <div>
-                        <a href="#"><img src="${post.profilePic}" alt="Profile Picture"></a>
-                    </div>
-                    <div class="post-content">
-                        <div>
-                            <a href="#" class="name">${post.name}</a>
-                            <p class="user-post">${post.postContent}</p>
-                        </div>
-                        <div class="buttons">
-                            <div class="like">
-                                <span class="like-count">${post.likeCount.length}</span><i class="fas fa-thumbs-up"></i><span>Like</span>
-                            </div>
-                            <div class="reply-button">
-                                <i class="fas fa-reply"></i><span>Reply</span>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                `
-            );
-            //append replies to post
-            if(post.replies.length > 0) {
-                const replyPoint = postContainer.find('#' + post.postId).children().eq(1);
-                for(let i = 0; i < post.replies.length; i+= 1){
-                    replyPoint.append(
-                        `
-                        <div class="reply" id="${post.replies[i].postId}">
-                                <a href="#"><img src="${post.replies[i].profilePic}" alt="Profile Picture"></a>
-                                <div>
-                                    <a href="#" class="name">${post.replies[i].name}</a>
-                                    <p class="user-post">${post.replies[i].postContent}</p>
-    
-                                    <div class="buttons">
-                                        <div class="like">
-                                            <span class="like-count">${post.replies[i].likeCount.length}</span><i class="fas fa-thumbs-up"></i><span>Like</span>
-                                        </div>
-                                        <div class="reply-button">
-                                            <i class="fas fa-reply"></i><span>Reply</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        `
-                    );
-                }
-            }
+            displayOperation(post);
         });
 
     }
