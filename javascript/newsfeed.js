@@ -21,9 +21,8 @@ let latestPosts = [
         likeCount: 45,
         userId: 4,
         timestamp: 50,
-        postId: 250, //should be calculated, postId-timestamp
+        postId: 250, 
         replies: [
-            //to-do, make reference
             {
                 profilePic: 'images/newsfeed/profilereply.jpg',
                 name: 'Layla',
@@ -34,7 +33,7 @@ let latestPosts = [
                 likeCount: 12,
                 userId: 3,
                 timestamp: 75,
-                postId: 375, //should be calculated, postId-timestamp
+                postId: 375,
             }
         ]
     },
@@ -48,7 +47,7 @@ let latestPosts = [
         likeCount: 43,
         userId: 2,
         timestamp: 25,
-        postId: 150, //should be calculated, postId-timestamp
+        postId: 150, 
         replies: [
         ]
     }
@@ -299,11 +298,21 @@ $('document').ready(function() {
 
     }
     //initial page population
-    displayLatest();
+    //display depending on sort setting
+    const selection = $('#sort');
+    if(selection.val() === 'new'){
+        displayLatest();
+    }
+    else if(selection.val() === 'rating'){
+        displayRating();
+    }
+    else {
+        displayOldest();
+    }
 
     //post creation
-    const createPostBtn = document.getElementById('post-button');
-    createPostBtn.addEventListener('click', function(event) {
+    const createPostBtn = $('#post-button');
+    createPostBtn.on('click', function(event) {
         event.preventDefault();
         const postText = document.getElementById('post-text').value;
         const newPost = {
@@ -318,39 +327,68 @@ $('document').ready(function() {
             ]
         }
 
+        //add to array
         latestPosts.unshift(newPost);
-        console.log(latestPosts);
-        displayLatest();
+
+        //display based on sorting
+        if(selection.val() === 'new'){
+            displayLatest();
+        }
+        else if(selection.val() === 'rating'){
+            displayRating();
+        }
+        else {
+            displayOldest();
+        }
+        
 
     });
 
     //sorting
 
     //sort by oldest
-    const sortByOldest = document.getElementById('sort-old');
-    sortByOldest.addEventListener('click', function() {
+    const sortByOldest = $('#sort-old');
+    sortByOldest.on('click', function() {
         displayOldest();
     });
 
     //sort by newest
-    const sortByNewest = document.getElementById('sort-new')
-    sortByNewest.addEventListener('click', function() {
+    const sortByNewest = $('#sort-new')
+    sortByNewest.on('click', function() {
         displayLatest();
     });
 
     //sort by rating
-    const sortByRating = document.getElementById('sort-rating');
-    sortByRating.addEventListener('click', function() {
-        //TO DO: Sorting algorithm
+    const sortByRating = $('#sort-rating');
+    sortByRating.on('click', function() {
         displayRating();
     });
     
 
     //like counts
-    const likeButtons = document.getElementsByClassName('like');
-    for(let i = 0; i < likeButtons.length; i += 1){
-        likeButtons[i].addEventListener('click', function() {
-            //TO DO: increment count
+    const likeButtons = $('.like');
+    for (let i = 0; i < likeButtons.length; i += 1){
+        //defaults to false for now, likes not stored by account
+        let liked = false;
+        likeButtons.eq(i).on('click', function() {
+            if(localStorage.getItem('logged-in') === "true"){
+                let likeBtn = $(this);
+                let countCont = likeBtn.children('.like-count');
+                let count = countCont.text();
+                if(!liked){
+                    likeBtn.children().eq(2).text('Liked');
+                    countCont.text(Number(count) + 1);
+                    liked = true;
+                }
+                else {
+                    likeBtn.children().eq(2).text('Like');
+                    countCont.text(Number(count) - 1);
+                    liked = false;
+                }
+            }
+            else {
+                alert('Cannot like: Not signed in.');
+            }
         });
     }
 
