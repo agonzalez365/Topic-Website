@@ -36,18 +36,6 @@ let latestPosts = [
                 timestamp: 75,
                 postId: 375,
             },
-            {
-                profilePic: 'images/newsfeed/profilereply.jpg',
-                name: 'Layla',
-                postContent: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque mattis libero dui,
-                vel placerat urna consectetur a. Maecenas in pulvinar magna. Praesent porttitor, nibh nec
-                consectetur eleifend, leo lacus lacinia leo, vel porta ipsum justo in turpis. Morbi vulputate
-                hendrerit orci ac finibus. Sed ullamcorper facilisis venenatis...`,
-                likeCount: [3, 2],
-                userId: 3,
-                timestamp: 75,
-                postId: 375,
-            }
         ]
     },
     {
@@ -159,6 +147,7 @@ $('document').ready(function() {
         });
 
     }
+    
     //initial page population
     //display depending on sort setting
     const selection = $('#sort');
