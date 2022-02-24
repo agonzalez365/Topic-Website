@@ -1,3 +1,5 @@
+//this is for mock account functionality so the page can adapt to user
+//not for real accounts
 $('document').ready(function() {
     const signIn = $('#sign-in-form');
 
