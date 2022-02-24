@@ -1,4 +1,5 @@
-//to-do: figure out timestamps
+//to-do: change like count to array of userIDs
+//change replies to array of postIDs
 let latestPosts = [
     {
         profilePic: 'images/newsfeed/profile1.jpg',
@@ -310,6 +311,26 @@ $('document').ready(function() {
         displayOldest();
     }
 
+    //sorting
+
+    //sort by oldest
+    const sortByOldest = $('#sort-old');
+    sortByOldest.on('click', function() {
+        displayOldest();
+    });
+
+    //sort by newest
+    const sortByNewest = $('#sort-new')
+    sortByNewest.on('click', function() {
+        displayLatest();
+    });
+
+    //sort by rating
+    const sortByRating = $('#sort-rating');
+    sortByRating.on('click', function() {
+        displayRating();
+    });
+
     //post creation
     const createPostBtn = $('#post-button');
     createPostBtn.on('click', function(event) {
@@ -342,33 +363,12 @@ $('document').ready(function() {
         }
         
 
-    });
-
-    //sorting
-
-    //sort by oldest
-    const sortByOldest = $('#sort-old');
-    sortByOldest.on('click', function() {
-        displayOldest();
-    });
-
-    //sort by newest
-    const sortByNewest = $('#sort-new')
-    sortByNewest.on('click', function() {
-        displayLatest();
-    });
-
-    //sort by rating
-    const sortByRating = $('#sort-rating');
-    sortByRating.on('click', function() {
-        displayRating();
-    });
-    
+    });  
 
     //like counts
     const likeButtons = $('.like');
     for (let i = 0; i < likeButtons.length; i += 1){
-        //defaults to false for now, likes not stored by account
+        //CHANGE LATER: defaults to false for now, likes not stored by account yet
         let liked = false;
         likeButtons.eq(i).on('click', function() {
             //if signed in, proceed, else notify user
@@ -394,4 +394,11 @@ $('document').ready(function() {
         });
     }
 
-})
+    //reply functionality
+    const replyButtons = $('.reply-button');
+    for (let i = 0; i < replyButtons.length; i += 1){
+        replyButtons.eq(i).on('click', function() {
+            console.log('clicked');
+        });
+    }
+});
