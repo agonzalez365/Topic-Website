@@ -16,17 +16,19 @@ $('document').ready(function() {
         console.log(childInputs);
         console.log(username, email, password, confirmPass);
 
+        //only one user can exist in localstorage
         //to-do: check for empty inputs, do not submit
-        if(!password === confirmPass){
+        if(password !== confirmPass){
             alert('Passwords do not match');
         } else {
             const user = {
                 userID,
+                username,
                 email,
-                password,
+                password
             }
 
-            window.localStorage.setItem(username, JSON.stringify(user));
+            window.localStorage.setItem('user', JSON.stringify(user));
             //redirect to signin
             window.location.href = 'signin.html';
         }
