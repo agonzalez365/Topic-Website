@@ -5,7 +5,7 @@ let latestPosts = [
         profilePic: 'images/newsfeed/profile1.jpg',
         name: 'Alex',
         postContent: 'I\'m happy to see a game that explores the topic of mental health!',
-        likeCount: 7,
+        likeCount: [4, 2],
         userId: 4,
         timestamp: 100,
         postId: 4100, //should be calculated, postId-timestamp
@@ -19,7 +19,7 @@ let latestPosts = [
         vel placerat urna consectetur a. Maecenas in pulvinar magna. Praesent porttitor, nibh nec
         consectetur eleifend, leo lacus lacinia leo, vel porta ipsum justo in turpis. Morbi vulputate
         hendrerit orci ac finibus. Sed ullamcorper facilisis venenatis...`,
-        likeCount: 45,
+        likeCount: [2, 1, 3, 4],
         userId: 2,
         timestamp: 50,
         postId: 250, 
@@ -31,7 +31,7 @@ let latestPosts = [
                 vel placerat urna consectetur a. Maecenas in pulvinar magna. Praesent porttitor, nibh nec
                 consectetur eleifend, leo lacus lacinia leo, vel porta ipsum justo in turpis. Morbi vulputate
                 hendrerit orci ac finibus. Sed ullamcorper facilisis venenatis...`,
-                likeCount: 12,
+                likeCount: [3, 2],
                 userId: 3,
                 timestamp: 75,
                 postId: 375,
@@ -45,7 +45,7 @@ let latestPosts = [
         vel placerat urna consectetur a. Maecenas in pulvinar magna. Praesent porttitor, nibh nec
         consectetur eleifend, leo lacus lacinia leo, vel porta ipsum justo in turpis. Morbi vulputate
         hendrerit orci ac finibus. Sed ullamcorper facilisis venenatis...`,
-        likeCount: 43,
+        likeCount: [1, 2, 3],
         userId: 1,
         timestamp: 25,
         postId: 150, 
@@ -81,7 +81,7 @@ $('document').ready(function() {
                             </div>
                             <div class="buttons">
                                 <div class="like">
-                                    <span class="like-count">${post.likeCount}</span><i class="fas fa-thumbs-up"></i><span>Like</span>
+                                    <span class="like-count">${post.likeCount.length}</span><i class="fas fa-thumbs-up"></i><span>Like</span>
                                 </div>
                                 <div class="reply-button">
                                     <i class="fas fa-reply"></i><span>Reply</span>
@@ -96,7 +96,7 @@ $('document').ready(function() {
     
                                     <div class="buttons">
                                         <div class="like">
-                                            <span class="like-count">${post.replies[0].likeCount}</span><i class="fas fa-thumbs-up"></i><span>Like</span>
+                                            <span class="like-count">${post.replies[0].likeCount.length}</span><i class="fas fa-thumbs-up"></i><span>Like</span>
                                         </div>
                                         <div class="reply-button">
                                             <i class="fas fa-reply"></i><span>Reply</span>
@@ -124,7 +124,7 @@ $('document').ready(function() {
                             </div>
                             <div class="buttons">
                                 <div class="like">
-                                    <span class="like-count">${post.likeCount}</span><i class="fas fa-thumbs-up"></i><span>Like</span>
+                                    <span class="like-count">${post.likeCount.length}</span><i class="fas fa-thumbs-up"></i><span>Like</span>
                                 </div>
                                 <div class="reply-button">
                                     <i class="fas fa-reply"></i><span>Reply</span>
@@ -155,7 +155,7 @@ $('document').ready(function() {
                             </div>
                             <div class="buttons">
                                 <div class="like">
-                                    <span class="like-count">${post.likeCount}</span><i class="fas fa-thumbs-up"></i><span>Like</span>
+                                    <span class="like-count">${post.likeCount.length}</span><i class="fas fa-thumbs-up"></i><span>Like</span>
                                 </div>
                                 <div class="reply-button">
                                     <i class="fas fa-reply"></i><span>Reply</span>
@@ -170,7 +170,7 @@ $('document').ready(function() {
     
                                     <div class="buttons">
                                         <div class="like">
-                                            <span class="like-count">${post.replies[0].likeCount}</span><i class="fas fa-thumbs-up"></i><span>Like</span>
+                                            <span class="like-count">${post.replies[0].likeCount.length}</span><i class="fas fa-thumbs-up"></i><span>Like</span>
                                         </div>
                                         <div class="reply-button">
                                             <i class="fas fa-reply"></i><span>Reply</span>
@@ -198,7 +198,7 @@ $('document').ready(function() {
                             </div>
                             <div class="buttons">
                                 <div class="like">
-                                    <span class="like-count">${post.likeCount}</span><i class="fas fa-thumbs-up"></i><span>Like</span>
+                                    <span class="like-count">${post.likeCount.length}</span><i class="fas fa-thumbs-up"></i><span>Like</span>
                                 </div>
                                 <div class="reply-button">
                                     <i class="fas fa-reply"></i><span>Reply</span>
@@ -215,12 +215,15 @@ $('document').ready(function() {
     function displayRating(){
         postContainer.empty();
         let postsByRating = latestPosts.slice().sort(function (a, b) {
-            if (a.likeCount > b.likeCount) {
+            //move to front if rating is higher
+            if (a.likeCount.length > b.likeCount.length) {
                 return -1;
             }
-            if(a.likeCount < b.likeCount) {
+            //move to back if rating is lower
+            if(a.likeCount.length < b.likeCount.length) {
                 return 1;
             }
+            //dont move if equal
             return 0;
         });
         postsByRating.forEach((post) => {
@@ -240,7 +243,7 @@ $('document').ready(function() {
                             </div>
                             <div class="buttons">
                                 <div class="like">
-                                    <span class="like-count">${post.likeCount}</span><i class="fas fa-thumbs-up"></i><span>Like</span>
+                                    <span class="like-count">${post.likeCount.length}</span><i class="fas fa-thumbs-up"></i><span>Like</span>
                                 </div>
                                 <div class="reply-button">
                                     <i class="fas fa-reply"></i><span>Reply</span>
@@ -255,7 +258,7 @@ $('document').ready(function() {
     
                                     <div class="buttons">
                                         <div class="like">
-                                            <span class="like-count">${post.replies[0].likeCount}</span><i class="fas fa-thumbs-up"></i><span>Like</span>
+                                            <span class="like-count">${post.replies[0].likeCount.length}</span><i class="fas fa-thumbs-up"></i><span>Like</span>
                                         </div>
                                         <div class="reply-button">
                                             <i class="fas fa-reply"></i><span>Reply</span>
@@ -283,7 +286,7 @@ $('document').ready(function() {
                             </div>
                             <div class="buttons">
                                 <div class="like">
-                                    <span class="like-count">${post.likeCount}</span><i class="fas fa-thumbs-up"></i><span>Like</span>
+                                    <span class="like-count">${post.likeCount.length}</span><i class="fas fa-thumbs-up"></i><span>Like</span>
                                 </div>
                                 <div class="reply-button">
                                     <i class="fas fa-reply"></i><span>Reply</span>
