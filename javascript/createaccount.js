@@ -12,6 +12,7 @@ $('document').ready(function() {
         const confirmPass = childInputs.eq(3).val();
         //mock login, will cause issues if existing id is generated
         const userID = Math.round(Math.random() * 1000 + 5);
+        const likedPosts = [];
 
         console.log(childInputs);
         console.log(username, email, password, confirmPass);
@@ -25,7 +26,8 @@ $('document').ready(function() {
                 userID,
                 username,
                 email,
-                password
+                password,
+                likedPosts
             }
 
             window.localStorage.setItem('user', JSON.stringify(user));
