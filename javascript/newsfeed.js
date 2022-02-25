@@ -241,6 +241,7 @@ $('document').ready(function () {
             //update like events
             //isssue: resets likes
             likeCountUpdate();
+            replyUpdate();
 
         }
 
@@ -300,11 +301,17 @@ $('document').ready(function () {
     likeCountUpdate();
 
     //reply functionality
-    const replyButtons = $('.reply-button');
-    for (let i = 0; i < replyButtons.length; i += 1) {
-        replyButtons.eq(i).on('click', function () {
-            console.log('clicked');
-        });
+    function replyUpdate() {
+        const replyButtons = $('.reply-button');
+        for (let i = 0; i < replyButtons.length; i += 1) {
+            replyButtons.eq(i).on('click', function () {
+                //TO DO: Add reply to latestPosts
+                //update display after would work but not efficient
+                console.log('click');
+            });
+        }
     }
+
+    replyUpdate();
 
 });
