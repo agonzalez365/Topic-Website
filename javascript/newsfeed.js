@@ -79,7 +79,7 @@ $('document').ready(function () {
 
     //store posts in local storage
     localStorage.setItem('Posts', latestPosts);
-    
+
     //container for existing posts
     const postContainer = $('.post-container');
 
@@ -238,6 +238,10 @@ $('document').ready(function () {
                 displayOldest();
             }
 
+            //update like events
+            //isssue: resets likes
+            likeCountUpdate();
+
         }
 
 
@@ -262,34 +266,38 @@ $('document').ready(function () {
     // }
 
     //like counts
-    const likeButtons = $('.like');
-    for (let i = 0; i < likeButtons.length; i += 1) {
-        //CHANGE LATER: defaults to false for now, likes not stored by account yet
-        let liked = false;
-        likeButtons.eq(i).on('click', function () {
-            //if signed in, proceed, else notify user
-            if (localStorage.getItem('logged-in') === "true" && localStorage.getItem('user') !== null) {
-                let likeBtn = $(this);
-                let countCont = likeBtn.children('.like-count');
-                let count = countCont.text();
-                //if not liked, update to liked, else reset
-                if (!liked) {
-                    likeBtn.children().eq(2).text('Liked');
-                    countCont.text(Number(count) + 1);
-                    liked = true;
+    //need to update to store user's likes
+    function likeCountUpdate() {
+        const likeButtons = $('.like');
+        for (let i = 0; i < likeButtons.length; i += 1) {
+            //CHANGE LATER: defaults to false for now, likes not stored by account yet
+            let liked = false;
+            likeButtons.eq(i).on('click', function () {
+                //if signed in, proceed, else notify user
+                if (localStorage.getItem('logged-in') === "true" && localStorage.getItem('user') !== null) {
+                    let likeBtn = $(this);
+                    let countCont = likeBtn.children('.like-count');
+                    let count = countCont.text();
+                    //if not liked, update to liked, else reset
+                    if (!liked) {
+                        likeBtn.children().eq(2).text('Liked');
+                        countCont.text(Number(count) + 1);
+                        liked = true;
+                    }
+                    else {
+                        likeBtn.children().eq(2).text('Like');
+                        countCont.text(Number(count) - 1);
+                        liked = false;
+                    }
                 }
                 else {
-                    likeBtn.children().eq(2).text('Like');
-                    countCont.text(Number(count) - 1);
-                    liked = false;
+                    alert('Cannot like: Not signed in.');
                 }
-            }
-            else {
-                alert('Cannot like: Not signed in.');
-            }
-        });
+            });
+        }
     }
 
+    likeCountUpdate();
 
     //reply functionality
     const replyButtons = $('.reply-button');
