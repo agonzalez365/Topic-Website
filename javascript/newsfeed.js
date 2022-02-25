@@ -5,7 +5,7 @@ let latestPosts = [
         profilePic: 'images/newsfeed/profile1.jpg',
         name: 'Alex',
         postContent: 'I\'m happy to see a game that explores the topic of mental health!',
-        likeCount: [4, 2],
+        likeCount: [4, 2, 759],
         userId: 4,
         timestamp: 100,
         postId: 4100, //should be calculated, postId-timestamp
@@ -55,11 +55,33 @@ let latestPosts = [
 ];
 
 $('document').ready(function () {
-    const postContainer = $('.post-container');
-    //hide post creation if user is not logged in
-    if (localStorage.getItem('logged-in') === "false") {
-        $('#create-post').hide();
+    //add post creation if user is logged in
+    if (localStorage.getItem('logged-in') === "true") {
+        const user = JSON.parse(localStorage.getItem('user'));
+        $('.post-creation').append(
+            `
+            <div class="post" id="create-post">
+                <a href="#"><img src="images/newsfeed/user.jpg" alt="Profile Picture"></a>
+                <div>
+                    <a href="#" class="name">${user.username}</a>
+                    <form>
+                        <textarea name="post-text" id="post-text" class="user-post" placeholder="Share your thoughts..."
+                        rows="4" maxlength="500"></textarea>
+                        <div>
+                        <input type="submit" name="user-create-post" value="Post" id="post-button">
+                        </div>
+                    </form>
+                </div>
+            </div>
+            `
+        );
     }
+
+    //store posts in local storage
+    localStorage.setItem('Posts', latestPosts);
+    
+    //container for existing posts
+    const postContainer = $('.post-container');
 
     //function to append post that is supplied
     function displayOperation(post) {
@@ -202,6 +224,8 @@ $('document').ready(function () {
             };
             //add to front array
             latestPosts.unshift(newPost);
+            //update local storage
+            localStorage.setItem('Posts', latestPosts);
 
             //display based on sorting
             if (selection.val() === 'new') {
@@ -223,6 +247,20 @@ $('document').ready(function () {
 
     });
 
+    // if user is logged in, apply what posts they have liked
+    // if (localStorage.getItem('user') !== null && localStorage.getItem('logged-in') === "true") {
+    //     const user = JSON.parse(localStorage.getItem('user'));
+    //     latestPosts.forEach((post) => {
+    //         for(let i = 0; i < user.likedPosts.length; i += 1){
+    //             post.likeCount.forEach((like) => {
+    //                 if(like === user.likedPosts[i]){
+    //                     liked = true;
+    //                 }
+    //             });
+    //         }
+    //     });
+    // }
+
     //like counts
     const likeButtons = $('.like');
     for (let i = 0; i < likeButtons.length; i += 1) {
@@ -230,7 +268,7 @@ $('document').ready(function () {
         let liked = false;
         likeButtons.eq(i).on('click', function () {
             //if signed in, proceed, else notify user
-            if (localStorage.getItem('logged-in') === "true") {
+            if (localStorage.getItem('logged-in') === "true" && localStorage.getItem('user') !== null) {
                 let likeBtn = $(this);
                 let countCont = likeBtn.children('.like-count');
                 let count = countCont.text();
@@ -252,13 +290,6 @@ $('document').ready(function () {
         });
     }
 
-    //apply likes to page
-    if (localStorage.getItem('user') !== null) {
-        console.log(localStorage.getItem('user'));
-        const user = JSON.parse(localStorage.getItem('user'));
-        console.log(user);
-        user
-    }
 
     //reply functionality
     const replyButtons = $('.reply-button');
