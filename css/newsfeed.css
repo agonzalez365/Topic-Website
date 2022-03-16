@@ -39,7 +39,7 @@
 
 /* post creation */
 
-.newsfeed textarea {
+/* .newsfeed textarea {
     font-family: 'Rubik', sans-serif;
     font-style: italic;
     resize: none;
@@ -74,7 +74,13 @@
     background-color: var(--button-hover-color);
     border: solid 2px #2c5e7a;
     transition: all 300ms;
+} */
+
+#post-creation {
+    margin-top: 1rem;
+    background-color: var(--content-layer-1-color);
 }
+
 
 /* posts */
 

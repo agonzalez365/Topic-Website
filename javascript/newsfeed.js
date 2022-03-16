@@ -66,7 +66,7 @@ const newsFeedTemp = `<h1>Latest Activity...</h1>
     </select>
 </div>
 
-<div class="post-creation">
+<div class="post-creation-container">
 </div>
 
 <div class="post-container">
@@ -87,18 +87,21 @@ $('document').ready(function () {
 
         if (localStorage.getItem('logged-in') === "true") {
             const user = JSON.parse(localStorage.getItem('user'));
-            $('.post-creation').append(
+            $('.post-creation-container').append(
                 `
-                <div class="post" id="create-post">
-                    <a href="#"><img src="images/newsfeed/user.jpg" alt="Profile Picture"></a>
-                    <div>
-                        <a href="#" class="name">${user.username}</a>
+                <div id="post-creation" class="post">
+                    <div class="img-container">
+                        <img src="./images/newsfeed/user.jpg" alt="">
+                    </div>
+                    <div class="post-content">
+                        <div class="username">
+                            <span>Name</span>
+                        </div>
                         <form>
-                            <textarea name="post-text" id="post-text" class="user-post" placeholder="Share your thoughts..."
-                            rows="4" maxlength="500"></textarea>
-                            <div>
-                            <input type="submit" name="user-create-post" value="Post" id="post-button">
+                            <div id="user-post-text">
+                                <textarea name="" id="" cols="30" rows="10"></textarea>
                             </div>
+                            <input type="submit">
                         </form>
                     </div>
                 </div>
