@@ -74,6 +74,8 @@ $('document').ready(function() {
     $('main').append(homeTemplate);
     $('#homepage').on('click', function() {
         $('main').empty();
+        $('main').removeClass();
+        $('main').addClass('homepage');
         $('main').append(homeTemplate);
     })
 })

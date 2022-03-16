@@ -117,6 +117,8 @@ const resourcesTemp = `    <div id="support">
 $(document).ready(function() {
     $('#resources').on('click', function() {
         $('main').empty();
+        $('main').removeClass();
+        $('main').addClass('resources');
         $('main').append(resourcesTemp);
     })
 })
