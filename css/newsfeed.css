@@ -1,10 +1,3 @@
-html, body {
-    background-image: url(../images/backgrounds/ocean-sunset.jpg);
-    background-size: cover;
-    background-attachment: fixed;
-}
-
-
 .newsfeed h1  {
     display: flex;
     justify-content: center;
