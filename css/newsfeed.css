@@ -85,98 +85,102 @@ html, body {
 
 /* posts */
 
-.newsfeed .post {
-    display: grid;
-    grid-template-columns: 1fr 7fr;
-    color: var(--body-text-color);
-    background-color: var(--content-layer-1-color);
-    border-radius: 1em;
-    margin: 2em 0;
-    padding: 1.5em;
-    box-shadow: 0px 10px 3px var(--content-box-drop-shadow-color);
-    line-height: 150%;
-    font-weight: 400;
-}
-
-.newsfeed .post > a {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-}
-
-.newsfeed .post a img {
-    border-radius: 50%;
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    border: solid 2px transparent;
-}
-
-.newsfeed a img:hover {
-    border: solid 2px rgb(39, 39, 39);
-    transition: 300ms;
-    opacity: 70%;
-}
-
-.newfeed .name {
-    font-weight: bold;
-    font-size: x-large;
-    color: var(--body-text-color);
-    text-decoration: none;
-}
-.newsfeed a.name:hover {
-    color: var(--highlight-color);
-    transition: all 300ms;
-}
-
-.newsfeed .user-post {
-    margin: 1em 0;
-}
-.newsfeed.buttons{
+.newsfeed .post-container {
     display: flex;
-    font-weight: bold;
-    margin: 1em 0;
-}
-
-.newsfeed .like, .newsfeed .reply-button{
-    margin: 0 1em 0 0;
-    padding: 1ch;
+    flex-direction: column;
+    font-weight: 500;
     color: var(--body-text-color);
 }
 
-.newsfeed .buttons .like:hover, .reply-button:hover{
-    background-color: var(--content-layer-2-color);
-    border-radius: 1em;
-    transition: all 300ms;
-    box-sizing: border-box;
-    cursor: pointer;
-}
-
-.newsfeed .like:hover i, .newsfeed .reply-button:hover i{
-    color: var(--highlight-color);
-    border-radius: 1em;
-    transition: all 300ms;
-}
-
-.newsfeed .reply .like:hover, .reply .reply-button:hover{
+.newsfeed .thread {
+    display: flex;
+    flex-direction: column;
+    border-radius: 1rem;
+    margin: 1rem;
     background-color: var(--content-layer-1-color);
+}
+
+.newsfeed .post {
+    display: flex;
+    padding: 1rem;
+    border-radius: 1rem;
+    margin: 0 1rem 1rem;
+}
+
+
+.newsfeed .img-container img {
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 1rem;
+    height: 150px;
+    width: 150px;
+}
+
+.newsfeed .post-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.newsfeed .username {
+    font-weight: bolder;
+    margin-bottom: 1rem;
+}
+
+.newsfeed .post-text {
+    margin-bottom: 1rem;
+}
+
+.newsfeed .post-btns {
+    display: flex;
+    flex-direction: row;
+    font-weight: 700;
+}
+
+.newsfeed .like-container > *, .newsfeed .reply-container i {
+    margin-right: 0.5ch;
+}
+
+.newsfeed .like-container, .newsfeed .reply-container {
+    padding: 1ch;
+}
+
+.newsfeed .like-container:hover, .newsfeed .reply-container:hover {
+    cursor: pointer;
+    background-color: var(--content-layer-2-color);
+    border-radius: 1rem;
+}
+
+.newsfeed .like-container:hover i, .newsfeed .reply-container:hover i {
+    color: var(--highlight-color);
 }
 
 .newsfeed .reply {
-    display: grid;
-    grid-template-columns: 1fr 7fr;
-    border-radius: 1em;
     background-color: var(--content-layer-2-color);
-    margin: 1em 1em;
-    padding: 1em;
 }
 
-.newsfeed .buttons span{
-    margin: 0.5em;
+.newsfeed .reply .like-container:hover, .newsfeed .reply .reply-container:hover {
+    cursor: pointer;
+    background-color: var(--content-layer-1-color);
+    border-radius: 1rem;
 }
 
-/* extra */
+/* scalability */
 
-.newsfeed #secret {
-    display: none;
-}
+@media only screen and (max-width: 800px) {
+    .newsfeed {
+        padding: 0.5em;
+        font-size: small;
+    }
+
+    .newsfeed .img-container img {
+        height: 100px;
+        width: 100px;
+    }
+  }
+
+  @media only screen and (max-width: 400px) {
+    .newsfeed .img-container img {
+        height: 50px;
+        width: 50px;
+    }
+  }

@@ -111,22 +111,33 @@ $('document').ready(function () {
         function displayOperation(post) {
             postContainer.append(
                 `
-                <div class="post" id="${post.postId}">
-                    <div>
-                        <a href="#"><img src="${post.profilePic}" alt="Profile Picture"></a>
+                <div class="thread" id="${post.postId}">
+
+                <div class="post">
+                    <div class="img-container">
+                        <img src="${post.profilePic}" alt="">
                     </div>
+    
                     <div class="post-content">
-                        <div>
-                            <a href="#" class="name">${post.name}</a>
-                            <p class="user-post">${post.postContent}</p>
+    
+                        <div class="username">
+                            <span>${post.name}</span>
                         </div>
-                        <div class="buttons">
-                            <div class="like">
+    
+                        <div class="post-text">
+                            <p>${post.postContent}</p>
+                        </div>
+    
+                        <div class="post-btns">
+    
+                            <div class="like-container">
                                 <span class="like-count">${post.likeCount.length}</span><i class="fas fa-thumbs-up"></i><span>Like</span>
                             </div>
-                            <div class="reply-button">
+    
+                            <div class="reply-container">
                                 <i class="fas fa-reply"></i><span>Reply</span>
                             </div>
+    
                         </div>
     
                     </div>
@@ -135,26 +146,42 @@ $('document').ready(function () {
             );
             //append replies to post
             if (post.replies.length > 0) {
-                const replyPoint = postContainer.find('#' + post.postId).children().eq(1);
+                const replyPoint = postContainer.find('#' + post.postId);
+                console.log(replyPoint);
                 for (let i = 0; i < post.replies.length; i += 1) {
                     replyPoint.append(
                         `
-                        <div class="reply" id="${post.replies[i].postId}">
-                                <a href="#"><img src="${post.replies[i].profilePic}" alt="Profile Picture"></a>
-                                <div>
-                                    <a href="#" class="name">${post.replies[i].name}</a>
-                                    <p class="user-post">${post.replies[i].postContent}</p>
-    
-                                    <div class="buttons">
-                                        <div class="like">
-                                            <span class="like-count">${post.replies[i].likeCount.length}</span><i class="fas fa-thumbs-up"></i><span>Like</span>
-                                        </div>
-                                        <div class="reply-button">
-                                            <i class="fas fa-reply"></i><span>Reply</span>
-                                        </div>
-                                    </div>
-                                </div>
+                        <div class="post reply" id="${post.replies[i].postId}">
+
+                        <div class="img-container">
+                            <img src="${post.replies[i].profilePic}" alt="">
+                        </div>
+        
+                        <div class="post-content">
+        
+                            <div class="username">
+                                <span>${post.replies[i].name}</span>
                             </div>
+        
+                            <div class="post-text">
+                                <p>${post.replies[i].postContent}</p>
+                            </div>
+        
+                            <div class="post-btns">
+        
+                                <div class="like-container">
+                                    <span class="like-count">${post.replies[i].likeCount.length}</span><i class="fas fa-thumbs-up"></i><span>Like</span>
+                                </div>
+        
+                                <div class="reply-container">
+                                    <i class="fas fa-reply"></i><span>Reply</span>
+                                </div>
+        
+                            </div>
+        
+                        </div>
+        
+                        </div>
                         `
                     );
                 }
