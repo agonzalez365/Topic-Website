@@ -1,23 +1,23 @@
-.header{
+.homepage .header{
     display: block;
 }
 
-#title {
+.homepage #title {
     display: flex;
     justify-content: center;
 }
 
-#title h1 {
+.homepage #title h1 {
     padding: 0 25px 25px 25px;
     color: var(--nav-text-color);
     text-shadow: 0px 5px 5px var(--content-box-drop-shadow-color);
 }
 
-#game-image div{
+.homepage #game-image div{
     height: 328px;
 }
 
-#game-image img {
+.homepage #game-image img {
     object-fit: cover;
     object-position: top;
     width: 100%;
@@ -26,7 +26,7 @@
     box-shadow: 0px 10px 3px var(--content-box-drop-shadow-color);
 }
 
-#game-image iframe {
+.homepage #game-image iframe {
     color: var(--body-text-color);
     background-color: var(--content-layer-2-color);
     padding: 20px;
@@ -36,7 +36,7 @@
     background-color: white;
 }
 
-.text-box {
+.homepage .text-box {
     color: var(--body-text-color);
     background-color: var(--content-layer-2-color);
     padding: 20px;
@@ -46,11 +46,11 @@
     height: max-content;
 }
 
-.text-box p {
+.homepage .text-box p {
     margin: 20px 0;
 }
 
-.text-box a {
+.homepage .text-box a {
     text-decoration: none;
     color: var(--body-text-color);
     background-color: var(--button-color);
@@ -61,20 +61,20 @@
     margin-left: 15px
 }
 
-.text-box a:hover {
+.homepage .text-box a:hover {
     color: var(--highlight-color);
     background-color: var(--button-hover-color);
     transition: 300ms;
 }
 
-#intro{
+.homepage #intro{
     margin-bottom: 2em;
     font-size: large;
     text-align: center;
     font-weight: 700;
 }
 
-.rank {
+.homepage .rank {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -86,14 +86,14 @@
     box-shadow: 0px 10px 3px var(--content-box-drop-shadow-color);
 }
 
-.rank img {
+.homepage .rank img {
     width: 100px;
     height: 100px;
     border-radius: 100%;
     object-fit: cover;
 }
 
-.ranking {
+.homepage .ranking {
     text-decoration: none;
     font-size: small;
     font-weight: 900;
@@ -102,21 +102,21 @@
     align-items: center;
 }
 
-#first {
+.homepage #first {
     color: rgb(141, 139, 1);
 }
 
-#second {
+.homepage #second {
     color: rgb(46, 0, 105);
 }
 
-#third {
+.homepage #third {
     color: rgb(0, 2, 90);
 }
 
 
 
-#help-grid {
+.homepage #help-grid {
     display: grid;
     grid-gap: 5%;
     grid-template-columns: 1fr 1fr;
@@ -129,14 +129,14 @@
 
 /* featured post */
 
-#activity-snippet {
+.homepage #activity-snippet {
     background-color: var(--content-layer-2-color);
     padding: 1em;
     border-radius: 1em;
     box-shadow: 0px 10px 3px var(--content-box-drop-shadow-color);
 }
 
-#activity-title {
+.homepage #activity-title {
     font-size: 1.5em;
     font-weight: 900;
     color: var(--nav-text-color);
@@ -145,12 +145,12 @@
     text-decoration: none;
 }
 
-#activity-title:hover {
+.homepage #activity-title:hover {
     color: var(--highlight-color);
     transition: 300ms;
 }
 
-.post {
+.homepage .post {
     display: grid;
     grid-template-columns: 1fr 7fr;
     color: var(--body-text-color);
@@ -163,13 +163,13 @@
     font-weight: 400;
 }
 
-.post > a {
+.homepage .post > a {
     width: 100px;
     height: 100px;
     border-radius: 50%;
 }
 
-.post a img {
+.homepage .post a img {
     border-radius: 50%;
     width: 100px;
     height: 100px;
@@ -177,13 +177,13 @@
     border: solid 2px transparent;
 }
 
-a img:hover {
+.homepage a img:hover {
     border: solid 2px rgb(39, 39, 39);
     transition: 300ms;
     opacity: 70%;
 }
 
-.name {
+.homepage .name {
     font-weight: bold;
     font-size: x-large;
     color: var(--body-text-color);
@@ -191,52 +191,41 @@ a img:hover {
     margin: 0em 0.3em;
 }
 
-a.name:hover {
+.homepage a.name:hover {
     color: var(--highlight-color);
     transition: all 300ms;
 }
 
-.user-post {
+.homepage .user-post {
     margin: 1em 0.5em;
 }
 
-.buttons{
+.homepage .buttons{
     display: flex;
     font-weight: bold;
     margin: 1em 0;
 }
 
-.buttons a {
+.homepage .buttons a {
     text-decoration: none;
     margin: 0 1em 0 0;
     padding: 1ch;
     color: var(--body-text-color);
 }
 
-.buttons a:hover{
+.homepage .buttons a:hover{
     background-color: var(--content-layer-2-color);
     border-radius: 1em;
     transition: all 300ms;
     box-sizing: border-box;
 }
 
-.buttons a:hover i{
+.homepage .buttons a:hover i{
     color: var(--highlight-color);
     border-radius: 1em;
     transition: all 300ms;
 }
 
-.buttons span{
+.homepage .buttons span{
     margin: 0.5em;
 }
-
-
-
-
-
-
-
-
-
-
-

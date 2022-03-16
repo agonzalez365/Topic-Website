@@ -1,9 +1,9 @@
-main {
+.resources {
     grid-template-columns: 1fr 1fr;
     display: grid;
 }
 
-#support {
+.resources #support {
     display: block;
     justify-self: center;
     grid-column: span 2;
@@ -11,30 +11,30 @@ main {
     width: max-content;
 }
 
-#support h1 {
+.resources #support h1 {
     margin-top: 0.75em;
 }
 
-#support a {
+.resources #support a {
     text-shadow: 0px 5px 5px var(--content-box-drop-shadow-color);
     color: var(--nav-text-color);
 }
 
-#links a:hover, #support a:hover {
+.resources #links a:hover, #support a:hover {
     color: var(--highlight-color);
     background-color: var(--content-box-drop-shadow-color);
     transition: 300ms;
     border-radius: .75em;
 }
 
-main a {
+.resources a {
     border-radius: 0.75em;
     width: max-content;
     padding: 10px;
     margin: 40px 0;
 }
 
-#links {
+.resources #links {
     grid-template-rows: max-content;
     align-content: center;
     background-color: var(--content-layer-1-color);
@@ -43,7 +43,7 @@ main a {
     height: max-content;
 }
 
-#links a {
+.resources #links a {
     color: var(--body-text-color);
     background-color: var(--content-layer-2-color);
     box-shadow: 0px 10px 3px var(--content-box-drop-shadow-color);
@@ -51,24 +51,24 @@ main a {
     margin-left: 50px;
 }
 
-#links a, #support {
+.resources #links a, #support {
     display: flex;
     justify-content: center;
     list-style: none;
 }
 
-#links a, #support a {
+.resources #links a, #support a {
     text-decoration: none;
     height: max-content;
     width: 80%;
 }
 
-#videos {
+.resources #videos {
     display: grid;
     justify-content: center;
 }
 
-#videos iframe {
+.resources #videos iframe {
     border-radius: 1em;
     margin-bottom: 20px;
 }

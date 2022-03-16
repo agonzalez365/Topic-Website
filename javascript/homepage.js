@@ -71,9 +71,12 @@ const homeTemplate = `<div id="title">
 </div>`
 
 $('document').ready(function() {
+    $('main').addClass('homepage');
     $('main').append(homeTemplate);
     $('#homepage').on('click', function() {
         $('main').empty();
+        $('main').removeClass();
+        $('main').addClass('homepage');
         $('main').append(homeTemplate);
     })
 })

@@ -76,6 +76,8 @@ const newsFeedTemp = `<h1>Latest Activity...</h1>
 $('document').ready(function () {
     $('#newsfeed').on('click', function() {
         $('main').empty();
+        $('main').removeClass();
+        $('main').addClass('newsfeed');
         $('main').append(newsFeedTemp);
 
         if (localStorage.getItem('logged-in') === "true") {

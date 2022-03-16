@@ -102,6 +102,8 @@ const leaderboardTemplate = `    <div id="title">
 $(document).ready(function() {
     $('#leaderboard').on('click', function() {
         $('main').empty();
+        $('main').removeClass();
+        $('main').addClass('leaderboard');
         $('main').append(leaderboardTemplate);
     })
 })
