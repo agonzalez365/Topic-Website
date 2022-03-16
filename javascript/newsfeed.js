@@ -75,6 +75,11 @@ const newsFeedTemp = `<h1>Latest Activity...</h1>
 
 $('document').ready(function () {
     $('#newsfeed').on('click', function() {
+        //update active class on nav
+        $('.active').removeClass();
+        $('#newsfeed').addClass('active');
+
+        //adjust page content
         $('main').empty();
         $('main').removeClass();
         $('main').addClass('newsfeed');

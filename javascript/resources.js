@@ -116,6 +116,11 @@ const resourcesTemp = `    <div id="support">
 
 $(document).ready(function() {
     $('#resources').on('click', function() {
+        //update active class on nav
+        $('.active').removeClass();
+        $('#resources').addClass('active');
+
+        //adjust page content
         $('main').empty();
         $('main').removeClass();
         $('main').addClass('resources');
