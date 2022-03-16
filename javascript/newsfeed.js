@@ -1,15 +1,14 @@
-const body = $('body');
-
-//to-do: figure out timestamps
-let posts = [
+//to-do: change like count to array of userIDs
+//change replies to array of postIDs
+let latestPosts = [
     {
         profilePic: 'images/newsfeed/profile1.jpg',
         name: 'Alex',
         postContent: 'I\'m happy to see a game that explores the topic of mental health!',
-        likeCount: 7,
-        userId: 5,
+        likeCount: [4, 2, 759],
+        userId: 4,
         timestamp: 100,
-        postId: 5100, //should be calculated, postId-timestamp
+        postId: 4100, //should be calculated, postId-timestamp
         replies: [
         ]
     },
@@ -20,12 +19,11 @@ let posts = [
         vel placerat urna consectetur a. Maecenas in pulvinar magna. Praesent porttitor, nibh nec
         consectetur eleifend, leo lacus lacinia leo, vel porta ipsum justo in turpis. Morbi vulputate
         hendrerit orci ac finibus. Sed ullamcorper facilisis venenatis...`,
-        likeCount: 15,
-        userId: 4,
+        likeCount: [2, 1, 3, 4],
+        userId: 2,
         timestamp: 50,
-        postId: 450, //should be calculated, postId-timestamp
+        postId: 250,
         replies: [
-            //to-do, make reference
             {
                 profilePic: 'images/newsfeed/profilereply.jpg',
                 name: 'Layla',
@@ -33,11 +31,11 @@ let posts = [
                 vel placerat urna consectetur a. Maecenas in pulvinar magna. Praesent porttitor, nibh nec
                 consectetur eleifend, leo lacus lacinia leo, vel porta ipsum justo in turpis. Morbi vulputate
                 hendrerit orci ac finibus. Sed ullamcorper facilisis venenatis...`,
-                likeCount: 12,
+                likeCount: [3, 2],
                 userId: 3,
                 timestamp: 75,
-                postId: 375, //should be calculated, postId-timestamp
-            }
+                postId: 375,
+            },
         ]
     },
     {
@@ -47,187 +45,299 @@ let posts = [
         vel placerat urna consectetur a. Maecenas in pulvinar magna. Praesent porttitor, nibh nec
         consectetur eleifend, leo lacus lacinia leo, vel porta ipsum justo in turpis. Morbi vulputate
         hendrerit orci ac finibus. Sed ullamcorper facilisis venenatis...`,
-        likeCount: 42,
-        userId: 2,
-        timestamp: 50,
-        postId: 250, //should be calculated, postId-timestamp
+        likeCount: [1, 2, 3],
+        userId: 1,
+        timestamp: 25,
+        postId: 150,
         replies: [
         ]
     }
 ];
 
-// const mainContainer = $('main');
-// console.log(mainContainer);
-// posts.forEach((post) => {
-//     mainContainer.append(
-//         `
-//         <p>test</p>
-//         `
-//     )
-// });
+const newsFeedTemp = `<h1>Latest Activity...</h1>
 
-// let replies = {
-//     postId: {
-//         timestamp: 0,
-//         name: 'Name',
-//         profilePic: 'link',
-//         postContent: 'this is a post',
-//         likeCount: 0,
-//         userId: 0,
-//     }
-// }
 
-// outputs same time sometimes
-// console.log(Date.now());
-// console.log(Date.now());
-// console.log(Date.now());
+<div id="sorting" class="post-submit">
+    <label for="sort">Sort by...</label>
+    <select name="sort" id="sort">
+        <option value="new" id="sort-new">Latest</option>
+        <option value="rating" id="sort-rating">Rating</option>
+        <option value="old" id="sort-old">Oldest</option>
+    </select>
+</div>
 
-$('document').ready(function() {
-    //hide post creation if user is not logged in
-    if(localStorage.getItem('logged-in') === "false"){
-        $('#create-post').hide();
-    }
+<div class="post-creation">
+</div>
 
-    //initial page population
-    const mainContainer = $('main');
-    posts.forEach((post) => {
-        //if there are replies, use reply template, else, don't
-        //only works with one reply, need to update
-        if(post.replies.length > 0){
-            mainContainer.append(
+<div class="post-container">
+</div>
+`
+
+$('document').ready(function () {
+    $('#newsfeed').on('click', function() {
+        $('main').empty();
+        $('main').append(newsFeedTemp);
+
+        if (localStorage.getItem('logged-in') === "true") {
+            const user = JSON.parse(localStorage.getItem('user'));
+            $('.post-creation').append(
                 `
-                <div class="post">
+                <div class="post" id="create-post">
+                    <a href="#"><img src="images/newsfeed/user.jpg" alt="Profile Picture"></a>
+                    <div>
+                        <a href="#" class="name">${user.username}</a>
+                        <form>
+                            <textarea name="post-text" id="post-text" class="user-post" placeholder="Share your thoughts..."
+                            rows="4" maxlength="500"></textarea>
+                            <div>
+                            <input type="submit" name="user-create-post" value="Post" id="post-button">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                `
+            );
+        }
+    
+        //store posts in local storage
+        localStorage.setItem('Posts', latestPosts);
+    
+        //container for existing posts
+        const postContainer = $('.post-container');
+    
+        //function to append post that is supplied
+        function displayOperation(post) {
+            postContainer.append(
+                `
+                <div class="post" id="${post.postId}">
                     <div>
                         <a href="#"><img src="${post.profilePic}" alt="Profile Picture"></a>
                     </div>
-                    <div>
+                    <div class="post-content">
                         <div>
                             <a href="#" class="name">${post.name}</a>
                             <p class="user-post">${post.postContent}</p>
                         </div>
                         <div class="buttons">
                             <div class="like">
-                                <span class="like-count">15</span><i class="fas fa-thumbs-up"></i><span>Like</span>
+                                <span class="like-count">${post.likeCount.length}</span><i class="fas fa-thumbs-up"></i><span>Like</span>
                             </div>
                             <div class="reply-button">
                                 <i class="fas fa-reply"></i><span>Reply</span>
                             </div>
                         </div>
-
-                        <div class="reply">
-                            <a href="#"><img src="${post.replies[0].profilePic}" alt="Profile Picture"></a>
-                            <div>
-                                <a href="#" class="name">${post.replies[0].name}</a>
-                                <p class="user-post">${post.replies[0].postContent}</p>
-
-                                <div class="buttons">
-                                    <div class="like">
-                                        <span class="like-count">${post.replies[0].likeCount}</span><i class="fas fa-thumbs-up"></i><span>Like</span>
-                                    </div>
-                                    <div class="reply-button">
-                                        <i class="fas fa-reply"></i><span>Reply</span>
+    
+                    </div>
+                </div>
+                `
+            );
+            //append replies to post
+            if (post.replies.length > 0) {
+                const replyPoint = postContainer.find('#' + post.postId).children().eq(1);
+                for (let i = 0; i < post.replies.length; i += 1) {
+                    replyPoint.append(
+                        `
+                        <div class="reply" id="${post.replies[i].postId}">
+                                <a href="#"><img src="${post.replies[i].profilePic}" alt="Profile Picture"></a>
+                                <div>
+                                    <a href="#" class="name">${post.replies[i].name}</a>
+                                    <p class="user-post">${post.replies[i].postContent}</p>
+    
+                                    <div class="buttons">
+                                        <div class="like">
+                                            <span class="like-count">${post.replies[i].likeCount.length}</span><i class="fas fa-thumbs-up"></i><span>Like</span>
+                                        </div>
+                                        <div class="reply-button">
+                                            <i class="fas fa-reply"></i><span>Reply</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-
-                    </div>
-                </div>
-                `
-            );
+                        `
+                    );
+                }
+            }
+        }
+    
+        //display functions
+        function displayLatest() {
+            postContainer.empty();
+            latestPosts.forEach((post) => {
+                displayOperation(post);
+            });
+        }
+        function displayOldest() {
+            postContainer.empty();
+            latestPosts.slice().reverse().forEach((post) => {
+                displayOperation(post);
+            });
+        }
+        function displayRating() {
+            postContainer.empty();
+            let postsByRating = latestPosts.slice().sort(function (a, b) {
+                //move to front if rating is higher
+                if (a.likeCount.length > b.likeCount.length) {
+                    return -1;
+                }
+                //move to back if rating is lower
+                if (a.likeCount.length < b.likeCount.length) {
+                    return 1;
+                }
+                //dont move if equal
+                return 0;
+            });
+            postsByRating.forEach((post) => {
+                displayOperation(post);
+            });
+    
+        }
+    
+        //initial page population
+        //display depending on sort setting
+        const selection = $('#sort');
+        if (selection.val() === 'new') {
+            displayLatest();
+        }
+        else if (selection.val() === 'rating') {
+            displayRating();
         }
         else {
-            mainContainer.append(
-                `
-                <div class="post">
-                    <div>
-                        <a href="#"><img src="${post.profilePic}" alt="Profile Picture"></a>
-                    </div>
-                    <div>
-                        <div>
-                            <a href="#" class="name">${post.name}</a>
-                            <p class="user-post">${post.postContent}</p>
-                        </div>
-                        <div class="buttons">
-                            <div class="like">
-                                <span class="like-count">${post.likeCount}</span><i class="fas fa-thumbs-up"></i><span>Like</span>
-                            </div>
-                            <div class="reply-button">
-                                <i class="fas fa-reply"></i><span>Reply</span>
-                            </div>
-                        </div>
-        
-                    </div>
-                </div>
-                `
-            );
+            displayOldest();
         }
-    });
+    
+        //sorting
+    
+        //sort by oldest
+        const sortByOldest = $('#sort-old');
+        sortByOldest.on('click', function () {
+            displayOldest();
+        });
+    
+        //sort by newest
+        const sortByNewest = $('#sort-new')
+        sortByNewest.on('click', function () {
+            displayLatest();
+        });
+    
+        //sort by rating
+        const sortByRating = $('#sort-rating');
+        sortByRating.on('click', function () {
+            displayRating();
+        });
+    
+        //post creation
+        //should be hiddden if not logged in
+        const createPostBtn = $('#post-button');
+        createPostBtn.on('click', function (event) {
+            event.preventDefault();
+            if (localStorage.getItem('user') !== null) {
+                const user = JSON.parse(localStorage.getItem('user'));
+                const postText = document.getElementById('post-text').value;
+                const newPost = {
+                    profilePic: 'images/newsfeed/user.jpg',
+                    name: user.username,
+                    postContent: postText,
+                    likeCount: [user.userId],
+                    userId: user.userId,
+                    timestamp: Date.now(),
+                    postId: latestPosts.length + 1,
+                    replies: [
+                    ]
+                };
+                //add to front array
+                latestPosts.unshift(newPost);
+                //update local storage
+                localStorage.setItem('Posts', latestPosts);
+    
+                //display based on sorting
+                if (selection.val() === 'new') {
+                    displayLatest();
+                }
+                else if (selection.val() === 'rating') {
+                    displayRating();
+                }
+                else {
+                    displayOldest();
+                }
+    
+                //update like events
+                //isssue: resets likes
+                likeCountUpdate();
+                replyUpdate();
+    
+            }
+    
+    
+    
+    
+    
+    
+        });
+    
+        // if user is logged in, apply what posts they have liked
+        // if (localStorage.getItem('user') !== null && localStorage.getItem('logged-in') === "true") {
+        //     const user = JSON.parse(localStorage.getItem('user'));
+        //     latestPosts.forEach((post) => {
+        //         for(let i = 0; i < user.likedPosts.length; i += 1){
+        //             post.likeCount.forEach((like) => {
+        //                 if(like === user.likedPosts[i]){
+        //                     liked = true;
+        //                 }
+        //             });
+        //         }
+        //     });
+        // }
+    
+        //like counts
+        //need to update to store user's likes
+        function likeCountUpdate() {
+            const likeButtons = $('.like');
+            for (let i = 0; i < likeButtons.length; i += 1) {
+                //CHANGE LATER: defaults to false for now, likes not stored by account yet
+                let liked = false;
+                likeButtons.eq(i).on('click', function () {
+                    //if signed in, proceed, else notify user
+                    if (localStorage.getItem('logged-in') === "true" && localStorage.getItem('user') !== null) {
+                        let likeBtn = $(this);
+                        let countCont = likeBtn.children('.like-count');
+                        let count = countCont.text();
+                        //if not liked, update to liked, else reset
+                        if (!liked) {
+                            likeBtn.children().eq(2).text('Liked');
+                            countCont.text(Number(count) + 1);
+                            liked = true;
+                        }
+                        else {
+                            likeBtn.children().eq(2).text('Like');
+                            countCont.text(Number(count) - 1);
+                            liked = false;
+                        }
+                    }
+                    else {
+                        alert('Cannot like: Not signed in.');
+                    }
+                });
+            }
+        }
+    
+        likeCountUpdate();
+    
+        //reply functionality
+        function replyUpdate() {
+            const replyButtons = $('.reply-button');
+            for (let i = 0; i < replyButtons.length; i += 1) {
+                replyButtons.eq(i).on('click', function () {
+                    //TO DO: Add reply to latestPosts
+                    //update display after would work but not efficient
+                    console.log('click');
+                });
+            }
+        }
+    
+        replyUpdate();
+    })
 
-    //post creation
-    const createPostBtn = document.getElementById('post-button');
-    createPostBtn.addEventListener('click', function(event) {
-        event.preventDefault();
-        const postText = document.getElementById('post-text').value;
-        //TO DO: make username non-default, store posts in local storage
-        //pic will remain default
-        mainContainer.append(
-            `
-            <div class="post">
-                    <div>
-                        <a href="#"><img src="/images/newsfeed/user.jpg" alt="Profile Picture"></a>
-                    </div>
-                    <div>
-                        <div>
-                            <a href="#" class="name">User</a>
-                            <p class="user-post">${postText}</p>
-                        </div>
-                        <div class="buttons">
-                            <div class="like">
-                                <span class="like-count">0</span><i class="fas fa-thumbs-up"></i><span>Like</span>
-                            </div>
-                            <div class="reply-button">
-                                <i class="fas fa-reply"></i><span>Reply</span>
-                            </div>
-                        </div>
-        
-                    </div>
-                </div>
-            `
-        )
-
-    });
-
-    //sorting
-
-    //sort by oldest
-    const sortByOldest = document.getElementById('sort-old');
-    sortByOldest.addEventListener('click', function() {
-        //TO DO: Sorting algorithm
-        console.log('old');
-    });
-
-    //sort by newest
-    const sortByNewest = document.getElementById('sort-new')
-    sortByNewest.addEventListener('click', function() {
-        //TO DO: Sorting algorithm
-        console.log('new');
-    });
-
-    //sort by rating
-    const sortByRating = document.getElementById('sort-rating');
-    sortByRating.addEventListener('click', function() {
-        //TO DO: Sorting algorithm
-        console.log('rating');
-    });
+    //add post creation if user is logged in
     
 
-    //like counts
-    const likeButtons = document.getElementsByClassName('like');
-    for(let i = 0; i < likeButtons.length; i += 1){
-        likeButtons[i].addEventListener('click', function() {
-            //TO DO: increment count
-        });
-    }
-
-})
+});
