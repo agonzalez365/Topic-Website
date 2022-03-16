@@ -170,7 +170,7 @@
     border-radius: 50%;
 }
 
-.post a img {
+.post .user-img {
     border-radius: 50%;
     width: 100px;
     height: 100px;
@@ -178,7 +178,7 @@
     border: solid 2px transparent;
 }
 
-a img:hover {
+.user-img:hover {
     border: solid 2px rgb(39, 39, 39);
     transition: 300ms;
     opacity: 70%;
@@ -205,6 +205,8 @@ a.name:hover {
     display: flex;
     font-weight: bold;
     margin: 1em 0;
+    height: 10%;
+    width: 10%;
 }
 
 .buttons a {
@@ -246,6 +248,9 @@ a.name:hover {
 .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
     z-index: 1; /* Sit on top */
     left: 0;
     top: 0;
@@ -258,10 +263,18 @@ a.name:hover {
 
 .modal-content{
     background-color: #fefefe;
-    margin: 15% auto;
     padding: 20px;
     border: 3px solid black;
+}
+
+.modal-main {
+    height: 65%;
     width: 80%;
+}
+
+.modal-more {
+    height: 15%;
+    width: 70%;
 }
 
 .close {
@@ -275,4 +288,14 @@ a.name:hover {
   color: black;
   text-decoration: none;
   cursor: pointer;
+}
+
+.black-text{
+    color: black;
+}
+
+.exit-image{
+    height: 10%;
+    width: 10%;
+    font-size: medium;
 }

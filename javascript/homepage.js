@@ -4,6 +4,7 @@ $(document).ready(function() {
     var button = $('.modal-button'); 
     var modal = $('#modal-div');
     button.on('click', function(event) {
-        modal.show();
+        modal.css('display', 'flex');
+        $('body').css('overflow', 'hidden');
     });
 });
