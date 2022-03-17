@@ -73,14 +73,11 @@ const resourcesData = {
     ]
 }
 
-
-
-
 $(document).ready(function() {
     $('#resources').on('click', function() {
         $('main').empty();
 
-        let resourcesTemp = `    
+        let resourcesTemp = `
             <div id="support">
                 <h1>
                     <a 
@@ -90,46 +87,53 @@ $(document).ready(function() {
                     </a>
                 </h1>
             </div>
+
             <div id="links">
+                
             </div>
-            <div id="videos">      
+
+            <div id="videos">
+
             </div>
         `;
 
         $('main').append(resourcesTemp);
+    
+        // create a loop that runs for every info link and video 
+        // in data object
 
-            // create a loop that runs for every info link in data object
-            /*for (x = 0; x > infoLinks.length; x++) {
-                $( '#links' ).append( "infoLinks" );
-            };*/
-            // template is created
-            // add values from infoLink object into template using template literals
-            // append to links id using jQuery
+        // template is created
 
-        let linkTemp = `
-            <h4>
-                <a href="" target="_blank"></a>
-            </h4>
-        `;
+        // add values from infoLink and video object into template 
+        // using template literals
 
-        // create a loop that runs for every video in data object
-            // template is created
-            // add values from video object into template using template literals
-            //append to videos id using jQuery
+        // append to links id using jQuery
 
-        let videoTemp = `
-            <iframe 
-                width="400" 
-                height="250" 
-                src="" 
-                title="" 
-                frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowfullscreen>
-            </iframe>
-        `;
+        for (i = 0; i < resourcesData['videos'][i].link.length && resourcesData['videos'][i].title.length; i++) {
+            let videoTemp = `
+                <iframe 
+                    width="400" 
+                    height="250" 
+                    src="${resourcesData['videos'][i].link}" 
+                    title="${resourcesData['videos'][i].title}" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            `;
 
-        
+            $('main').append(videoTemp);
+        };
+
+        for (i = 0; i < resourcesData['infoLinks'][i].link.length && resourcesData['infoLinks'][i].text.length; i++) {
+            let linkTemp = `
+                <h4>
+                    <a href="${resourcesData['infoLinks'][i].link}" target="_blank"> ${resourcesData['infoLinks'][i].text}</a> 
+                </h4>
+            `;
+
+            $('main').append(linkTemp);
+        };
     });
 });
 
