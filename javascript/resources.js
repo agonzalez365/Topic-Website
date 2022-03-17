@@ -101,18 +101,8 @@ $(document).ready(function() {
         $('main').removeClass();
         $('main').addClass('resources');
         $('main').append(resourcesTemp);
-    
-        // create a loop that runs for every info link and video 
-        // in data object
 
-        // template is created
-
-        // add values from infoLink and video object into template 
-        // using template literals
-
-        // append to links id using jQuery
-
-        for (i = 0; i < resourcesData['videos'][i].link.length && resourcesData['videos'][i].title.length; i++) {
+        for (i = 0; i < resourcesData.videos.length; i++) {
             let videoTemp = `
                 <iframe 
                     width="400" 
@@ -128,7 +118,7 @@ $(document).ready(function() {
             $('#videos').append(videoTemp);
         };
 
-        for (i = 0; i < resourcesData['infoLinks'][i].link.length && resourcesData['infoLinks'][i].text.length; i++) {
+        for (i = 0; i < resourcesData.infoLinks.length; i++) {
             let linkTemp = `
                 <h4>
                     <a href="${resourcesData['infoLinks'][i].link}" target="_blank"> ${resourcesData['infoLinks'][i].text}</a> 
