@@ -75,6 +75,7 @@ const resourcesData = {
 
 $(document).ready(function() {
     $('#resources').on('click', function() {
+
         $('main').empty();
 
         let resourcesTemp = `
@@ -96,7 +97,6 @@ $(document).ready(function() {
 
             </div>
         `;
-
         
         $('main').removeClass();
         $('main').addClass('resources');
@@ -125,7 +125,7 @@ $(document).ready(function() {
                 </iframe>
             `;
 
-            $('main').append(videoTemp);
+            $('#videos').append(videoTemp);
         };
 
         for (i = 0; i < resourcesData['infoLinks'][i].link.length && resourcesData['infoLinks'][i].text.length; i++) {
@@ -135,7 +135,7 @@ $(document).ready(function() {
                 </h4>
             `;
 
-            $('main').append(linkTemp);
+            $('#links').append(linkTemp);
         };
     });
 });
