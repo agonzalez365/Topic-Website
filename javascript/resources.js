@@ -97,6 +97,9 @@ $(document).ready(function() {
             </div>
         `;
 
+        
+        $('main').removeClass();
+        $('main').addClass('resources');
         $('main').append(resourcesTemp);
     
         // create a loop that runs for every info link and video 
