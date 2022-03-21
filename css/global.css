@@ -23,6 +23,7 @@ html, body {
 
     /* preferably use these variables so colors are more uniform and changing page colors is easier */
     /* examples of how to use a variable are in newsfeed.css */
+    
     /* header & footer colors */
 
     --nav-main-color: #1B4965;
