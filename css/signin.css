@@ -1,4 +1,4 @@
-main div h1 {
+/* main div h1 {
     margin: 1em;
 }
 
@@ -72,4 +72,73 @@ input {
     padding: 1ch;
     margin: 5px;
     box-shadow: 0px 5px 5px var(--content-box-drop-shadow-color);
+} */
+
+/* new css */
+
+.sign-in {
+    color: var(--body-text-color);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.sign-in h1 {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    color: var(--nav-text-color);
+}
+
+.sign-in label {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+
+.sign-in form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    width: 300px;
+    background-color: var(--content-layer-1-color);
+    box-shadow: 0px 10px 10px var(--content-box-drop-shadow-color)
+}
+
+.sign-in form > * {
+    margin: 0.5rem;
+}
+
+.sign-in form > input {
+    padding: 1ch;
+    border-radius: 1rem;
+    border: none;
+    box-shadow: 0px 5px 5px var(--content-box-drop-shadow-color);
+}
+
+.sign-in input[type="submit"] {
+    font-weight: bold;
+    color: var(--body-text-color);
+    background-color: var(--button-color);
+}
+
+.sign-in input[type="submit"]:hover {
+    cursor: pointer;
+    transition: background-color 300ms;
+    background-color: var(--button-hover-color);
+}
+
+.sign-in a {
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--body-text-color);
+}
+
+.sign-in a:hover {
+    transition: color 300ms;
+    color: var(--highlight-color);
+    text-decoration: underline;
 }
