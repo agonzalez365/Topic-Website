@@ -35,15 +35,15 @@ const homeTemplate = `<div id="title">
 </div>
 
 <div class="rank">
-    <a href="leaderboard.html" class="ranking" id="first"> 
+    <a href="#" class="ranking" id="first"> 
         <img src="images/leaderboard/nathan.jpg">
-        <p>C0rti_Metr00 </p>
+        <p>C0rti_Metr00</p>
     </a>
-    <a href="leaderboard.html" class="ranking" id="second">
+    <a href="#" class="ranking" id="second">
         <img src="images/leaderboard/sharian.jpg">
         <p>_Yuuki_12</p>
     </a>
-    <a href="leaderboard.html" class="ranking" id="third">
+    <a href="#" class="ranking" id="third">
         <img src="images/leaderboard/david.jpg">
         <p>Da_S3raph_Sl1dz_</p>
     </a>
