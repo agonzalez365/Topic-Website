@@ -62,15 +62,6 @@ const signinHTML = `
 </form>   
 `
 
-const sentHTML = `
-<div>
-        <h1>Your Recovery Email Has Been Sent!</h1>
-        <h6>Check your email for password recovery options.</h6>
-    </div>
-    <h6><a href="signin.html">Log-in</a></h6>
-    <h6><a href="index.html">Home</a></h6>
-`
-
 const recoverHTML = `
 <div>
         <h1>Enter Recovery Email</h1>
