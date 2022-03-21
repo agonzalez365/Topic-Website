@@ -151,6 +151,22 @@ footer ul li {
 }
 
 /* scalability */
+
+#dropdown {
+    display: none;
+    font-size: x-large;
+    padding: 2ch;
+    color: var(--nav-text-color);
+    background: none;
+    border: none;
+}
+
+#dropdown:hover {
+    cursor: pointer;
+    color: var(--highlight-color);
+    transition: color 300ms;
+}
+
 @media only screen and (max-width: 1200px) {
     nav {
         font-size: small; 
@@ -160,5 +176,22 @@ footer ul li {
     }
   }
 
-@media only screen and (max-width: 930px) {
+@media only screen and (max-width: 940px) {
+    #dropdown {
+        display: flex;
+    }
+    #logo-dropdown a {
+        display: none;
+    }
+    nav ul {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+    }
+    .hidden {
+        display: none;
+    }
+    main {
+        margin: 71px auto 38px auto;
+    }
 }
