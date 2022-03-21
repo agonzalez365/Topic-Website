@@ -83,7 +83,7 @@ $(document).ready(function() {
         $('main').empty();
         $('main').removeClass();
         $('main').addClass('resources');
-        $('main').append(resourcesTemp);
+        
 
         let resourcesTemp = `
             <div id="support">
@@ -104,6 +104,8 @@ $(document).ready(function() {
 
             </div>
         `;
+
+        $('main').append(resourcesTemp);
 
         for (i = 0; i < resourcesData.videos.length; i++) {
             let videoTemp = `
