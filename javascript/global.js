@@ -21,7 +21,15 @@ $('document').ready(function() {
     //JS Media Queries
     medQuery = window.matchMedia('(max-width: 1000px)');
 
-    //can use to have js run on mediaquery if needed
+    //updates html on page load
+    if(medQuery.matches){
+        $('#profile').children().eq(0).html('<i class="fas fa-user">');;
+    }
+    else {
+        $('#profile').children().eq(0).html('Sign-in <i class="fas fa-user">');
+    }
+
+    //updates on screensize change
     medQuery.addListener(function(query) {
         if(query.matches){
             $('#profile').children().eq(0).html('<i class="fas fa-user">');;
