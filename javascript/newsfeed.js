@@ -102,7 +102,7 @@ $('document').ready(function () {
                                 <textarea name="" id="" cols="120" rows="10" placeholder="Share your thoughts..."></textarea>
                             </div>
                             <div id="post-btn-container">
-                                <input type="submit" id="make-new-post">
+                                <input type="submit" id="make-new-post" value="Make Post">
                             </div>
                         </form>
                     </div>
