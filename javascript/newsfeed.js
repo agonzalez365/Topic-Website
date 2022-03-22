@@ -155,7 +155,6 @@ $('document').ready(function () {
             //append replies to post
             if (post.replies.length > 0) {
                 const replyPoint = postContainer.find('#' + post.postId);
-                console.log(replyPoint);
                 for (let i = 0; i < post.replies.length; i += 1) {
                     replyPoint.append(
                         `

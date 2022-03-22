@@ -187,6 +187,10 @@
         height: 100px;
         width: 100px;
     }
+
+    .newsfeed {
+        margin: 86px auto 38px auto;;
+    }
   }
 
   @media only screen and (max-width: 400px) {

@@ -1,11 +1,17 @@
 $('document').ready(function() {
 
-    //incomplete
-    // mqCatch = window.matchMedia('(max-width: 940px)');
+    medQuery = window.matchMedia('(max-width: 940px)');
 
-    // mqCatch.addEventListener(function() {
-
-    // })
+    //can use to have js run on mediaquery if needed
+    medQuery.addListener(function(query) {
+        if(query.matches){
+            console.log('triggered match');
+        }
+        else {
+            console.log('triggered')
+        }
+        
+    })
 
     //check login status, update html accordingly
     const signInBtn = document.getElementById('sign-in-btn');
