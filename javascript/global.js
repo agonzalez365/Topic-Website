@@ -25,6 +25,7 @@ $('document').ready(function() {
     //updates html on page load
     if(medQuery.matches){
         $('#profile').children().eq(0).html('<i class="fas fa-user">');;
+        $('#nav-links').addClass('hidden');
     } else {
         if(localStorage.getItem('logged-in') === "true") {
             $('#profile').children().eq(0).html('Sign out <i class="fas fa-user">')
@@ -36,11 +37,13 @@ $('document').ready(function() {
     //updates on screensize change
     medQuery.addListener(function(query) {
         if(query.matches){
-            $('#profile').children().eq(0).html('<i class="fas fa-user">');;
+            $('#profile').children().eq(0).html('<i class="fas fa-user">');
+            $('#nav-links').addClass('hidden');
         }
         else {
+            $('#nav-links').removeClass('hidden');
             if(localStorage.getItem('logged-in') === "true") {
-                $('#profile').children().eq(0).html('Sign out <i class="fas fa-user">')
+                $('#profile').children().eq(0).html('Sign out <i class="fas fa-user">');
             } else {
                 $('#profile').children().eq(0).html('Sign in <i class="fas fa-user">');
             }

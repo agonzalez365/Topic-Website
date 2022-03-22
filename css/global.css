@@ -155,7 +155,7 @@ footer ul li {
     }
   }
 
-@media only screen and (max-width: 950px) {
+@media only screen and (max-width: 1000px) {
     #dropdown {
         display: flex;
     }
