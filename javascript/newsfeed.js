@@ -66,7 +66,7 @@ const newsFeedTemp = `<h1>Latest Activity...</h1>
     </select>
 </div>
 
-<div class="post-creation">
+<div class="post-creation-container">
 </div>
 
 <div class="post-container">
@@ -75,6 +75,11 @@ const newsFeedTemp = `<h1>Latest Activity...</h1>
 
 $('document').ready(function () {
     $('#newsfeed').on('click', function() {
+        //update active class on nav
+        $('.active').removeClass();
+        $('#newsfeed').addClass('active');
+
+        //adjust page content
         $('main').empty();
         $('main').removeClass();
         $('main').addClass('newsfeed');
@@ -82,17 +87,22 @@ $('document').ready(function () {
 
         if (localStorage.getItem('logged-in') === "true") {
             const user = JSON.parse(localStorage.getItem('user'));
-            $('.post-creation').append(
+            $('.post-creation-container').append(
                 `
-                <div class="post" id="create-post">
-                    <a href="#"><img src="images/newsfeed/user.jpg" alt="Profile Picture"></a>
-                    <div>
-                        <a href="#" class="name">${user.username}</a>
+                <div id="post-creation" class="post">
+                    <div class="img-container">
+                        <img src="./images/newsfeed/user.jpg" alt="">
+                    </div>
+                    <div class="post-content">
+                        <div class="username">
+                            <span>Name</span>
+                        </div>
                         <form>
-                            <textarea name="post-text" id="post-text" class="user-post" placeholder="Share your thoughts..."
-                            rows="4" maxlength="500"></textarea>
-                            <div>
-                            <input type="submit" name="user-create-post" value="Post" id="post-button">
+                            <div id="user-post-text">
+                                <textarea name="" id="" cols="120" rows="10" placeholder="Share your thoughts..."></textarea>
+                            </div>
+                            <div id="post-btn-container">
+                                <input type="submit" id="make-new-post" value="Make Post">
                             </div>
                         </form>
                     </div>
@@ -111,22 +121,33 @@ $('document').ready(function () {
         function displayOperation(post) {
             postContainer.append(
                 `
-                <div class="post" id="${post.postId}">
-                    <div>
-                        <a href="#"><img src="${post.profilePic}" alt="Profile Picture"></a>
+                <div class="thread" id="${post.postId}">
+
+                <div class="post">
+                    <div class="img-container">
+                        <img src="${post.profilePic}" alt="">
                     </div>
+    
                     <div class="post-content">
-                        <div>
-                            <a href="#" class="name">${post.name}</a>
-                            <p class="user-post">${post.postContent}</p>
+    
+                        <div class="username">
+                            <span>${post.name}</span>
                         </div>
-                        <div class="buttons">
-                            <div class="like">
+    
+                        <div class="post-text">
+                            <p>${post.postContent}</p>
+                        </div>
+    
+                        <div class="post-btns">
+    
+                            <div class="like-container">
                                 <span class="like-count">${post.likeCount.length}</span><i class="fas fa-thumbs-up"></i><span>Like</span>
                             </div>
-                            <div class="reply-button">
+    
+                            <div class="reply-container">
                                 <i class="fas fa-reply"></i><span>Reply</span>
                             </div>
+    
                         </div>
     
                     </div>
@@ -135,26 +156,41 @@ $('document').ready(function () {
             );
             //append replies to post
             if (post.replies.length > 0) {
-                const replyPoint = postContainer.find('#' + post.postId).children().eq(1);
+                const replyPoint = postContainer.find('#' + post.postId);
                 for (let i = 0; i < post.replies.length; i += 1) {
                     replyPoint.append(
                         `
-                        <div class="reply" id="${post.replies[i].postId}">
-                                <a href="#"><img src="${post.replies[i].profilePic}" alt="Profile Picture"></a>
-                                <div>
-                                    <a href="#" class="name">${post.replies[i].name}</a>
-                                    <p class="user-post">${post.replies[i].postContent}</p>
-    
-                                    <div class="buttons">
-                                        <div class="like">
-                                            <span class="like-count">${post.replies[i].likeCount.length}</span><i class="fas fa-thumbs-up"></i><span>Like</span>
-                                        </div>
-                                        <div class="reply-button">
-                                            <i class="fas fa-reply"></i><span>Reply</span>
-                                        </div>
-                                    </div>
-                                </div>
+                        <div class="post reply" id="${post.replies[i].postId}">
+
+                        <div class="img-container">
+                            <img src="${post.replies[i].profilePic}" alt="">
+                        </div>
+        
+                        <div class="post-content">
+        
+                            <div class="username">
+                                <span>${post.replies[i].name}</span>
                             </div>
+        
+                            <div class="post-text">
+                                <p>${post.replies[i].postContent}</p>
+                            </div>
+        
+                            <div class="post-btns">
+        
+                                <div class="like-container">
+                                    <span class="like-count">${post.replies[i].likeCount.length}</span><i class="fas fa-thumbs-up"></i><span>Like</span>
+                                </div>
+        
+                                <div class="reply-container">
+                                    <i class="fas fa-reply"></i><span>Reply</span>
+                                </div>
+        
+                            </div>
+        
+                        </div>
+        
+                        </div>
                         `
                     );
                 }
@@ -229,12 +265,14 @@ $('document').ready(function () {
     
         //post creation
         //should be hiddden if not logged in
-        const createPostBtn = $('#post-button');
+        const createPostBtn = $('#make-new-post');
         createPostBtn.on('click', function (event) {
             event.preventDefault();
             if (localStorage.getItem('user') !== null) {
                 const user = JSON.parse(localStorage.getItem('user'));
-                const postText = document.getElementById('post-text').value;
+                console.log('hi');
+                const postText = document.getElementById('#user-post-text').value;
+                console.log(postText);
                 const newPost = {
                     profilePic: 'images/newsfeed/user.jpg',
                     name: user.username,

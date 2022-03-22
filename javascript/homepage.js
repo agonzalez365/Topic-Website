@@ -74,6 +74,11 @@ $('document').ready(function() {
     $('main').addClass('homepage');
     $('main').append(homeTemplate);
     $('#homepage').on('click', function() {
+        //update active class on nav
+        $('.active').removeClass();
+        $('#homepage').addClass('active');
+
+        //adjust page content
         $('main').empty();
         $('main').removeClass();
         $('main').addClass('homepage');

@@ -75,8 +75,15 @@ const resourcesData = {
 
 $(document).ready(function() {
     $('#resources').on('click', function() {
+        //update active class on nav
+        $('.active').removeClass();
+        $('#resources').addClass('active');
 
+        //adjust page content
         $('main').empty();
+        $('main').removeClass();
+        $('main').addClass('resources');
+        
 
         let resourcesTemp = `
             <div id="support">
@@ -97,9 +104,7 @@ $(document).ready(function() {
 
             </div>
         `;
-        
-        $('main').removeClass();
-        $('main').addClass('resources');
+
         $('main').append(resourcesTemp);
 
         for (i = 0; i < resourcesData.videos.length; i++) {
