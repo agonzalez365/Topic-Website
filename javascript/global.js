@@ -1,18 +1,4 @@
 $('document').ready(function() {
-
-    medQuery = window.matchMedia('(max-width: 940px)');
-
-    //can use to have js run on mediaquery if needed
-    medQuery.addListener(function(query) {
-        if(query.matches){
-            console.log('triggered match');
-        }
-        else {
-            console.log('triggered')
-        }
-        
-    })
-
     //check login status, update html accordingly
     const signInBtn = document.getElementById('sign-in-btn');
     if(localStorage.getItem('logged-in') === "true"){
@@ -30,6 +16,20 @@ $('document').ready(function() {
 
     $('#dropdown').on('click', function() {
          $('#nav-links').toggleClass('hidden');
+    });
+
+    //JS Media Queries
+    medQuery = window.matchMedia('(max-width: 1000px)');
+
+    //can use to have js run on mediaquery if needed
+    medQuery.addListener(function(query) {
+        if(query.matches){
+            $('#profile').children().eq(0).html('<i class="fas fa-user">');;
+        }
+        else {
+            $('#profile').children().eq(0).html('Sign-in <i class="fas fa-user">');
+        }
+        
     });
 
     

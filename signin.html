@@ -11,57 +11,62 @@
     <link rel="stylesheet" href="css/signin.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="javascript/global.js"></script>
-    <script src="javascript/signin.js"></script> 
+    <script src="javascript/signin.js"></script>
     <script src="javascript/theme.js"></script>
 </head>
 
 <body>
 
-<nav>
-    <div id="logo">
-        <a href="#">MHA</a>
-    </div>
-    <div>
-        <ul>
-            <li><a id="homepage" href="index.html">Home</a></li>
-            <li><a id="resources" href="index.html">Resources</a></li>
-            <li><a id="newsfeed" href="index.html">News Feed</a></li>
-            <li><a id="leaderboard" href="index.html">Leaderboard</a></li>
-        </ul>
-    </div>
-    <div id="profile" >
-        <a class="active" href="signin.html" id="sign-in-btn"><span>Sign-in</span><i class="fas fa-user"></i></a>
-    </div>
-</nav>
-
-<main class="sign-in">
-    <h1>Sign-In</h1>
-    <form action="" id="sign-in-form">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required placeholder="username">
-    
-        <label for="pass">Password:</label>
-        <input type="password" id="pass" name="password" minlength="8" required placeholder="password">
-    
-        <input type="submit" value="Sign in" id="signin-Btn">
-    
-        <div>
-            <a href="#" id="create-account">Create a new account</a>
+    <nav>
+        <div id="logo-dropdown">
+            <button id="dropdown">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <a href="index.html">MHA</a>
         </div>
-    
         <div>
-            <a href="#" id="account-recovery">Forgot your password?</a>
+            <ul id="nav-links">
+                <li><a id="homepage" class="active" href="#">Home</a></li>
+                <li><a id="resources" href="#">Resources</a></li>
+                <li><a id="newsfeed" href="#">News&nbsp;Feed</a></li>
+                <li><a id="leaderboard" href="#">Leaderboard</a></li>
+            </ul>
         </div>
-    </form>  
-</main>
 
-<footer>
-    <div>
-        <ul>
-            <li>Copyright &copy; 2021</li>
-        </ul>
-    </div>
-</footer>
+        <div id="profile">
+            <a href="signin.html" id="sign-in-btn">Sign-in <i class="fas fa-user"></i></a>
+        </div>
+    </nav>
+
+    <main class="sign-in">
+        <h1>Sign-In</h1>
+        <form action="" id="sign-in-form">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required placeholder="username">
+
+            <label for="pass">Password:</label>
+            <input type="password" id="pass" name="password" minlength="8" required placeholder="password">
+
+            <input type="submit" value="Sign in" id="signin-Btn">
+
+            <div>
+                <a href="#" id="create-account">Create a new account</a>
+            </div>
+
+            <div>
+                <a href="#" id="account-recovery">Forgot your password?</a>
+            </div>
+        </form>
+    </main>
+
+    <footer>
+        <div>
+            <ul>
+                <li>Copyright &copy; 2021</li>
+            </ul>
+        </div>
+    </footer>
 
 </body>
+
 </html>
