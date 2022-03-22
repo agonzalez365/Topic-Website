@@ -151,7 +151,7 @@ footer ul li {
         font-size: small; 
     }
     main {
-        margin: 81px auto 38px auto;
+        margin: 83px auto 38px auto;
     }
   }
 
@@ -169,8 +169,5 @@ footer ul li {
     }
     .hidden {
         display: none;
-    }
-    main {
-        margin: 71px auto 38px auto;
     }
 }

@@ -99,9 +99,11 @@ $('document').ready(function () {
                         </div>
                         <form>
                             <div id="user-post-text">
-                                <textarea name="" id="" cols="30" rows="10"></textarea>
+                                <textarea name="" id="" cols="120" rows="10" placeholder="Share your thoughts..."></textarea>
                             </div>
-                            <input type="submit">
+                            <div id="post-btn-container">
+                                <input type="submit" id="make-new-post">
+                            </div>
                         </form>
                     </div>
                 </div>
@@ -263,12 +265,14 @@ $('document').ready(function () {
     
         //post creation
         //should be hiddden if not logged in
-        const createPostBtn = $('#post-button');
+        const createPostBtn = $('#make-new-post');
         createPostBtn.on('click', function (event) {
             event.preventDefault();
             if (localStorage.getItem('user') !== null) {
                 const user = JSON.parse(localStorage.getItem('user'));
-                const postText = document.getElementById('post-text').value;
+                console.log('hi');
+                const postText = document.getElementById('#user-post-text').value;
+                console.log(postText);
                 const newPost = {
                     profilePic: 'images/newsfeed/user.jpg',
                     name: user.username,

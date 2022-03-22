@@ -94,7 +94,7 @@ const signupHTML = `
     <label for="c-password">Confirm Password:</label>
     <input type="password" id="c-password" name="c-password" minlength="8" required placeholder="confirm password">
     
-    <input type="submit" value="Create">
+    <input type="submit" value="Create Account" id="create-account">
 
     <div>
         <a href="signin.html">Already have an account?</a>

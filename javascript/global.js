@@ -35,7 +35,7 @@ $('document').ready(function() {
             $('#profile').children().eq(0).html('<i class="fas fa-user">');;
         }
         else {
-            $('#profile').children().eq(0).html('Sign-in <i class="fas fa-user">');
+            $('#profile').children().eq(0).html('Sign in <i class="fas fa-user">');
         }
         
     });
