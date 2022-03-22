@@ -1,9 +1,9 @@
 $('document').ready(function() {
     //check login status, update html accordingly
     const signInBtn = document.getElementById('sign-in-btn');
-    if(localStorage.getItem('logged-in') === "true"){
-        signInBtn.innerHTML = `Sign out <i class="fas fa-user"></i>`;
-    }
+    // if(localStorage.getItem('logged-in') === "true"){
+    //     signInBtn.innerHTML = `Sign out <i class="fas fa-user"></i>`;
+    // }
 
     //sign user out if logged in, else bring user to log in page
     signInBtn.addEventListener('click', function(event) {
@@ -24,9 +24,12 @@ $('document').ready(function() {
     //updates html on page load
     if(medQuery.matches){
         $('#profile').children().eq(0).html('<i class="fas fa-user">');;
-    }
-    else {
-        $('#profile').children().eq(0).html('Sign-in <i class="fas fa-user">');
+    } else {
+        if(localStorage.getItem('logged-in') === "true") {
+            $('#profile').children().eq(0).html('Sign out <i class="fas fa-user">')
+        } else {
+            $('#profile').children().eq(0).html('Sign in <i class="fas fa-user">');
+        }
     }
 
     //updates on screensize change
