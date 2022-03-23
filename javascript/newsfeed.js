@@ -95,11 +95,11 @@ $('document').ready(function () {
                     </div>
                     <div class="post-content">
                         <div class="username">
-                            <span>Name</span>
+                            <span>${user.username}</span>
                         </div>
                         <form>
-                            <div id="user-post-text">
-                                <textarea name="" id="" cols="120" rows="10" placeholder="Share your thoughts..."></textarea>
+                            <div>
+                                <textarea name="" id="user-post-text" cols="120" rows="10" placeholder="Share your thoughts..."></textarea>
                             </div>
                             <div id="post-btn-container">
                                 <input type="submit" id="make-new-post" value="Make Post">
@@ -270,9 +270,7 @@ $('document').ready(function () {
             event.preventDefault();
             if (localStorage.getItem('user') !== null) {
                 const user = JSON.parse(localStorage.getItem('user'));
-                console.log('hi');
-                const postText = document.getElementById('#user-post-text').value;
-                console.log(postText);
+                const postText = $('#user-post-text').val();
                 const newPost = {
                     profilePic: 'images/newsfeed/user.jpg',
                     name: user.username,

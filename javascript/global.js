@@ -9,10 +9,11 @@ $('document').ready(function() {
     signInBtn.addEventListener('click', function(event) {
         if(localStorage.getItem('logged-in') === "true") {
             event.preventDefault();
-            if(!query.matches){
+            if(!medQuery.matches){
                 signInBtn.innerHTML = `Sign in <i class="fas fa-user"></i>`;
             }
             localStorage.setItem('logged-in', false);
+            $('.post-creation-container').empty();
         }
     });
 
