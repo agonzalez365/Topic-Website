@@ -95,7 +95,7 @@ $('document').ready(function () {
                     </div>
                     <div class="post-content">
                         <div class="username">
-                            <span>Name</span>
+                            <span>${user.username}</span>
                         </div>
                         <form>
                             <div id="user-post-text">
