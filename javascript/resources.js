@@ -97,7 +97,8 @@ $(document).ready(function() {
             </div>
 
             <div id="links">
-                
+                <ul id="list">
+                </ul>
             </div>
 
             <div id="videos">
@@ -125,12 +126,12 @@ $(document).ready(function() {
 
         for (i = 0; i < resourcesData.infoLinks.length; i++) {
             let linkTemp = `
-                <h4>
-                    <a href="${resourcesData['infoLinks'][i].link}" target="_blank"> ${resourcesData['infoLinks'][i].text}</a> 
-                </h4>
+            <li>
+                <a href="${resourcesData['infoLinks'][i].link}" target="_blank"> ${resourcesData['infoLinks'][i].text}</a>
+            </li>
             `;
 
-            $('#links').append(linkTemp);
+            $('#list').append(linkTemp);
         };
     });
 });
