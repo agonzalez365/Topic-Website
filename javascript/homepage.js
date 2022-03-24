@@ -105,7 +105,16 @@ $('document').ready(function() {
                             </button>
                         </div>
                         <p class="black-text"> 
-                            this is a place holder text.
+                            -Spreading awareness about a global issue.
+                            Address and properly display the issue to a wide audience.
+                            Provide a place to display our game.
+                            -Rapidly growing issue, and is often overlooked. 
+                            Can be a defining reason behind underlying problems in day to day life.
+                            Making information easier to access.
+                            -Small things can have an impact on our mental health and how we behave. 
+                            The mind is the tool we use to decide and act.
+                            Good mental health can change people's lives with minimal exposure to information and resources.
+                            
                         </p>
                     </div>
                 </div>
@@ -117,7 +126,6 @@ $('document').ready(function() {
         </div>
     `;
     $('main').append(homeTemplate);
-
     let rankings = function() {
         // loop over ranks in homeData object
         homeData.ranks.forEach((user) => {
