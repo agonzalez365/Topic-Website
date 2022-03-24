@@ -1,0 +1,37 @@
+.categories ul {
+    width: max-content;
+    height: max-content;
+    display: flex;
+    list-style: none;
+    padding: 10px;
+}
+
+.subs ul li:hover {
+    color: var(--highlight-color);
+    background-color: var(--content-box-drop-shadow-color);
+    transition: 300ms;
+}
+
+.subs {
+    background-color: var(--content-layer-1-color);
+    box-shadow: 0px 10px 3px var(--content-box-drop-shadow-color);
+    border-radius: .75em;
+    height: max-content;
+    width: max-content;
+    list-style: none;
+    padding: 10px;
+    margin: 40px 0;
+    display: flex;
+}
+
+.subs ul li {
+    color: var(--body-text-color);
+    background-color: var(--content-layer-2-color);
+    box-shadow: 0px 10px 3px var(--content-box-drop-shadow-color);
+    border-radius: 0.75em;
+    padding: 10px;
+    margin: 5px;
+}
+
+
+

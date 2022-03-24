@@ -68,7 +68,7 @@ $(document).ready(function() {
         }
     ];
 
-    let inputs = $('.themes').children('button');
+    let inputs = $('.theme').children('button');
 
     for (let i = 0; i < inputs.length; i += 1) {
         inputs.eq(i).on('click', function() {
