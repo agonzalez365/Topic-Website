@@ -26,7 +26,7 @@ $(document).ready(function() {
             /* Light */
             /* header & footer colors */
 
-            navMain: 'C9D2D1',
+            navMain: 'd4d4d4',
             navHover: '23303D',
             navHighlight: 'FFF1A6',
             navLogo: 'CAE9FF',
@@ -36,7 +36,7 @@ $(document).ready(function() {
             /* page content colors */
     
             bodyText: '23303D',
-            bodyBackground: '959e9d',
+            bodyBackground: '9c9c9c',
             bodyContent1: 'a8b2bf',
             bodyContent2: '8f9fb8',
             bodyShadow: '31313199',
@@ -49,7 +49,7 @@ $(document).ready(function() {
             /* header & footer colors */
 
             navMain: '23303D',
-            navHover: 'C9D2D1',
+            navHover: 'd4d4d4',
             navHighlight: 'FFF1A6',
             navLogo: 'CAE9FF',
             navText: 'CAE9FF',
