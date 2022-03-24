@@ -147,7 +147,6 @@ $('document').ready(function() {
     $('#homepage').on('click', function() {
         $('main').empty();
         $('main').removeClass();
-
         $('main').addClass('homepage');
         $('main').append(homeTemplate);
 
