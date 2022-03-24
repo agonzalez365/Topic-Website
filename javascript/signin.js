@@ -42,7 +42,7 @@ $('document').ready(function () {
 //sign in pages
 
 const signinHTML = `
-<h1>Sign-In</h1>
+<h1>Sign In</h1>
 <form action="" id="sign-in-form">
     <label for="username">Username:</label>
     <input type="text" id="username" name="username" required placeholder="username">
