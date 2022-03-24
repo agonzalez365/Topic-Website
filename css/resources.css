@@ -8,11 +8,6 @@
     justify-self: center;
     grid-column: span 2;
     margin-bottom: 2em;
-    width: max-content;
-}
-
-.resources #support h1 {
-    margin-top: 0.75em;
 }
 
 .resources #support a {
@@ -29,38 +24,59 @@
 
 .resources a {
     border-radius: 0.75em;
-    width: max-content;
+    width: fit-content;
     padding: 10px;
-    margin: 40px 0;
+    margin: 1rem 1rem;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.resources h1 a {
+    font-size: 2rem;
 }
 
 .resources #links {
-    grid-template-rows: max-content;
-    align-content: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     background-color: var(--content-layer-1-color);
     box-shadow: 0px 10px 3px var(--content-box-drop-shadow-color);
     border-radius: .75em;
     height: max-content;
 }
 
-.resources #links a {
+.resources #list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1.25rem 0;
+}
+
+.resources #list li a {
+    display: flex;
+    justify-content: center;
+    margin: 1.25rem auto;
+    width: 90%;
     color: var(--body-text-color);
     background-color: var(--content-layer-2-color);
     box-shadow: 0px 10px 3px var(--content-box-drop-shadow-color);
-    width: max-content;
-    margin-left: 50px;
+}
+
+.resources #list li {
+    display: inline-block;
 }
 
 .resources #links a, #support {
     display: flex;
     justify-content: center;
-    list-style: none;
 }
 
 .resources #links a, #support a {
     text-decoration: none;
-    height: max-content;
-    width: 80%;
+}
+
+.resources #list {
+    list-style-type: none;
 }
 
 .resources #videos {
@@ -71,4 +87,16 @@
 .resources #videos iframe {
     border-radius: 1em;
     margin-bottom: 20px;
+}
+
+/* scalability */
+@media only screen and (max-width: 950px) {
+    .resources {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .resources > * {
+        margin-bottom: 2rem;
+    }
 }
