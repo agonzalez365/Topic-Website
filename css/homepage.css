@@ -229,3 +229,20 @@
 .homepage .buttons span{
     margin: 0.5em;
 }
+
+/* scalability */
+
+@media only screen and (max-width: 840px) {
+    .homepage #help-grid {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .homepage #help-grid > * {
+        margin-bottom: 2rem;
+    }
+
+    .homepage .rank {
+        display: none;
+    }
+}
