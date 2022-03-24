@@ -51,27 +51,23 @@ nav {
     top: 0;
     width: 100%;
     display: grid;
-    grid-template-columns: 1fr 6fr 1fr;
+    grid-template-columns: 3fr 8fr 3fr;
     background-color: var(--nav-main-color);
-    padding: 5px;
     z-index: 1;
-
 }
 
 nav ul {
     display:flex;
     list-style: none;
     justify-content: center;
-    padding: 5px 0;
 }
 
 nav a {
-    text-decoration: none;
     font-size: 1.75em;
     font-weight: bold;
     color: var(--nav-text-color);
-    padding: 0.5em 1em;
-    margin: 0.25em;
+    padding: 0.75rem 1rem;
+    margin: 1rem 0.5rem;
     text-decoration: none;
     display: inline-block;
 }
@@ -84,40 +80,9 @@ nav a:hover {
     transition: 300ms;
 }
 
-#logo {
-    display: flex;
-    align-items: center;
-    color: var(--logo-color);
-}
-
-#logo:hover::after{
-    content: "Mental Health Awareness";
-    font-weight: 900;
-}
-
 #profile {
     display: flex;
-    align-items: center;
     justify-content: end;
-}
-
-#profile a {
-    padding: 0.5em;
-    width: max-content;
-}
-
-#profile a:hover {
-    background-color: var(--nav-hover-color);
-    border-radius: 1em;
-    transition: all 300ms;
-}
-
-#profile a:hover i{
-    color: var(--highlight-color);
-}
-
-#profile span {
-    margin-right: 0.5em;
 }
 
 a.active {
@@ -129,15 +94,11 @@ a.active {
 
 /* Page */
 
-section {
-    height: 12%;
-}
-
 main {
     width: 100%;
     min-height: 100%;
     max-width: 1200px;
-    margin: 94px auto 38px auto;
+    margin: 88px auto 38px auto;
     padding: 2em;
     background-color: var(--page-background-color);
     box-shadow: 5px 0 20px var(--content-box-drop-shadow-color), -5px 0 10px var(--content-box-drop-shadow-color);
@@ -167,4 +128,47 @@ footer ul li {
     margin-top: 10px;
     margin-bottom: 10px;
     opacity: 50%;
+}
+
+/* scalability */
+
+#dropdown {
+    display: none;
+    font-size: x-large;
+    padding: 2ch;
+    color: var(--nav-text-color);
+    background: none;
+    border: none;
+}
+
+#dropdown:hover {
+    cursor: pointer;
+    color: var(--highlight-color);
+    transition: color 300ms;
+}
+
+@media only screen and (max-width: 1200px) {
+    nav {
+        font-size: small; 
+    }
+    main {
+        margin: 83px auto 38px auto;
+    }
+  }
+
+@media only screen and (max-width: 1000px) {
+    #dropdown {
+        display: flex;
+    }
+    #logo-dropdown a {
+        display: none;
+    }
+    nav ul {
+        transition: all 500ms;
+        display: flex;
+        flex-direction: column;
+    }
+    .hidden {
+        display: none;
+    }
 }

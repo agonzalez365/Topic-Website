@@ -101,6 +101,11 @@ const leaderboardTemplate = `    <div id="title">
 
 $(document).ready(function() {
     $('#leaderboard').on('click', function() {
+        //update active class on nav
+        $('.active').removeClass();
+        $('#leaderboard').addClass('active');
+
+        //adjust page content
         $('main').empty();
         $('main').removeClass();
         $('main').addClass('leaderboard');
