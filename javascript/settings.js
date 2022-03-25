@@ -38,7 +38,7 @@ const settings = `    <div id="Settings">
 </ul>
 </div>`
 
-$(document).ready(function() {
+$('document').ready(function() {
     $('#settings').on('click', function() {
         //update active class on nav
         $('.active').removeClass();
@@ -47,7 +47,9 @@ $(document).ready(function() {
         //adjust page content
         $('main').empty();
         $('main').removeClass();
-        $('main').addClass('leaderboard');
+        $('main').addClass('settings');
         $('main').append(settings);
+
+        themes();
     })
 })

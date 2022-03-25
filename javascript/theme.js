@@ -1,4 +1,4 @@
-$(document).ready(function() {
+function themes () {
     const hex = [
         {
             /* Navy */
@@ -88,7 +88,7 @@ $(document).ready(function() {
             $('body').css('--button-hover-color', `#${hex[i].bodyButtonHover}`);
         });
     } 
-});
+};
 
 /*const themeTemplate = `
 <button id="navy" class="btn">Navy</button>

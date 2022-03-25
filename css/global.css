@@ -92,6 +92,42 @@ a.active {
     border-radius: 1em;
 }
 
+/* Drop Menu */
+
+/*.dropdown .hide {
+    max-height: 0 !important;
+}
+
+.dropdown{
+	border: 0.1em solid black;
+	width: max-content;
+  text-indent: 5px;
+	margin-bottom: 1em;
+}
+
+.dropdown .title{
+	margin: .3em .3em .3em .3em;
+}
+
+.dropdown .title .fa-angle-right{
+	width: max-content;
+	transition: transform .3s;
+}
+
+.dropdown .menu{
+	transition: max-height .5s ease-out;
+	overflow: hidden;
+}
+
+.dropdown .menu .option{
+	margin: .3em .3em .3em .3em;
+	margin-top: 0.3em;
+}
+
+.dropdown .menu .option:hover{
+	background-color: #FFF1A6;
+}*/
+
 /* Page */
 
 main {
